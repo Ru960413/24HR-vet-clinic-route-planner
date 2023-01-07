@@ -1,0 +1,27 @@
+{% extends "layout.html" %} {% block title %}路線規劃{% endblock title %} {%
+block content %}
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
+</style>
+
+<div class="navbar">
+  <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
+  <h3 class="nav-item title">路線規劃</h3>
+  <div class="nav-item"><a href="/detail-zh" class="info">獸醫院的詳細資訊</a></div>
+</div>
+
+<!--insert google map-->
+<div class="map"></div>
+
+{% endblock content %}
+
+
+{% block script %}
+
+<script async defer 
+src=”https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&libraries=places,drawing,geometry&v=3&callback=initMap">
+</script>
+{% endblock script %}
+

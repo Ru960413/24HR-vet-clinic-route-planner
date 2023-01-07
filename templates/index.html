@@ -1,0 +1,27 @@
+{% extends 'layout.html' %} {% block title %} 24HR Vet Clinics in Taiwan {%
+endblock title %} {% block content %}
+
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+</style>
+
+<div class="greeting-container">
+  <h1 class="greeting-zh">歡迎來到24小時營業動物醫院查詢服務</h1>
+  <h1 class="greeting-en">
+    Welcome to 24-hour emergency vet clinics search service
+  </h1>
+</div>
+
+<div class="explanation">
+  <h4 class="ex-zh">幫你找到離你最近的急診獸醫院</h4>
+  <h4 class="ex-en">We help you find the nearest emergency vet clinic</h4>
+</div>
+
+<div class="choose-language">
+  <a class="language-1" href="/route-en">English</a>
+  <a class="language-2" href="/route-zh">中文</a>
+</div>
+{% endblock content %}

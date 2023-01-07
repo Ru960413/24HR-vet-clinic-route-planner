@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block title %}Route planning{% endblock title %}
+{% block content %}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+</style>
+
+<div class="navbar">
+  <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
+  <h2 class="nav-item title">Route planning</h2>
+  <div class="nav-item">
+    <a href="/detail-en" class="info">More info about vet clinics</a>
+  </div>
+</div>
+
+<!--insert google map-->
+<div class="map"></div>
+
+{% endblock content %}

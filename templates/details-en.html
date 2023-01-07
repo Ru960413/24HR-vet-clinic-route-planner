@@ -1,0 +1,727 @@
+{% extends "layout.html" %} {% block title %}Clinic Details{% endblock title %}
+{% block content %}
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+</style>
+
+<!--TODO: add table of Contents-->
+<!--https://www.roboleary.net/webdev/2022/06/27/add-a-table-of-contents-to-your-blog-posts.html-->
+
+<!--TODO: add videos about pet emergency-->
+
+<!--TODO: add copyright and contact info-->
+
+<div class="vet-clinic-list">
+  <div class="nav-item"><a href="/route-en" class="back">&#x3c;</a></div>
+  <h2 class="nav-item title">
+    All the Emergency Veterinary Services in Taiwan(Last updated 2023.01)
+  </h2>
+</div>
+
+<h3 class="area city">Taipei City</h3>
+
+<h4 class="area">Zhongshan District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Eden Animal Hospital</td>
+    <td>1F., No.33, Beian Rd, Lane 554, Zhongshan District, Taipei City</td>
+    <td>
+      <a href="https://eden-vet.com" target="_blank">https://eden-vet.com</a>
+    </td>
+    <td>Call after 9PM</td>
+    <td><a href="tel:0285092579">02-8509-2579</a></td>
+  </tr>
+
+  <tr>
+    <td>Top Veterinary Hospital</td>
+    <td>No. 260, Long Jiang Rd, Zhongshan District, Taipei City</td>
+    <td>
+      <a href="http://topvet.topet.net/info-act.html" target="_blank"
+        >https://www.topvet.topet.net</a
+      >
+    </td>
+    <td>Call after 9PM</td>
+    <td>
+      <a href="tel:0928242358">09-28242358</a> or
+      <a href="tel:0225170902">02-2517-0902</a>
+    </td>
+  </tr>
+</table>
+
+<h4 class="area">Da’an District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Duke Veterinary Clinic</td>
+    <td>No. 117, Sec. 3, Heping E. Rd., Da’an Dist., Taipei City</td>
+    <td>
+      <a href="https://www.facebook.com/dukevetclinic" target="_blank"
+        >https://www.facebook.com/dukevetclinic</a
+      >
+    </td>
+    <td>Call after 12AM</td>
+    <td><a href="tel:0287324789">02-8732-4789</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Datong District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Loving Kindness Animal Hospital</td>
+    <td>No.1, Ningxia Rd, Datong District, Taipei City</td>
+    <td>
+      <a href="https://www.lkah.com.tw/" target="_blank"
+        >https://www.lkah.com.tw/</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0225563320">02-2556-3320</a></td>
+  </tr>
+
+  <tr>
+    <td>Formosa Vet Center</td>
+    <td>1F., No. 247, Minsheng W. Rd., Datong Dist., Taipei City</td>
+    <td>
+      <a href="https://www.formosavetcenter.com" target="_blank"
+        >https://www.formosavetcenter.com</a
+      >
+    </td>
+    <td></td>
+    <td>
+      <a href="tel:0225530371">02-2553-0371</a> or
+      <a href="tel:0225530303">02-2553-0303</a>
+    </td>
+  </tr>
+</table>
+
+<h4 class="area">Wanhua District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Prospect Vet Emergency Critical Center</td>
+    <td>No.2, Section 2, Zhonghua Rd, Wanhua District, Taipei City</td>
+    <td>
+      <a href="http://www.prospect-vet.com/info.html" target="_blank"
+        >https://www.prospect-vet.com</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0223880122">02-2388-0122</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Neihu District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>National Veterinary Hospital(Taipei Branch)</td>
+    <td>No. 13, Lane 30, Section 1, Jiuzong Rd, Neihu District, Taipei City</td>
+    <td>
+      <a href="https://www.vet.com.tw/en/about.php" target="_blank"
+        >https://www.vet.com.tw/en/about.php</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0287918706">02-8791-8706</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Songshan District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Top Veterinary Hospital(Nanjing branch)</td>
+    <td>No. 286, Sec. 5, Nanjing E. Rd., Songshan Dist., Taipei City</td>
+    <td>
+      <a href="http://topvet.topet.net/" target="_blank"
+        >http://topvet.topet.net/</a
+      >
+    </td>
+    <td>Call After 9 PM</td>
+    <td><a href="tel:0227562005">02-2756-2005</a></td>
+  </tr>
+
+  <tr>
+    <td>Xintai Animal Hospital</td>
+    <td>1F., No. 57, Yanji St., Songshan Dist., Taipei City</td>
+    <td>
+      <a href="http://www.stah.com.tw" target="_blank"
+        >http://www.stah.com.tw</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0225795722">02-2579-5722</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Wenshan District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Dacyun Veterinarian 24hr Animal Emergency Hospital</td>
+    <td>No. 206, Section 6, Roosevelt Rd, Wenshan District, Taipei City</td>
+    <td>
+      <a href="https://dacyun-vet.tw" target="_blank">https://dacyun-vet.tw</a>
+    </td>
+    <td></td>
+    <td><a href="tel:0229305557">02-2930-5557</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Shilin District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Boulder Yard Animal Hospital</td>
+    <td>No. 102, Section 1, Zhongcheng Rd, Shilin District, Taipei City</td>
+    <td>
+      <a href="http://www.boulderyard24.com" target="_blank"
+        >http://www.boulderyard24.com</a
+      >
+    </td>
+    <td>
+      <strong>Provide service for dogs, cats, rodents, and rabbits</strong>
+    </td>
+    <td><a href="tel:0228341119">02-2834-1119</a></td>
+  </tr>
+
+  <tr>
+    <td>Anew Animal Hospital</td>
+    <td>1F., No. 238, Jihe Rd., Shilin Dist., Taipei City</td>
+    <td>
+      <a href="https://anewanimalhospital.webnode.tw" target="_blank"
+        >https://anewanimalhospital.webnode.tw</a
+      >
+    </td>
+    <td>Call After 10PM & Sunday After 5PM</td>
+    <td><a href="tel:0228810478">02-2881-0478</a></td>
+  </tr>
+
+  <tr>
+    <td>Blue Sky Animal Hospital</td>
+    <td>No. 757, Wenlin Rd, Shilin District, Taipei City</td>
+    <td>
+      <a href="https://reurl.cc/aajRXl" target="_blank">Facebook Page</a>
+    </td>
+    <td>
+      Call After 9PM & Sunday Off
+      <strong> Provide service for dogs, cats, birds, fish, and rabbits</strong>
+    </td>
+    <td><a href="tel:0228380088">02-2838-0088</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Zhongzheng District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Daan Animal Hospital</td>
+    <td>1F., No. 162, Sec. 4, Roosevelt Rd., Zhongzheng Dist., Taipei City</td>
+    <td>
+      <a href="https://daan-vet.com" target="_blank">https://daan-vet.com</a>
+    </td>
+    <td></td>
+    <td><a href="tel:0223632020">02-2363-2020</a></td>
+  </tr>
+</table>
+
+<h3 class="area city">New Taipei City</h3>
+
+<h4 class="area">Banqiao District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Hsiang Hsin Animal Hospital</td>
+    <td>No. 203, Zhongxiao Rd., Banqiao Dist., New Taipei City</td>
+    <td>
+      <a href="https://www.hsianghsin.tw" target="_blank"
+        >https://www.hsianghsin.tw</a
+      >
+    </td>
+    <td>Call after 9PM</td>
+    <td><a href="tel:0229569099">02-2956-9099</a></td>
+  </tr>
+
+  <tr>
+    <td>Mutsun Animal Hospital</td>
+    <td>No. 28, Section 2, Zhongshan Rd, Banqiao District, New Taipei City</td>
+    <td>
+      <a href="https://www.facebook.com/mtpet/" target="_blank"
+        >Facebook Page</a
+      >
+    </td>
+    <td>Call after 8PM</td>
+    <td>
+      <a href="tel:0289511172">02-8951-1172</a>
+    </td>
+  </tr>
+</table>
+
+<h4 class="area">Zhonghe District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Chung Ri Animal Hospital</td>
+    <td>No. 2, Section 3, Zhongshan Rd, Zhonghe District, New Taipei City</td>
+    <td>
+      <a href="http://www.unitevet.com" target="_blank"
+        >http://www.unitevet.com</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0222263639">02-2226-3639</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Yonghe District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Le Huo Animal Hospital</td>
+    <td>No. 21, Lane 66, Zhulin Rd, Yonghe District, New Taipei City</td>
+    <td><a href="shorturl.at/bpsyP" target="_blank">Facebook Page</a></td>
+    <td>Call between 9PM to 2AM, Sunday Off</td>
+    <td><a href="tel:0229225805">02-2922-5805</a></td>
+  </tr>
+</table>
+
+<h3 class="area city">Taoyuan City</h3>
+
+<h4 class="area">Taoyuan District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Elite Animal Hospital</td>
+    <td>No. 495-9, Minsheng Rd, Taoyuan District, Taoyuan City</td>
+    <td>
+      <a href="https://www.ghanimalcasa.com" target="_blank"
+        >https://www.ghanimalcasa.com</a
+      >
+    </td>
+    <td>Call After 2AM</td>
+    <td><a href="tel:033363252">03-336-3252</a></td>
+  </tr>
+
+  <tr>
+    <td>Genki Veterinary Hospital(Sanmin Branch)</td>
+    <td>No. 381, Section 3, Sanmin Rd, Taoyuan District, Taoyuan City</td>
+    <td>
+      <a href="http://www.genkivet.com.tw" target="_blank"
+        >http://www.genkivet.com.tw</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:033333816"> 03-333-3816</a></td>
+  </tr>
+
+  <tr>
+    <td>Genki Veterinary Hospital(Yiwen Branch)</td>
+    <td>No. 156, Section 1, Zhuangjing Rd, Taoyuan District, Taoyuan City</td>
+    <td>
+      <a href="http://www.genkivet.com.tw" target="_blank"
+        >http://www.genkivet.com.tw</a
+      >
+    </td>
+    <td>Provide service for dogs, cats, rodents, and rabbits</td>
+    <td><a href="tel:033553911"> 03-355-3911</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Zhongli District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Bisous Animal Hospital</td>
+    <td>No. 20, Yanping Rd., Zhongli Dist., Taoyuan City</td>
+    <td>
+      <a href="https://zh-tw.facebook.com/BisousAH" target="_blank"
+        >Facebook Page</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:034535740">03-453-5740</a></td>
+  </tr>
+</table>
+
+<h3 class="area city">Hsinchu City</h3>
+
+<h4 class="area">East District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Zhu Xin Animal Hospital</td>
+    <td>No. 654, Section 1, Jingguo Rd, East District, Hsinchu City</td>
+    <td>
+      <a href="http://www.zhuxin.com.tw/" target="_blank"
+        >http://www.zhuxin.com.tw/</a
+      >
+    </td>
+    <td>Provide Service from 9PM to 2AM</td>
+    <td><a href="tel:035338055">03-533-8055</a></td>
+  </tr>
+</table>
+
+<h3 class="area city">Taichung City</h3>
+
+<h4 class="area">West District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>National Veterinary Hospital(Taichung Main Branch)</td>
+    <td>No. 100, Wuquan 8th St., West Dist., Taichung City</td>
+    <td>
+      <a href="https://www.vet.com.tw/en/about.php" target="_blank"
+        >https://www.vet.com.tw/en/about.php</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0423710496">04-2371-0496</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Nantun District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Gleam ways Animal Hospital</td>
+    <td>No. 486, Sec. 1, Wenxin Rd., Nantun Dist., Taichung City</td>
+    <td>
+      <a href="https://www.facebook.com/gleamways" target="_blank"
+        >Facebook Page</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0423202279">04-2320-2279</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Beitun District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Kant Animal Hospital</td>
+    <td>No. 270, Section 2, Chongde Rd, Beitun District, Taichung City</td>
+    <td>
+      <a href="https://www.facebook.com/kantvet/" target="_blank"
+        >Facebook Page</a
+      >
+    </td>
+    <td>
+      Call before going &
+      <strong>Provide service for dogs, cats, rodents, and rabbits</strong>
+    </td>
+    <td><a href="tel:073452541">04-2241-2700</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Dali District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Loving Kindness Animal Hospital(Taichung Main branch)</td>
+    <td>No. 539, Sec. 2, Guoguang Rd., Dali Dist., Taichung City</td>
+    <td>
+      <a href="https://www.facebook.com/Lkah009" target="_blank"
+        >Facebook Page</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:0424066688">04-2406-6688</a></td>
+  </tr>
+</table>
+
+<h3 class="area city">Tainan City</h3>
+
+<h4 class="area">East District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>National Veterinary Hospital(Tainan Branch)</td>
+    <td>2F., No. 620, Chongde Rd., East Dist., Tainan City</td>
+    <td>
+      <a href="https://www.vet.com.tw/en/about.php" target="_blank"
+        >https://www.vet.com.tw/en/about.php</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:062673191">06-267-3191</a></td>
+  </tr>
+</table>
+
+<h4 class="area">South District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Loving Kindness Animal Hospital(Tainan Branch)</td>
+    <td>No. 437, Sec. 1, Ximen Rd., South Dist., Tainan City</td>
+    <td>
+      <a href="https://www.lkah.com.tw" target="_blank"
+        >https://www.lkah.com.tw</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:062203166">06-220-3166</a></td>
+  </tr>
+</table>
+
+<h3 class="area city">Kaohsiung City</h3>
+
+<h4 class="area">Renwu District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Alliance Veterinary Hospital(Renwu Main Branch)</td>
+    <td>No. 231, Fengren Rd., Renwu Dist., Kaohsiung City</td>
+    <td>
+      <a href="https://www.pet100pa.com/vet" target="_blank"
+        >https://www.pet100pa.com/vet</a
+      >
+    </td>
+    <td>
+      Emergency service from 9PM to 2AM &
+      <strong
+        >Provide service for dogs, cats, rodents, rabbits, hedgehogs, sugar
+        gliders, birds, parrots and reptiles</strong
+      >
+    </td>
+    <td><a href="tel:073740964">07-374-0964</a> #20</td>
+  </tr>
+</table>
+
+<h4 class="area">Sanmin District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Hung Li Animal Hospital</td>
+    <td>No. 326, Mingcheng 1st Rd, Sanmin District, Kaohsiung City</td>
+    <td>
+      <a href="https://www.hunglivet.com/" target="_blank"
+        >https://www.hunglivet.com/</a
+      >
+    </td>
+    <td></td>
+    <td><a href="tel:073102819">07-310-2819</a></td>
+  </tr>
+</table>
+
+<h4 class="area">Zuoying District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Jong-Shing Animal Hospital</td>
+    <td>No. 498, Wenfu Rd, Zuoying District, Kaohsiung City</td>
+    <td>
+      <a href="http://www.jsah.com.tw/" target="_blank"
+        >http://www.jsah.com.tw/</a
+      >
+    </td>
+    <td>
+      <strong>Provide emergency service from 9:30PM to 2AM</strong>
+    </td>
+    <td><a href="tel:073502020">07-350-2020</a>#431</td>
+  </tr>
+</table>
+
+<h4 class="area">Lingya District</h4>
+<table>
+  <tr>
+    <th>Clinic name</th>
+    <th>Address</th>
+    <th>Website</th>
+    <th>Note</th>
+    <th>Phone number</th>
+  </tr>
+
+  <tr>
+    <td>Udoch Animal Hospital</td>
+    <td>No. 139, Zhongzheng 1st Rd, Lingya District, Kaohsiung City</td>
+    <td>
+      <a href="https://udochah.wixsite.com/udoch" target="_blank"
+        >https://udochah.wixsite.com/udoch</a
+      >
+    </td>
+    <td>Press the emergency bell at the door if service needed</td>
+    <td><a href="tel: 077220804">07-722-0804</a></td>
+  </tr>
+
+  <tr>
+    <td>GuanAn Animal Hospital</td>
+    <td>No. 131-1, Zhongzheng 2nd Rd, Lingya District, Kaohsiung City</td>
+    <td></td>
+    <td>Call after 9:30PM, Sunday after 5:30PM</td>
+    <td><a href="tel:  072236451">07-223-6451</a></td>
+  </tr>
+</table>
+
+{% endblock content %}

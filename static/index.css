@@ -1,0 +1,167 @@
+.info-container {
+  max-width: 1200px;
+
+  margin: auto;
+  border: solid 2px navy;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
+  -moz-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
+  box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
+  background-color: #f3f8f6;
+}
+
+@media only screen and (max-width: 600px) {
+  .info-container {
+    min-width: fit-content !important;
+    margin: auto;
+    border: solid 2px navy;
+    border-radius: 10px;
+    -webkit-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
+    -moz-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
+    box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
+    background-color: #f0f8ff;
+  }
+  /* TODO: make font-size responsive 
+  .greeting-zh{
+
+  }
+
+  .greeting-en{
+
+  }
+
+  .ex-en{
+
+  }
+
+  .ex-zh{
+
+  }
+
+  .back{
+
+  }
+
+  .info{
+
+  }
+
+  .title{
+
+  }
+
+  .language-1,
+  .language-2{
+    
+  }
+
+
+  */
+}
+/* TODO: 改字型 DONE */
+
+.greeting-container,
+.choose-language,
+.explanation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.greeting-container,
+.explanation {
+  flex-direction: column;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.greeting-zh {
+  font-family: "Noto Sans TC", serif;
+  font-size: 2.5rem;
+}
+
+.greeting-en {
+  font-family: "Noto Serif", serif;
+  font-size: 2.5rem;
+}
+
+.ex-en {
+  font-family: "Roboto Slab", serif;
+  font-size: 1.5rem;
+}
+
+.ex-zh {
+  font-family: "Noto Serif TC", serif;
+  font-size: 1.5rem;
+}
+
+.language-1,
+.language-2 {
+  padding: 10px;
+  font-size: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item {
+  margin: 2rem;
+}
+
+.info {
+  font-size: 1.5rem;
+}
+
+.back {
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+table,
+th,
+td {
+  border: 2px solid navy;
+  border-collapse: collapse;
+}
+
+table,
+.area,
+.area-zh {
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+table {
+  margin-bottom: 1rem;
+  background-color: white;
+}
+
+th,
+td {
+  padding: 10px;
+}
+
+.city,
+.city-zh {
+  text-decoration: underline;
+  margin-top: 4rem;
+}
+
+.area,
+.city,
+th {
+  font-family: "Noto Serif", serif;
+}
+
+td {
+  font-family: "Roboto Slab", serif;
+}
+
+.title {
+  font-size: 2rem;
+  font-family: "Noto Serif", serif;
+}
