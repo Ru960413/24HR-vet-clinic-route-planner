@@ -165,3 +165,8 @@ td {
   font-size: 2rem;
   font-family: "Noto Serif", serif;
 }
+
+#map-en {
+  width: 100%;
+  height: auto;
+}

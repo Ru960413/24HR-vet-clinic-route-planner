@@ -14,6 +14,12 @@
 </div>
 
 <!--insert google map-->
-<div class="map"></div>
+<div id="map-en"></div>
 
-{% endblock content %}
+{% endblock content %} {% block script %}
+<script
+  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap&v=weekly"
+  defer
+></script>
+
+{% endblock script %}

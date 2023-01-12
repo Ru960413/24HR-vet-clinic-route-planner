@@ -7,19 +7,12 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/static/index.css" rel="stylesheet" />
-    {% block style %}
-    {% endblock style %}
+    <script type="module" src="/static/main.js"></script>
+    {% block style %} {% endblock style %}
   </head>
 
   <body>
-    <div class="info-container">
-      {% block content %} 
-      
-      {% endblock content %}
-    </div>
-    {% block script %}
-    
-    {% endblock script %}
-    
+    <div class="info-container">{% block content %} {% endblock content %}</div>
+    {% block script %} {% endblock script %}
   </body>
 </html>
