@@ -52,7 +52,7 @@ def getLatLng(address):
 
         return lat, lng
     
-# find a way to read vet clinic address and save its latitude and longitude into db
+# find a way to read vet clinic address and save its latitude and longitude into csv
 
 # print(getLatLng("台中市龍井區遠東街30-11號")) #(24.1908835, 120.5882498)
 # print(getLatLng("台中市南屯區文心路一段486號"))
