@@ -2,6 +2,7 @@
 
 import json
 import requests
+import csv
 
 # url = "https://maps.googleapis.com/maps/api/distancematrix/json?origins=Seattle&destinations=San+Francisco&key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
 # r = requests.get(url)
@@ -52,12 +53,24 @@ def getLatLng(address):
 
 
 
-# TODO: read vet clinic address and save its latitude and longitude into csv
+# DONE read vet clinic address and save its latitude and longitude into csv
 # read address from csv files(row[1])
+addresses = []
 
 # loop through all the address and call getLatLng(address)
-file = open("templates/details-en.csv", "a")
+with open("details-zh.csv") as file:
+    reader = csv.reader(file)
+    for row in reader:
+        addresses.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lanLng": getLatLng(row[1])})
+#print(addresses)
 
-# save the outputs and add it as row[4] using append mode
+# Reference: https://stackoverflow.com/questions/3086973/how-do-i-convert-this-list-of-dictionaries-to-a-csv-file
 
-# repeat it for the chinese csv
+# save the outputs and add it to a new csv
+keys = addresses[0].keys()
+
+with open('new_details_zh.csv', 'w', newline='') as output_file:
+    dict_writer = csv.DictWriter(output_file, fieldnames = keys)
+    dict_writer.writeheader()
+    dict_writer.writerows(addresses)
+

@@ -15,12 +15,12 @@ Reference:
 
 2. get the location of the vet clinic, according to user's location
     1) save vet clinic details as csv files DONE
-    2) read vet clinic addresses and then call for getLatLng() and save latitude, longitude into a new colum
+    2) read vet clinic addresses and then call for getLatLng() and save latitude, longitude into a new colum DONE
     3) display google map on website
     4) mark vet clinic locations on google map
 
 Reference:
-    https://blog.goodjack.tw/2017/11/python-google-maps-api.html
+    https://medium.com/@limichelle21/integrating-google-maps-api-for-multiple-locations-a4329517977a
 
 3. route planning, using google map's distance matrix api
 
