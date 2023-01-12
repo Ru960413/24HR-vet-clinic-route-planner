@@ -20,8 +20,6 @@ def getRoute():
     # get response
     r = requests.get(url + "origins="+ home + "&destinations=" + clinic + "&key=" + API_KEY)
 
-    print(r.json())
-
     # return time as text
     # time = r.json()["rows"][0]["elements"][0]["duration"]["text"]
     # seconds = r.json()["rows"][0]["elements"][0]["duration"]["value"]
@@ -51,10 +49,15 @@ def getLatLng(address):
             pass
 
         return lat, lng
-    
-# find a way to read vet clinic address and save its latitude and longitude into csv
 
-# print(getLatLng("台中市龍井區遠東街30-11號")) #(24.1908835, 120.5882498)
-# print(getLatLng("台中市南屯區文心路一段486號"))
-print(getLatLng("台中市西區五權八街100號"))
 
+
+# TODO: read vet clinic address and save its latitude and longitude into csv
+# read address from csv files(row[1])
+
+# loop through all the address and call getLatLng(address)
+file = open("templates/details-en.csv", "a")
+
+# save the outputs and add it as row[4] using append mode
+
+# repeat it for the chinese csv
