@@ -7,10 +7,10 @@ import requests
 # r = requests.get(url)
 # print(r.json())
 
-API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
+Google_API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
 
 def getRoute():
-    API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
+    API_KEY = Google_API_KEY
     url = "https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial"
 
     clinic = input("Enter a vet clinic address\n")
@@ -32,5 +32,29 @@ def getRoute():
 # No. 30, Yuandong St, Longjing District, Taichung City, Taiwan
 # getRoute()
 
+def getLatLng(address):
+    lat, lng = None, None
+    api_key = Google_API_KEY
+    url = "https://maps.googleapis.com/maps/api/geocode/json"
+    endPoint = f"{url}?address={address}&key={api_key}&language=zh-TW"
 
+    r = requests.get(endPoint)
+    if r.status_code not in range(200, 299):
+        return None, None
+    else:
+        try:
+            results = r.json()['results'][0]
+            lat = results['geometry']['location']['lat']
+            lng = results['geometry']['location']['lng']
+        
+        except:
+            pass
+
+        return lat, lng
+    
+# find a way to read vet clinic address and save its latitude and longitude into db
+
+# print(getLatLng("台中市龍井區遠東街30-11號")) #(24.1908835, 120.5882498)
+# print(getLatLng("台中市南屯區文心路一段486號"))
+print(getLatLng("台中市西區五權八街100號"))
 
