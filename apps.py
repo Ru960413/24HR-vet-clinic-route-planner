@@ -58,7 +58,7 @@ def getLatLng(address):
 addresses = []
 
 # loop through all the address and call getLatLng(address)
-with open("details-zh.csv") as file:
+with open("details-zh-updated.csv") as file:
     reader = csv.reader(file)
     for row in reader:
         addresses.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lanLng": getLatLng(row[1])})
