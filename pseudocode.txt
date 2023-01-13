@@ -22,7 +22,7 @@ Reference:
 Reference:
     https://medium.com/@limichelle21/integrating-google-maps-api-for-multiple-locations-a4329517977a
 
-3. route planning, using google map's distance matrix api
+3. calculate the distance and route planning, using google map's distance matrix api
 
 Reference:
     https://icelandcheng.medium.com/%E9%81%8B%E7%94%A8google-map-api-distance-matrix-service-%E5%8F%96%E5%BE%97%E6%97%85%E7%A8%8B%E6%99%82%E9%96%93%E5%8F%8A%E8%B7%9D%E9%9B%A2-4e7c9b929e9e
