@@ -58,18 +58,18 @@ def getLatLng(address):
 addresses = []
 
 # loop through all the address and call getLatLng(address)
-with open("details-zh-updated.csv") as file:
+with open("csv/details-zh-updated.csv") as file:
     reader = csv.reader(file)
     for row in reader:
         addresses.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lanLng": getLatLng(row[1])})
-#print(addresses)
+print(addresses)
 
 # Reference: https://stackoverflow.com/questions/3086973/how-do-i-convert-this-list-of-dictionaries-to-a-csv-file
 
 # save the outputs and add it to a new csv
 keys = addresses[0].keys()
 
-with open('new_details_zh.csv', 'w', newline='') as output_file:
+with open('csv/new_details_zh.csv', 'w', newline='') as output_file:
     dict_writer = csv.DictWriter(output_file, fieldnames = keys)
     dict_writer.writeheader()
     dict_writer.writerows(addresses)
