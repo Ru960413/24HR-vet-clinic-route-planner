@@ -9,19 +9,29 @@ block content %}
 <div class="navbar">
   <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
   <h3 class="nav-item title">路線規劃</h3>
-  <div class="nav-item"><a href="/detail-zh" class="info">獸醫院的詳細資訊</a></div>
+  <div class="nav-item">
+    <a href="/detail-zh" class="info">獸醫院的詳細資訊</a>
+  </div>
 </div>
 
 <!--insert google map-->
-<div class="map"></div>
+<div id="map"></div>
 
-{% endblock content %}
+{% endblock content %} {% block script %}
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap"></script>
+<script>
+  // Error initMap is not a function -> need to create the function initMap
+  let map = new google.maps.Map(document.getElementById("map"), {
+    center: { lat: 24.1908835, lng: 120.5882498 },
+    zoom: 10,
+  });
 
-{% block script %}
+  const myLocation = new google.maps.Marker({
+    position: { lat: 24.1908835, lng: 120.5882498 },
+    label: "我",
+  });
 
-<script async defer 
-src=”https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&libraries=places,drawing,geometry&v=3&callback=initMap">
+  myLocation.setMap(map);
 </script>
 {% endblock script %}
-

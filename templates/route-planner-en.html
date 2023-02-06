@@ -1,25 +1,47 @@
-{% extends "layout.html" %} {% block title %}Route planning{% endblock title %}
-{% block content %}
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-</style>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Route planning</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/static/index.css" rel="stylesheet" />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
+    </style>
+  </head>
 
-<div class="navbar">
-  <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
-  <h2 class="nav-item title">Route planning</h2>
-  <div class="nav-item">
-    <a href="/detail-en" class="info">More info about vet clinics</a>
-  </div>
-</div>
+  <body>
+    <div class="info-container">
+      <div class="navbar">
+        <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
+        <h2 class="nav-item title">Route planning</h2>
+        <div class="nav-item">
+          <a href="/detail-en" class="info">More info about vet clinics</a>
+        </div>
+      </div>
 
-<!--insert google map-->
-<div id="map"></div>
+      <!--insert google map-->
+      <div id="map"></div>
+    </div>
+  </body>
 
-{% endblock content %} {% block script %}
-<script
-  src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap&v=weekly"
-  defer
-></script>
+  <!--<script type="text/javascript" src="main-en.js"></script>-->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap"></script>
+  <script>
+    // Error initMap is not a function -> need to create the function initMap
+    let map = new google.maps.Map(document.getElementById("map"), {
+      center: { lat: 24.0860183, lng: 120.5488554 },
+      zoom: 10,
+    });
 
-{% endblock script %}
+    const myLocation = new google.maps.Marker({
+      position: { lat: 24.1908835, lng: 120.5882498 },
+      label: "Me",
+    });
+
+    myLocation.setMap(map);
+  </script>
+</html>
