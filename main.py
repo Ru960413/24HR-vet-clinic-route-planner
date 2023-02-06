@@ -1,6 +1,8 @@
 # render all the templates
 
-from flask import Flask, redirect, render_template, request
+from flask import Flask, render_template, jsonify
+from flask_cors import CORS
+from helpers import get_addresses_zh, get_addresses_en
 
 # TODO: connect with database to store the vet clinics info
 
@@ -11,6 +13,10 @@ from flask import Flask, redirect, render_template, request
 
 app = Flask(__name__)
 
+# enable cross-origin HTTP requests
+CORS(app)
+
+
 @app.route("/")
 def index():
     return render_template("index.html")
@@ -18,18 +24,22 @@ def index():
 
 
 @app.route("/route-en")
-def planInEnglish():
+def mapInEnglish():
+    # vet_clinics_en = get_addresses_en()
     return render_template("route-planner-en.html")
 
 
 
 @app.route("/route-zh")
-def planInChinese():
+def mapInChinese():
+    # vet_clinics_zh = get_addresses_zh()
     return render_template("route-planner-zh.html")
+
 
 
 @app.route("/detail-en")
 def detailsInEnglish():
+    
     return render_template("details-en.html")
 
 
