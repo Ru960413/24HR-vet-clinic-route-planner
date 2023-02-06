@@ -166,7 +166,8 @@ td {
   font-family: "Noto Serif", serif;
 }
 
-#map-en {
+#map {
   width: 100%;
-  height: auto;
+  height: 800px;
+  background-color: grey;
 }
