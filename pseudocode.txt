@@ -15,7 +15,7 @@ Reference:
 
 2. get the location of the vet clinic, according to user's location
     1) save vet clinic details as csv files DONE
-    2) read vet clinic addresses and then call for getLatLng() and save latitude, longitude into a new colum DONE
+    2) read vet clinic addresses and then call for getLatLng() and save latitude, longitude into a two new columns DONE
     3) display google map on website
     4) mark vet clinic locations on google map
 
