@@ -21,7 +21,7 @@ def getLatLng(address):
         except:
             pass
 
-        return {"lat": lat, "lng": lng} 
+        return lat, lng
 
 
 # # DONE read vet clinic address and save its latitude and longitude into csv
@@ -56,7 +56,7 @@ def get_addresses_zh():
         next(reader)
 
         for row in reader:
-            addresses_zh.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lan": getLatLng(row[1])["lat"], "lng": getLatLng(row[1])["lng"]})
+            addresses_zh.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lat": getLatLng(row[1])[0], "lng": getLatLng(row[1])[1]})
     # print(addresses_zh)
     return addresses_zh
 
@@ -72,6 +72,8 @@ def get_addresses_en():
         # skip the first row(header row) 
         next(reader)
         for row in reader:
-            addresses_en.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lan": getLatLng(row[1])["lat"], "lng": getLatLng(row[1])["lng"]})
+            addresses_en.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lat": getLatLng(row[1])[0], "lng": getLatLng(row[1])[1]})
     # print(addresses_en)
     return addresses_en
+
+get_addresses_en()
