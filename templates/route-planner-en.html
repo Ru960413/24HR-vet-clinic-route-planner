@@ -7,6 +7,7 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/static/index.css" rel="stylesheet" />
+    <!--<script type="text/javascript" src="/static/main-en.js"></script>-->
     <style>
       @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
       @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
@@ -25,10 +26,14 @@
 
       <!--insert google map-->
       <div id="map"></div>
+
+      <!--Q: How to add vet clinic info as marker to Google Map API?(Info is generated from Python Backend)-->
+      <!--A: send data as JSON format, and then get data using fetch-->
+      <div class="info">{{ data }}</div>
+      <!--Get: <Response 9625 bytes [200 OK]>-->
     </div>
   </body>
 
-  <!--<script type="text/javascript" src="main-en.js"></script>-->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap"></script>
   <script>
     // Error initMap is not a function -> need to create the function initMap
