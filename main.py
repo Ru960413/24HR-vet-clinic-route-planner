@@ -25,17 +25,14 @@ def index():
 
 @app.route("/route-en")
 def mapInEnglish():
-    vet_clinics_en = get_addresses_en()
-    data = jsonify(vet_clinics_en)
+    data = get_addresses_en()
     return render_template("route-planner-en.html", data=data)
-
 
 
 
 @app.route("/route-zh")
 def mapInChinese():
-    vet_clinics_zh = get_addresses_zh()
-    data = jsonify(vet_clinics_zh)
+    data = get_addresses_zh()
     return render_template("route-planner-zh.html", data=data)
 
 
