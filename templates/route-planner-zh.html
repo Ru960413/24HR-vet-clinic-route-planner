@@ -1,37 +1,42 @@
-{% extends "layout.html" %} {% block title %}路線規劃{% endblock title %} {%
-block content %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>路線規劃</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="/static/index.css" rel="stylesheet" />
+    <!--<script type="text/javascript" src="/static/main-en.js"></script>-->
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap");
+      @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
+    </style>
+  </head>
 
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
-</style>
+  <body>
+    <div class="info-container">
+      <div class="navbar">
+        <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
+        <h2 class="nav-item title">路線規劃</h2>
+        <div class="nav-item">
+          <a href="/detail-zh" class="info">更多獸醫院的詳細資訊</a>
+        </div>
+      </div>
 
-<div class="navbar">
-  <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
-  <h3 class="nav-item title">路線規劃</h3>
-  <div class="nav-item">
-    <a href="/detail-zh" class="info">獸醫院的詳細資訊</a>
-  </div>
-</div>
+      <!--insert google map-->
+      <div id="map"></div>
 
-<!--insert google map-->
-<div id="map"></div>
+      <!--Q: How to add vet clinic info as marker to Google Map API?(Info is generated from Python Backend)-->
+      <!--A: send data as JSON format, and then get data using fetch-->
+    </div>
+  </body>
 
-{% endblock content %} {% block script %}
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap"></script>
-<script>
-  // Error initMap is not a function -> need to create the function initMap
-  let map = new google.maps.Map(document.getElementById("map"), {
-    center: { lat: 24.1908835, lng: 120.5882498 },
-    zoom: 10,
-  });
-
-  const myLocation = new google.maps.Marker({
-    position: { lat: 24.1908835, lng: 120.5882498 },
-    label: "我",
-  });
-
-  myLocation.setMap(map);
-</script>
-{% endblock script %}
+  <script type="text/javascript" src="/static/map-zh.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap"></script>
+  <!--<script>
+    fetch("http://127.0.0.1:5000/route-en")
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  </script>-->
+</html>
