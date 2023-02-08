@@ -1,5 +1,6 @@
 import requests
 import csv
+from flask import jsonify
 
 Google_API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
 
@@ -56,9 +57,11 @@ def get_addresses_zh():
         next(reader)
 
         for row in reader:
-            addresses_zh.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lat": getLatLng(row[1])[0], "lng": getLatLng(row[1])[1]})
+            addresses_zh.append({"name": row[0],"address": row[1], "website": row[2], "note": row[3], "phone": row[4], "lat": getLatLng(row[1])[0], "lng": getLatLng(row[1])[1]})
     # print(addresses_zh)
-    return addresses_zh
+    data = jsonify(addresses_zh)    
+
+    return data
 
 
 
@@ -72,8 +75,15 @@ def get_addresses_en():
         # skip the first row(header row) 
         next(reader)
         for row in reader:
-            addresses_en.append({"name": row[0],"address": row[1], "note": row[2], "phone": row[3], "lat": getLatLng(row[1])[0], "lng": getLatLng(row[1])[1]})
-    # print(addresses_en)
-    return addresses_en
+            addresses_en.append({"name": row[0],"address": row[1], "website": row[2], "note": row[3], "phone": row[4], "lat": getLatLng(row[1])[0], "lng": getLatLng(row[1])[1]})
+    
+    # which one is better for this situation save data in another file or pass it as a variable?
+    # out_file = open("info_en.json", "w")
+  
+    # json.dump(addresses_en, out_file, indent = 6)
+  
+    # out_file.close()
 
-get_addresses_en()
+    return jsonify(addresses_en)
+
+# get_addresses_en()
