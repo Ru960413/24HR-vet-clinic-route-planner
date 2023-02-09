@@ -29,30 +29,28 @@
 
       <!--Q: How to add vet clinic info as marker to Google Map API?(Info is generated from Python Backend)-->
       <!--A: send data as JSON format-->
-      <div class="info">{{ data }}</div>
+      <!--<div class="info">{{ data }}</div>-->
       <!--Get: <Response 9625 bytes [200 OK], aka a Response object>-->
       <!--From MDN: The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to extract the JSON body content from the Response object, we use the json() method, which returns a second promise that resolves with the result of parsing the response body text as JSON.-->
     </div>
   </body>
 
+  <script>
+    //Reference 1. : https://stackoverflow.com/questions/63565509/vanilla-javascript-how-to-read-local-json-file
+    //Reference 2. : https://ithelp.ithome.com.tw/m/articles/10264625
+    //fetch("./json-value-en")
+    //.then((response) => response.json())
+    //.then((response) => console.log(response)) //Bug: Able to get data as a array, but can't use data in initMap function(get data is undefined)
+    //.catch((err) => console.log(err));
+    //async function get_addresses() {
+    //const fetchResult = fetch("./json-value-en");
+    //const response = await fetchResult;
+    //const data = await response.json();
+    //initMap(data);
+    // }
+
+    //get_addresses();
+  </script>
   <script type="text/javascript" src="/static/map-en.js"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c&callback=initMap"></script>
-  <script>
-    const myrequest = "info_en.json";
-    fetch(myrequest)
-      .then((response) => response.json())
-      .then((data) => {
-        initMap(response);
-      });
-  </script>
-  <!--<script>
-    let url = `http://<host_name>:<port_no>/route-en`;
-    $.ajax({
-      type: `GET`,
-      url: url,
-      success: function (response) {
-        initMap(response);
-      },
-    });
-  </script>-->
 </html>
