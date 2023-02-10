@@ -1,6 +1,5 @@
 import requests
 import csv
-from flask import jsonify
 import json
 
 Google_API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
@@ -61,14 +60,11 @@ def get_addresses_zh():
             addresses_zh.append({"name": row[0],"address": row[1], "website": row[2], "note": row[3], "phone": row[4], "lat": getLatLng(row[1])[0], "lng": getLatLng(row[1])[1]})
     # print(addresses_zh)
     out_file = open("info_zh.json", "w")
-  
-    json.dump(addresses_zh, out_file, indent = 6)
+
+    # add in ensure_ascii=False so that chinese data can be displayed correctly in JSON file
+    json.dump(addresses_zh, out_file, indent = 6, ensure_ascii=False)
   
     out_file.close()
-
-    # data = jsonify(addresses_zh)    
-
-    # return data
 
 
 
@@ -91,7 +87,5 @@ def get_addresses_en():
   
     out_file.close()
 
-    # return jsonify(addresses_en)
-    # return json.dumps(addresses_en)
-
 # get_addresses_en()
+# get_addresses_zh()
