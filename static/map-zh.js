@@ -1,6 +1,7 @@
+//Reference: https://www.youtube.com/watch?v=VlY2byIcE9M&ab_channel=GeoDev
+//Reference: https://towardsdatascience.com/integrating-google-maps-api-using-python-and-javascript-149fdba27b99
+
 let map;
-// let user_lat = position.coords.latitude;
-// let user_lng = position.coords.longitude;
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
@@ -14,6 +15,44 @@ function initMap() {
   });
 
   myLocation.setMap(map);
+
+  //Get user current position
+  //Reference: https://ithelp.ithome.com.tw/articles/10191242
+
+  // making sure we can access geolocation through user's device
+  if (navigator.geolocation) {
+    // if successful:
+    navigator.geolocation.getCurrentPosition(function (position) {
+      // set the position variable to the user's current latitude and longitude
+      let pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+      alert("已抓到您的位置，請稍等");
+      // update myLocation with the new variable
+      let myLocation = new google.maps.Marker({
+        position: pos,
+        map: map,
+      });
+      // zoom in the map
+      map.setZoom(12);
+
+      //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
+      //set the center of the map to myLocation's latitude and longitude
+      map.setCenter(pos);
+
+      //reset myLocation marker on map
+      myLocation.setMap(map);
+
+      alert("請點選任一地標已檢視更多的資訊");
+      // TODO: add an else statement to render an apology when user didn't allow access
+    });
+
+    //else if not successful
+  } else {
+    // Browser doesn't support Geolocation
+    alert("發生了一些錯誤，導致無法抓取您的位置!");
+  }
 
   const markers = [
     {

@@ -1,55 +1,63 @@
-//Get user current position
-
-// function getUsersLocation() {
-//   // making sure we can access geolocation through user's device
-//   if (navigator.geolocation) {
-//     // if not successful:
-//     function error() {
-//       alert("Can't access your location");
-//     }
-
-//     // if successful:
-//     function success(position) {
-//       //console.log(position.coords.latitude, position.coords.longitude);
-//       return position.coords.latitude, position.coords.longitude;
-//     }
-
-//     navigator.geolocation.getCurrentPosition(success, error);
-//   } else {
-//     alert("Sorry,your device doesn't support geolocation");
-//   }
-
-//   //set the center of the map to the user's current location
-//   // let myLocation = new google.maps.LatLng(
-//   //   position.coords.latitude,
-//   //   position.coords.longitude
-//   // );
-//   const myLocation = new google.maps.Marker({
-//     position: { lat: position.coords.latitude, lng: position.coords.longitude },
-//     label: "Me",
-//   });
-//   return myLocation;
-// }
-
 //Reference: https://www.youtube.com/watch?v=VlY2byIcE9M&ab_channel=GeoDev
 //Reference: https://towardsdatascience.com/integrating-google-maps-api-using-python-and-javascript-149fdba27b99
 
 let map;
-// let user_lat = position.coords.latitude;
-// let user_lng = position.coords.longitude;
 
 function initMap() {
   // Question: How to set the center of the map and myLocation to user's current location?
+
+  // Initialize map with a set of latitude and longitude
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 24.1906155, lng: 120.5882385 },
     zoom: 8,
   });
-  // myLocation = getUsersLocation();
-  const myLocation = new google.maps.Marker({
-    position: { lat: 24.1908835, lng: 120.5882498 },
+
+  // And then set my location
+  let myLocation = new google.maps.Marker({
+    position: { lat: 24.1906155, lng: 120.5882385 },
     label: "Me",
   });
+
   myLocation.setMap(map);
+
+  //Get user current position
+  //Reference: https://ithelp.ithome.com.tw/articles/10191242
+
+  // making sure we can access geolocation through user's device
+  if (navigator.geolocation) {
+    // if successful:
+    navigator.geolocation.getCurrentPosition(function (position) {
+      // set the position variable to the user's current latitude and longitude
+      let pos = {
+        lat: position.coords.latitude,
+        lng: position.coords.longitude,
+      };
+      alert("Got your location! Just a sec...");
+      // update myLocation with the new variable
+      let myLocation = new google.maps.Marker({
+        position: pos,
+        map: map,
+      });
+      // zoom in the map
+      map.setZoom(12);
+
+      //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
+      //set the center of the map to myLocation's latitude and longitude
+      map.setCenter(pos);
+
+      //reset myLocation marker on map
+      myLocation.setMap(map);
+
+      alert("Click on any of the markers to see more info");
+      // TODO: add an else statement to render an apology when user didn't allow access
+    });
+
+    //else if not successful
+  } else {
+    // Browser doesn't support Geolocation or user didn't allow access
+    alert("Error!");
+  }
+
   const markers = [
     {
       name: "Eden Animal Hospital",
@@ -489,7 +497,7 @@ function initMap() {
             `<strong>Clinic name: ${m["name"]}</strong><br>Address: ${
               m["address"]
             }<br><strong>Note: ${
-              m["note"]
+              m["note"] || "none"
             }</strong><br>Phone Number: <a href="${m["phone"].replaceAll(
               "-",
               ""
