@@ -2,6 +2,7 @@ import requests
 import csv
 import json
 
+# set as environment variable
 Google_API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
 
 def getLatLng(address):
