@@ -55,7 +55,8 @@
 
 .greeting-container,
 .choose-language,
-.explanation {
+.explanation,
+.disclaimer-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -63,11 +64,17 @@
 }
 
 .greeting-container,
+.disclaimer-container,
 .explanation {
   flex-direction: column;
   margin-top: 2rem;
   margin-left: 2rem;
   margin-right: 2rem;
+}
+
+.disclaimer-en,
+.disclaimer-zh {
+  margin: 5px;
 }
 
 .greeting-zh {

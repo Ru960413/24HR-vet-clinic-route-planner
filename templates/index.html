@@ -1,12 +1,12 @@
 {% extends 'layout.html' %} {% block title %} 24HR Vet Clinics in Taiwan {%
-endblock title %} {% block content %}
-
+endblock title %} {% block content %} {% block style %}
 <style>
   @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
   @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
 </style>
+{% endblock style %}
 
 <div class="greeting-container">
   <h1 class="greeting-zh">歡迎來到24小時動物醫院地圖</h1>
@@ -21,5 +21,15 @@ endblock title %} {% block content %}
 <div class="choose-language">
   <a class="language-1" href="/route-en">English</a>
   <a class="language-2" href="/route-zh">中文</a>
+</div>
+
+<div class="disclaimer-container">
+  <h5 class="disclaimer-en">
+    The information was last updated on January 2023, please feel free to
+    contact me if there's any update
+  </h5>
+  <h5 class="disclaimer-zh">
+    本網站的資訊的最後更新時間為2023年1月，若有任何更新請聯絡我
+  </h5>
 </div>
 {% endblock content %}
