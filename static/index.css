@@ -1,11 +1,8 @@
 .info-container {
   max-width: 1200px;
-
   margin: auto;
   border: solid 2px navy;
   border-radius: 10px;
-  -webkit-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
-  -moz-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
   box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
   background-color: #f3f8f6;
 }
@@ -16,47 +13,43 @@
     margin: auto;
     border: solid 2px navy;
     border-radius: 10px;
-    -webkit-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
-    -moz-box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
     box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
     background-color: #f0f8ff;
   }
-  /* TODO: make font-size responsive 
-  .greeting-zh{
 
+  .greeting-zh {
+    font-size: 1.8rem;
   }
 
-  .greeting-en{
-
+  .greeting-en {
+    font-size: 1.8rem;
   }
 
-  .ex-en{
-
+  .ex-en {
+    font-size: 1.2rem;
   }
 
-  .ex-zh{
-
+  .ex-zh {
+    font-size: 1.2rem;
   }
 
-  .back{
-
+  .back {
+    font-size: 1.2rem;
   }
 
-  .info{
-
+  .info {
+    font-size: 1rem;
   }
 
-  .title{
-
+  .title {
+    font-size: 1.6rem;
   }
 
   .language-1,
-  .language-2{
-    
+  .language-2 {
+    padding: 5px;
+    font-size: 15px;
   }
-
-
-  */
 }
 /* TODO: 改字型 DONE */
 
