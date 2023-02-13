@@ -32,6 +32,7 @@ function initMap() {
       // update myLocation with the new variable
       let myLocation = new google.maps.Marker({
         position: pos,
+        label: "我",
         map: map,
       });
       // zoom in the map
@@ -484,7 +485,9 @@ function initMap() {
               m["note"] || "無"
             }</strong><br>電話: <a href="${m["phone"].replaceAll("-", "")}">${
               m["phone"]
-            }</a>`
+            }</a><br><a href="https://www.google.com/maps/dir/?api=1&destination=${
+              m["lat"]
+            },${m["lng"]}&travelmode=driving" target="blank">導航</a>`
           );
           infoWindow.open(map, marker);
         };

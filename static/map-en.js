@@ -1,6 +1,6 @@
 //Reference: https://www.youtube.com/watch?v=VlY2byIcE9M&ab_channel=GeoDev
 //Reference: https://towardsdatascience.com/integrating-google-maps-api-using-python-and-javascript-149fdba27b99
-
+//Reference: https://stackoverflow.com/questions/28395255/dynamically-link-to-google-maps-route-planner-and-always-use-car-as-preferred-fo
 let map;
 
 function initMap() {
@@ -36,6 +36,7 @@ function initMap() {
       // update myLocation with the new variable
       let myLocation = new google.maps.Marker({
         position: pos,
+        label: "Me",
         map: map,
       });
       // zoom in the map
@@ -496,12 +497,17 @@ function initMap() {
           infoWindow.setContent(
             `<strong>Clinic name: ${m["name"]}</strong><br>Address: ${
               m["address"]
-            }<br><strong>Note: ${
+            }
+            <br><strong>Note: ${
               m["note"] || "none"
             }</strong><br>Phone Number: <a href="${m["phone"].replaceAll(
               "-",
               ""
-            )}">${m["phone"]}</a>`
+            )}">${
+              m["phone"]
+            }</a><br><a href="https://www.google.com/maps/dir/?api=1&destination=${
+              m["lat"]
+            },${m["lng"]}&travelmode=driving" target="blank">Get Direction</a>`
           );
           infoWindow.open(map, marker);
         };
