@@ -13,12 +13,12 @@ function initMap() {
   });
 
   // And then set my location
-  let myLocation = new google.maps.Marker({
-    position: { lat: 24.1906155, lng: 120.5882385 },
-    label: "Me",
-  });
+  // let myLocation = new google.maps.Marker({
+  //   position: { lat: 24.1906155, lng: 120.5882385 },
+  //   label: "Me",
+  // });
 
-  myLocation.setMap(map);
+  // myLocation.setMap(map);
 
   //Get user current position
   //Reference: https://ithelp.ithome.com.tw/articles/10191242

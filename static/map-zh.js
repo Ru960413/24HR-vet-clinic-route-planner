@@ -9,12 +9,12 @@ function initMap() {
     zoom: 8,
   });
 
-  const myLocation = new google.maps.Marker({
-    position: { lat: 24.1908835, lng: 120.5882498 },
-    label: "我",
-  });
+  // const myLocation = new google.maps.Marker({
+  //   position: { lat: 24.1908835, lng: 120.5882498 },
+  //   label: "我",
+  // });
 
-  myLocation.setMap(map);
+  // myLocation.setMap(map);
 
   //Get user current position
   //Reference: https://ithelp.ithome.com.tw/articles/10191242
