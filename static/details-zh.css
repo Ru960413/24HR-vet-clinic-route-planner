@@ -3,7 +3,7 @@
 .area-zh,
 .city-zh,
 th {
-  font-family: "Noto Sans TC", sans-serif !important;
+  font-family: "Noto Sans TC", sans-serif;
 }
 
 th {
@@ -11,16 +11,8 @@ th {
 }
 
 td {
-  font-family: "Noto Serif TC", serif !important;
+  font-family: "Noto Serif TC", serif;
   font-size: 1rem;
-}
-
-.city-zh {
-  font-size: 1.5rem !important;
-}
-
-.area-zh {
-  font-size: 1.2rem;
 }
 
 .title {
