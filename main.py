@@ -1,8 +1,7 @@
 # render all the templates
 
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template
 from flask_cors import CORS
-from helpers import get_addresses_zh, get_addresses_en
 
 # TODO: connect with database to store the vet clinics info
 
@@ -28,16 +27,17 @@ def mapInEnglish():
     return render_template("route-planner-en.html")
 
 
+
+@app.route("/route-zh")
+def mapInChinese():
+    # data = get_addresses_zh()
+    return render_template("route-planner-zh.html")
+
+
 # @app.route('/json-value-en', methods=['GET'])
 # def JSON_value_en():
 #     data = get_addresses_en()
 #     return data
-
-
-@app.route("/route-zh")
-def mapInChinese():
-    data = get_addresses_zh()
-    return render_template("route-planner-zh.html", data=data)
 
 
 
@@ -60,4 +60,4 @@ def detailsInChinese():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run
