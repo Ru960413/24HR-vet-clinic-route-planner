@@ -1,15 +1,21 @@
+# creates json files for Front End access
+
 import requests
 import csv
 import json
+import os
+from dotenv import load_dotenv
 
-# set as environment variable
-Google_API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
+load_dotenv()
+
+# get google map API Key from environment variable
+Google_API_KEY = os.getenv('Google_API_KEY')
+
 
 def getLatLng(address):
     lat, lng = None, None
-    api_key = Google_API_KEY
     url = "https://maps.googleapis.com/maps/api/geocode/json"
-    endPoint = f"{url}?address={address}&key={api_key}&language=zh-TW"
+    endPoint = f"{url}?address={address}&key={Google_API_KEY}&language=zh-TW"
 
     r = requests.get(endPoint)
     if r.status_code not in range(200, 299):
