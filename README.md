@@ -6,7 +6,7 @@
 
 ## Welcome Page
 
- ![Welcome Page](WelcomePage.png "Welcome Page")
+ ![Welcome Page](pics/WelcomePage.png "Welcome Page")
 
 ## Tech Used
 
