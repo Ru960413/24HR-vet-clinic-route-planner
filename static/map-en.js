@@ -40,7 +40,7 @@ function initMap() {
         map: map,
       });
       // zoom in the map
-      map.setZoom(12);
+      map.setZoom(11);
 
       //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
       //set the center of the map to myLocation's latitude and longitude
