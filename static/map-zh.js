@@ -174,15 +174,6 @@ function initMap() {
       lng: 121.5214287,
     },
     {
-      name: "藍天家畜醫院",
-      address: "台北市士林區文林路759號",
-      website: "Facebook Page ",
-      note: "9PM後，須先以電話聯絡 週日休息 & 服務對象：犬、貓、鳥、兔、魚 ",
-      phone: "02-2838-0088",
-      lat: 25.103274,
-      lng: 121.519365,
-    },
-    {
       name: "大安動物醫院",
       address: "台北市中正區羅斯福路四段162號1樓",
       website: "https://daan-vet.com ",
@@ -190,15 +181,6 @@ function initMap() {
       phone: "02-2363-2020",
       lat: 25.0123936,
       lng: 121.5361745,
-    },
-    {
-      name: "翔心動物醫院",
-      address: "新北市板橋區忠孝路203號",
-      website: "https://www.hsianghsin.tw ",
-      note: "9PM後，須先以電話聯絡",
-      phone: "02-2956-9099",
-      lat: 25.0027793,
-      lng: 121.4652805,
     },
     {
       name: "牧村動物醫院",

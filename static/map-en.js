@@ -182,15 +182,6 @@ function initMap() {
       lng: 121.5214455,
     },
     {
-      name: "Blue Sky Animal Hospital",
-      address: "No. 757, Wenlin Rd, Shilin District, Taipei City",
-      website: "Facebook Page ",
-      note: "Call After 9PM & Sunday Off  Provide service for dogs, cats, birds, fish, and rabbits ",
-      phone: "02-2838-0088",
-      lat: 25.103235,
-      lng: 121.519392,
-    },
-    {
       name: "Daan Animal Hospital",
       address:
         "1F., No. 162, Sec. 4, Roosevelt Rd., Zhongzheng Dist., Taipei City",
@@ -199,15 +190,6 @@ function initMap() {
       phone: "02-2363-2020",
       lat: 25.0123932,
       lng: 121.5361749,
-    },
-    {
-      name: "Hsiang Hsin Animal Hospital",
-      address: "No. 203, Zhongxiao Rd., Banqiao Dist., New Taipei City",
-      website: "https://www.hsianghsin.tw ",
-      note: "Call after 9PM",
-      phone: "02-2956-9099",
-      lat: 25.0027793,
-      lng: 121.4652805,
     },
     {
       name: "Mutsun Animal Hospital",
