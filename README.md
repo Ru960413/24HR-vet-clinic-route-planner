@@ -32,17 +32,19 @@ It consists of 2 major parts: the FrontEnd portion for which user can get the di
 
 In my opinion it's important to always have a copy of emergency vet clinics just in case we will need it someday. When I was researching about it, I realize that there's not much English information, so I think why don't I create a digital copy of all the information and also make it accessible for both Mandarin speaker and English speaker. By building/creating this site, I hope it will help whoever is in need 🙂!
 
-## Key Features <!-- Add Screenshots-->
+## Key Features
 
 1. Get the direction to emergency vet clinics base on users location: by clicking the marker on the map, an information window will pop up. If "Get Direction" link is clicked user will be guided to google map for direction. User can also call the vet clinics by clicking the phone number.
 
-![Route planning page](pics/Route_planning.png "Route planning page")
+    ![Route planning page](pics/Route_planning.png "Route planning page")
 
-![Asking to access user's location](pics/Asking_for_location.png "Asking to access user's location")
+    ![Asking to access user's location](pics/Asking_for_location.png "Asking to access user's location")
 
-![Vet clinic detail](pics/Vet_clinic_detail.jpg "info window popup")
+    ![Info window popup](pics/Vet_clinic_detail.jpg "info window popup")
 
 2. Bilingual support: choose preferable language at the welcome page of the site.
+
+    ![Bilingual support](pics/Bilingual_support.jpg "Bilingual support")
 
 3. Find the detail information of emergency vet clinics by clicking "More Info bout vet clinics"
 
@@ -56,9 +58,12 @@ In my opinion it's important to always have a copy of emergency vet clinics just
 
 ## Contact Me
 
-If there's any bug or updates, please don't hesitate to contact me via [Gmail]<huiruhu96@gmail.com>
+If there's any bug or info updates, please don't hesitate to contact me via [Gmail]<huiruhu96@gmail.com>
 
-## The next version <!-- Need Editing-->
+## The next version
+
+    - UI improvement
+    - Info update
 
 <!-- Create separation here -->
 
