@@ -32,14 +32,6 @@ It consists of 2 major parts: the FrontEnd portion for which user can get the di
 
 In my opinion it's important to always have a copy of emergency vet clinics just in case we will need it someday. When I was researching about it, I realize that there's not much English information, so I think why don't I create a digital copy of all the information and also make it accessible for both Mandarin speaker and English speaker. By building/creating this site, I hope it will help whoever is in need 🙂!
 
-## What I learnt while building this project
-
-    - Working with Google Map APIs
-    - FrontEnd BackEnd integration
-    - building a bilingual website
-    - Responsive Website Design -> How to make my website user friendly for different screen types
-    - Better my JavaScript skill
-
 ## Key Features <!-- Add Screenshots-->
 
 1. Get the direction to emergency vet clinics: by clicking the marker on the map, an information window will pop up. If "Get Direction" link is clicked you'll be guided to google map for direction. You can also call the vet clinics by clicking the phone number.
@@ -48,11 +40,22 @@ In my opinion it's important to always have a copy of emergency vet clinics just
 
 3. Find the detail information of emergency vet clinics by clicking "More Info bout vet clinics"
 
-## Contact Me <!-- Need Editing-->
+## What I learnt while building this project
+
+    - Working with Google Map APIs -> add maps and markers
+    - FrontEnd BackEnd integration -> working with JavaScript and Python
+    - building a bilingual website
+    - Responsive Website Design -> How to make my website user friendly for different screen types
+    - Better my JavaScript skill
+
+## Contact Me
+
+If there's any bug or updates, please don't hesitate to contact me via [Gmail]<huiruhu96@gmail.com>
 
 ## The next version <!-- Need Editing-->
 
 <!-- Create separation here -->
+
 <!-- Write Chinese Version-->
 
 ## 專案說明
