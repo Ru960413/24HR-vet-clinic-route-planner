@@ -34,7 +34,13 @@ In my opinion it's important to always have a copy of emergency vet clinics just
 
 ## Key Features <!-- Add Screenshots-->
 
-1. Get the direction to emergency vet clinics: by clicking the marker on the map, an information window will pop up. If "Get Direction" link is clicked you'll be guided to google map for direction. You can also call the vet clinics by clicking the phone number.
+1. Get the direction to emergency vet clinics base on users location: by clicking the marker on the map, an information window will pop up. If "Get Direction" link is clicked user will be guided to google map for direction. User can also call the vet clinics by clicking the phone number.
+
+![Route planning page](pics/Route_planning.png "Route planning page")
+
+![Asking to access user's location](pics/Asking_for_location.png "Asking to access user's location")
+
+![Vet clinic detail](pics/Vet_clinic_detail.png "info window popup")
 
 2. Bilingual support: choose preferable language at the welcome page of the site.
 
