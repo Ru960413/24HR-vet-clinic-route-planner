@@ -40,7 +40,7 @@ In my opinion it's important to always have a copy of emergency vet clinics just
 
 ![Asking to access user's location](pics/Asking_for_location.png "Asking to access user's location")
 
-![Vet clinic detail](pics/Vet_clinic_detail.png "info window popup")
+![Vet clinic detail](pics/Vet_clinic_detail.jpg "info window popup")
 
 2. Bilingual support: choose preferable language at the welcome page of the site.
 
