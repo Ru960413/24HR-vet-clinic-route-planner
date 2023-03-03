@@ -22,15 +22,15 @@
 
 ## Introduction
 
-    When I was designing the site, in order to increase the usability, I made it as a bilingual website.
+When I was designing the site, in order to increase the usability, I made it as a bilingual website.
 
-    This is a site that can help you get the direction to the vet clinics nearby, as well as get the details of each of the vet clinics.
+This is a site that can help you get the direction to the vet clinics nearby, as well as get the details of each of the vet clinics.
 
-    It consists of 2 major parts: the FrontEnd portion for which user can get the direction to the vet clinics and dial the phone number of the vet clinics by simply clicking the markers on the map; the BackEnd portion, converts the csv files, which stores all the information about the vet clinics, generates the latitude and longitude of the vet clinics and stores them as json formats to support the FrontEnd's need to generate the maps.
+It consists of 2 major parts: the FrontEnd portion for which user can get the direction to the vet clinics and dial the phone number of the vet clinics by simply clicking the markers on the map; the BackEnd portion, converts the csv files, which stores all the information about the vet clinics, generates the latitude and longitude of the vet clinics and stores them as json formats to support the FrontEnd's need to generate the maps.
 
 ## Motivation & Goal
 
-    In my opinion it's important to always have a copy of emergency vet clinics just in case we will need it someday. When I was researching about it, I realize that there's not much English information, so I think why don't I create a digital copy of all the information and also make it accessible for both Mandarin speaker and English speaker. By building/creating this site, I hope it will help whoever is in need 🙂!
+In my opinion it's important to always have a copy of emergency vet clinics just in case we will need it someday. When I was researching about it, I realize that there's not much English information, so I think why don't I create a digital copy of all the information and also make it accessible for both Mandarin speaker and English speaker. By building/creating this site, I hope it will help whoever is in need 🙂!
 
 ## What I learnt while building this project
 
