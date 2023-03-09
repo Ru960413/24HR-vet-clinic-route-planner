@@ -101,11 +101,11 @@ If there's any bug or info updates, please don't hesitate to contact me via [Gma
 
 1. 根據使用者所在之位置取得最近的獸醫院: 在取得使用者的位置後，當使用者點選任一 marker 即可得到獸醫院之詳細資訊，可導航至所選之獸醫院（會連結至 google map 於另一個視窗開啟導航頁面），也可以點選電話號碼直接撥打至獸醫院。
 
-   ![路經規劃](pics/抓取定位.png "路經規劃")
+   ![路經規劃](pics/定位.png "路經規劃")
 
    ![取得存取使用者位置之允許](pics/抓取定位.png "取得存取使用者位置之允許")
 
-   ![取得使用者位置](pics/定位.png "取得使用者位置")
+   ![取得使用者位置](pics/說明.png "取得使用者位置")
 
    ![彈出式Info window](pics/中文_infoWindow.png "彈出式info window")
 
