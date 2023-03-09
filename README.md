@@ -2,6 +2,7 @@
 
 - [24HR Vet Clinic Map \& Route Planner](#24hr-vet-clinic-map--route-planner)
   - [My Website](#my-website)
+  - [English Version](#english-version)
     - [Welcome Page](#welcome-page)
     - [Tech Used](#tech-used)
     - [Introduction](#introduction)
@@ -10,7 +11,7 @@
     - [What I learnt while building this project](#what-i-learnt-while-building-this-project)
     - [Contact Me](#contact-me)
     - [The next version](#the-next-version)
-  - [中文版專案說明](#中文版專案說明)
+  - [中文版](#中文版)
     - [專案介紹](#專案介紹)
     - [動機與目標](#動機與目標)
     - [專案重點](#專案重點)
@@ -20,6 +21,7 @@
 
 <https://24hr-vet-clinic-route-planner-production.up.railway.app/>
 
+## English Version
 
 ### Welcome Page
 
@@ -82,7 +84,7 @@ If there's any bug or info updates, please don't hesitate to contact me via [Gma
 
 ---
 
-## 中文版專案說明
+## 中文版
 
 ### 專案介紹
 
