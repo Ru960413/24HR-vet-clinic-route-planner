@@ -75,7 +75,7 @@ In my opinion it's important to always have a copy of emergency vet clinics just
 
 ### Contact Me
 
-If there's any bug or info updates, please don't hesitate to contact me via [Gmail]<huiruhu96@gmail.com>
+If there's any bug or info updates, please don't hesitate to contact me via [Gmail](huiruhu96@gmail.com)
 
 ### The next version
 
@@ -117,4 +117,4 @@ If there's any bug or info updates, please don't hesitate to contact me via [Gma
 
 ### 聯絡我
 
-若有任何的修改建議或是資訊更新，歡迎用[Gmail]<huiruhu96@gmail.com>聯絡我喔！
+若有任何的修改建議或是資訊更新，歡迎用[Gmail](huiruhu96@gmail.com)聯絡我喔！
