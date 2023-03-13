@@ -1,34 +1,30 @@
 {% extends "layout.html" %} {% block style %}
 <style>
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-</style>
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap");
+    @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
+  </style>
 {% endblock style %} {% block content %}
 <!--toDo: style the contact form-->
 <div class="main-container">
-  <h3 style="text-align: center" class="title">Get In Touch</h3>
+  <h3 style="text-align: center" class="title">聯絡我</h3>
   <div class="nav-item back"><a href="/" class="back"><</a></div>
   <form
     id="contact-form"
     action="https://formsubmit.co/huiruhu96@gmail.com"
     method="POST"
   >
-    <label>Name</label>
+    <label>名稱</label>
     <input class="input-field" type="text" name="name" required />
 
-    <input
-      type="hidden"
-      name="_next"
-      value="https://24hr-vet-clinic-route-planner-production.up.railway.app//thankyou.html"
-    />
-
-    <label>Subject</label>
+    <label>主旨</label>
     <input class="input-field" type="text" name="subject" required />
+
+    <input type="hidden" name="_next" value="https://24hr-vet-clinic-route-planner-production.up.railway.app//thankyou.html" />
 
     <label>Email</label>
     <input class="input-field" type="text" name="Email" required />
 
-    <label>Message</label>
+    <label>內容</label>
     <textarea
       class="input-field"
       type="message"
@@ -36,7 +32,7 @@
       required
     ></textarea>
 
-    <input id="submit-btn" type="submit" value="Send" />
+    <input id="submit-btn" type="submit" value="傳送" />
   </form>
 </div>
 {% endblock content %}

@@ -57,9 +57,15 @@ def detailsInEnglish():
 def detailsInChinese():
     return render_template("details-zh.html")
 
+
 @app.route("/contact")
-def contactMe():
+def contact():
     return render_template("contact.html")
+
+
+@app.route("/contact-zh")
+def contactZh():
+    return render_template("contact-zh.html")
 
 
 if __name__ == "__main__":
