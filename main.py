@@ -2,7 +2,6 @@
 
 from flask import Flask, render_template
 from flask_cors import CORS
-from flask_mail import Mail, Message
 
 
 # need to tell Flask what module to locate the current Flask app instance in
