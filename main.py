@@ -2,8 +2,8 @@
 
 from flask import Flask, render_template
 from flask_cors import CORS
+from flask_mail import Mail, Message
 
-# TODO: connect with database to store the vet clinics info
 
 # need to tell Flask what module to locate the current Flask app instance in
 # Set FLASK_APP as an environment variable(run the following command in terminal):
@@ -57,6 +57,10 @@ def detailsInEnglish():
 @app.route("/detail-zh")
 def detailsInChinese():
     return render_template("details-zh.html")
+
+@app.route("/contact")
+def contactMe():
+    return render_template("contact.html")
 
 
 if __name__ == "__main__":
