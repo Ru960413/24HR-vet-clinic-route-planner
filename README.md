@@ -9,13 +9,11 @@
     - [Motivation \& Goal](#motivation--goal)
     - [Key Features](#key-features)
     - [What I learnt while building this project](#what-i-learnt-while-building-this-project)
-    - [Contact Me](#contact-me)
     - [The next version](#the-next-version)
   - [中文版](#中文版)
     - [專案介紹](#專案介紹)
     - [動機與目標](#動機與目標)
     - [專案重點](#專案重點)
-    - [聯絡我](#聯絡我)
 
 ## My Website
 
@@ -73,10 +71,6 @@ In my opinion it's important to always have a copy of emergency vet clinics just
     - Responsive Website Design -> How to make my website user friendly for different screen types
     - Better my JavaScript skill
 
-### Contact Me
-
-If there's any bug or info updates, please don't hesitate to contact me via [Gmail](huiruhu96@gmail.com)
-
 ### The next version
 
     - UI improvement
@@ -114,7 +108,3 @@ If there's any bug or info updates, please don't hesitate to contact me via [Gma
    ![Bilingual support](pics/Bilingual_support.jpg "Bilingual support")
 
 3. 點選“更多獸醫院的詳細資訊”即可查看全台有提供急診的獸醫院資訊
-
-### 聯絡我
-
-若有任何的修改建議或是資訊更新，歡迎用[Gmail](huiruhu96@gmail.com)聯絡我喔！
