@@ -68,7 +68,7 @@ def contactZh():
     return render_template("contact-zh.html")
 
 
-@app.route("/thankyou")
+@app.route("/thankyou.html")
 def thankyou():
     return render_template("thankyou.html")
 
