@@ -22,32 +22,37 @@ function initMap() {
   // making sure we can access geolocation through user's device
   if (navigator.geolocation) {
     // if successful:
-    navigator.geolocation.getCurrentPosition(function (position) {
-      // set the position variable to the user's current latitude and longitude
-      let pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-      alert("已抓到您的位置，請稍等");
-      // update myLocation with the new variable
-      let myLocation = new google.maps.Marker({
-        position: pos,
-        label: "我",
-        map: map,
-      });
-      // zoom in the map
-      map.setZoom(11);
+    navigator.geolocation.getCurrentPosition(
+      function (position) {
+        // set the position variable to the user's current latitude and longitude
+        let pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude,
+        };
+        alert("已抓到您的位置，請稍等");
+        // update myLocation with the new variable
+        let myLocation = new google.maps.Marker({
+          position: pos,
+          label: "我",
+          map: map,
+        });
+        // zoom in the map
+        map.setZoom(11);
 
-      //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
-      //set the center of the map to myLocation's latitude and longitude
-      map.setCenter(pos);
+        //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
+        //set the center of the map to myLocation's latitude and longitude
+        map.setCenter(pos);
 
-      //reset myLocation marker on map
-      myLocation.setMap(map);
+        //reset myLocation marker on map
+        myLocation.setMap(map);
 
-      alert("請點選任一地標已檢視更多的資訊");
-      // TODO: add an else statement to render an apology when user didn't allow access
-    });
+        alert("請點選任一地標已檢視更多的資訊");
+        // TODO: add an else statement to render an apology when user didn't allow access
+      },
+      function () {
+        alert("無法定位您的位置");
+      }
+    );
 
     //else if not successful
   } else {
