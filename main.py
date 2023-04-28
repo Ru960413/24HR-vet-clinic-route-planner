@@ -33,20 +33,6 @@ def mapInChinese():
     return render_template("route-planner-zh.html")
 
 
-# @app.route('/json-value-en', methods=['GET'])
-# def JSON_value_en():
-#     data = get_addresses_en()
-#     return data
-
-
-
-# @app.route('/json-value-zh', methods=['GET'])
-# def JSON_value_zh():
-#     data = get_addresses_zh()
-#     return data
-
-
-
 @app.route("/detail-en")
 def detailsInEnglish():
     return render_template("details-en.html")
