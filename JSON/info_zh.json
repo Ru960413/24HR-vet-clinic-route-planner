@@ -207,6 +207,15 @@
     "lng": 120.9744711
   },
   {
+    "name": "全天候動物醫院",
+    "address": "新竹市東區關新路225號1樓",
+    "website": "https://www.facebook.com/allweathervet",
+    "note": "服務對象：犬貓、鼠兔",
+    "phone": "03-668-6356",
+    "lat": 24.7878558,
+    "lng": 121.0200103
+  },
+  {
     "name": "大福小幸動物醫院",
     "address": "新竹市香山區經國路三段92巷6號",
     "website": "Facebook ",
@@ -214,6 +223,15 @@
     "phone": "03-530-0175",
     "lat": 24.798127,
     "lng": 120.95258
+  },
+  {
+    "name": "沐暮星動物醫院",
+    "address": "新竹縣竹北市縣政二路南段75號",
+    "website": "https://www.facebook.com/profile.php?id=100082868185418",
+    "note": "",
+    "phone": "03-558-7540",
+    "lat": 24.8195943,
+    "lng": 121.0127039
   },
   {
     "name": "全國動物醫院（台中總院）",

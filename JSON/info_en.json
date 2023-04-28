@@ -207,6 +207,15 @@
     "lng": 120.9744711
   },
   {
+    "name": "All Weather Animal Hospital",
+    "address": "1F., No. 255, Guanxin Rd., East Dist., Hsinchu City",
+    "website": "https://www.facebook.com/allweathervet",
+    "note": "Service for dogs, cats, rodents, and rabbits",
+    "phone": "03-668-6356",
+    "lat": 24.7878558,
+    "lng": 121.0200103
+  },
+  {
     "name": "Happinesss Animal Hospital",
     "address": "No. 6, Lane 92, Section 3, Jingguo Rd, Xiangshan District, Hsinchu City, 300 ",
     "website": "Facebook Page ",
@@ -214,6 +223,15 @@
     "phone": "03-530-0175",
     "lat": 24.798127,
     "lng": 120.95258
+  },
+  {
+    "name": "Mumustar Animal Hospital",
+    "address": "No. 75, South Section, Xianzheng 2nd Rd, Zhubei City, Hsinchu County, 302",
+    "website": "https://www.facebook.com/profile.php?id=100082868185418",
+    "note": "Call After Hours",
+    "phone": "03-558-7540",
+    "lat": 24.8195943,
+    "lng": 121.0127039
   },
   {
     "name": "National Veterinary Hospital(Taichung Main Branch)",
