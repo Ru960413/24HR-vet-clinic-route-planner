@@ -59,7 +59,8 @@ function initMap() {
     // Browser doesn't support Geolocation
     alert("發生了一些錯誤，導致無法抓取您的位置!");
   }
-
+  
+  // replace this with fetch (getting data from my API)
   const markers = [
     {
       name: "伊甸動物醫院",

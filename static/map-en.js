@@ -63,7 +63,7 @@ function initMap() {
     // Browser doesn't support Geolocation or user didn't allow access
     alert("Error!");
   }
-
+  // replace this with fetch (getting data from my API)
   const markers = [
     {
       name: "Eden Animal Hospital",
