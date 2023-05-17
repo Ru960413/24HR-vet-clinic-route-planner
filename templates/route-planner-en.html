@@ -17,7 +17,7 @@
   <body>
     <div class="info-container">
       <div class="navbar">
-        <div class="nav-item"><a href="/" class="back"><</a></div>
+        <div class="nav-item"><a href="/" class="back">←</a></div>
         <h2 class="nav-item title">Route planning</h2>
         <div class="nav-item">
           <a href="/detail-en" class="info">More info about vet clinics</a>
@@ -26,12 +26,6 @@
 
       <!--insert google map-->
       <div id="map"></div>
-
-      <!--Q: How to add vet clinic info as marker to Google Map API?(Info is generated from Python Backend)-->
-      <!--A: send data as JSON format-->
-      <!--<div class="info">{{ data }}</div>-->
-      <!--Get: <Response 9625 bytes [200 OK], aka a Response object>-->
-      <!--From MDN: The Response object, in turn, does not directly contain the actual JSON response body but is instead a representation of the entire HTTP response. So, to extract the JSON body content from the Response object, we use the json() method, which returns a second promise that resolves with the result of parsing the response body text as JSON.-->
     </div>
   </body>
 
