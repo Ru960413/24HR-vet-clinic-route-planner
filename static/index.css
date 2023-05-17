@@ -1,7 +1,7 @@
 .info-container {
   max-width: 1200px;
   margin: auto;
-  border: solid 2px navy;
+  border: solid 2px #a7a5a5;
   border-radius: 10px;
   box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
   background-color: #f3f8f6;
@@ -94,7 +94,9 @@
   align-items: center;
   text-align: center;
 }
-
+.choose-language {
+  gap: 2rem;
+}
 .greeting-container,
 .disclaimer-container,
 .explanation {
@@ -107,7 +109,7 @@
 .disclaimer-en,
 .disclaimer-zh {
   margin: 5px;
-  color: navy;
+  color: rgb(2, 72, 72);
 }
 
 .greeting-zh {
@@ -152,6 +154,7 @@
 .back {
   text-decoration: none;
   font-size: 2rem;
+  color: #000;
 }
 
 table,
@@ -238,11 +241,6 @@ p {
   font-size: 1.5rem;
 }
 
-a:hover {
-  text-decoration: none;
-  color: blue;
-}
-
 .toc_item {
   font-size: 1.2rem;
   color: navy;
@@ -307,4 +305,20 @@ a:hover {
 #contact-form textarea {
   min-height: 100px;
   font-size: 14px;
+}
+
+button {
+  margin-top: 0.5rem;
+  border: #aaa 1px solid;
+  border-radius: 1.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: navy;
+}
+
+a:hover {
+  text-decoration: none;
+  color: blue;
 }
