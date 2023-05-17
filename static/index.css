@@ -146,7 +146,9 @@
 .nav-item {
   margin: 2rem;
 }
-
+.vet-clinic-list {
+  display: flex;
+}
 .info {
   font-size: 1.5rem;
 }
