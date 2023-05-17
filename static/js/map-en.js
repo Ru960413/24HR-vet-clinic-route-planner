@@ -4,8 +4,6 @@
 let map;
 
 function initMap() {
-  // Question: How to set the center of the map and myLocation to user's current location?
-
   // Initialize map with a set of latitude and longitude
   map = new google.maps.Map(document.getElementById("map"), {
     center: { lat: 24.1906155, lng: 120.5882385 },
@@ -52,7 +50,7 @@ function initMap() {
     // Browser doesn't support Geolocation or user didn't allow access
     alert("Error!");
   }
-  // replace this with fetch (getting data from my API)
+  // replace this with fetch (getting data from my API) -> tried but failed
   const markers = [
     {
       id: 1,
@@ -579,7 +577,7 @@ function initMap() {
   //add vet clinics as markers on google map(using forEach)
 
   let infoWindow = new google.maps.InfoWindow({});
-
+  
   markers.forEach((m) => {
     //--> Error: cannot read properties as undefined
     marker = new google.maps.Marker({
