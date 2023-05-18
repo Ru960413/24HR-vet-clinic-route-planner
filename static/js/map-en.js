@@ -9,47 +9,40 @@ function initMap() {
     center: { lat: 24.1906155, lng: 120.5882385 },
     zoom: 8,
   });
-
   // making sure we can access geolocation through user's device
-  if (navigator.geolocation) {
-    // if successful:
-    navigator.geolocation.getCurrentPosition(
-      function (position) {
-        // set the position variable to the user's current latitude and longitude
-        let pos = {
-          lat: position.coords.latitude,
-          lng: position.coords.longitude,
-        };
-        alert("Got your location! Just a sec...");
-        // update myLocation with the new variable
-        let myLocation = new google.maps.Marker({
-          position: pos,
-          label: "Me",
-          map: map,
-        });
-        // zoom in the map
-        map.setZoom(11);
+  const getPosition = function () {
+    return new Promise(function (resolve, reject) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => resolve(position),
+        (err) => reject(`Couldn't get your location (${err})`)
+      );
+      navigator.geolocation.getCurrentPosition(resolve, reject);
+    });
+  };
+  getPosition().then((position) => {
+    const pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    };
+    alert("Got your location! Just a sec...");
+    // update myLocation with the new variable
+    let myLocation = new google.maps.Marker({
+      position: pos,
+      label: "Me",
+      map: map,
+    });
+    // zoom in the map
+    map.setZoom(11);
 
-        //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
-        //set the center of the map to myLocation's latitude and longitude
-        map.setCenter(pos);
+    //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
+    //set the center of the map to myLocation's latitude and longitude
+    map.setCenter(pos);
 
-        //reset myLocation marker on map
-        myLocation.setMap(map);
+    //reset myLocation marker on map
+    myLocation.setMap(map);
+    alert("Click on any of the markers to see more info");
+  });
 
-        alert("Click on any of the markers to see more info");
-        // TODO: add an else statement to render an apology when user didn't allow access
-      },
-      function () {
-        alert("Couldn't get your location");
-      }
-    );
-
-    //else if not successful
-  } else {
-    // Browser doesn't support Geolocation or user didn't allow access
-    alert("Error!");
-  }
   // replace this with fetch (getting data from my API) -> tried but failed
   const markers = [
     {
@@ -577,7 +570,7 @@ function initMap() {
   //add vet clinics as markers on google map(using forEach)
 
   let infoWindow = new google.maps.InfoWindow({});
-  
+
   markers.forEach((m) => {
     //--> Error: cannot read properties as undefined
     marker = new google.maps.Marker({
