@@ -6,7 +6,7 @@ from flask_cors import CORS
 
 # need to tell Flask what module to locate the current Flask app instance in
 # Set FLASK_APP as an environment variable(run the following command in terminal):
-# export FLASK_APP=file name
+# export FLASK_APP=main.py
 
 
 app = Flask(__name__)
