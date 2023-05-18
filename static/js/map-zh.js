@@ -9,39 +9,42 @@ function initMap() {
     zoom: 8,
   });
 
-    // making sure we can access geolocation through user's device
-    const getPosition = function () {
-      return new Promise(function (resolve, reject) {
-        navigator.geolocation.getCurrentPosition(
-          (position) => resolve(position),
-          (err) => reject(`Couldn't get your location (${err})`)
-        );
-        navigator.geolocation.getCurrentPosition(resolve, reject);
-      });
-    };
-    getPosition().then((position) => {
-      const pos = {
-        lat: position.coords.latitude,
-        lng: position.coords.longitude,
-      };
-      alert("已找到您的位置，請稍後片刻");
-      // update myLocation with the new variable
-      let myLocation = new google.maps.Marker({
-        position: pos,
-        label: "我",
-        map: map,
-      });
-      // zoom in the map
-      map.setZoom(11);
-  
-      //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
-      //set the center of the map to myLocation's latitude and longitude
-      map.setCenter(pos);
-  
-      //reset myLocation marker on map
-      myLocation.setMap(map);
-      alert("請點選任意的圖釘以查看位置的細節");
+  // making sure we can access geolocation through user's device
+  const getPosition = function () {
+    return new Promise(function (resolve, reject) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => resolve(position),
+        (err) => {
+          reject(`Couldn't get your location (${err})`);
+          alert(`無法找到您現在的位置`);
+        }
+      );
+      navigator.geolocation.getCurrentPosition(resolve, reject);
     });
+  };
+  getPosition().then((position) => {
+    const pos = {
+      lat: position.coords.latitude,
+      lng: position.coords.longitude,
+    };
+    alert("已找到您的位置，請稍後片刻");
+    // update myLocation with the new variable
+    let myLocation = new google.maps.Marker({
+      position: pos,
+      label: "我",
+      map: map,
+    });
+    // zoom in the map
+    map.setZoom(11);
+
+    //Bug: this is not working(SOLVE) --> because I'm passing in the wrong parameter lol(shouldn't pass in myLocation, just its lat and log): setCenter(latlng)
+    //set the center of the map to myLocation's latitude and longitude
+    map.setCenter(pos);
+
+    //reset myLocation marker on map
+    myLocation.setMap(map);
+    alert("請點選任意的圖釘以查看位置的細節");
+  });
 
   // replace this with fetch (getting data from my API)
   const markers = [

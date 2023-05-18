@@ -14,7 +14,10 @@ function initMap() {
     return new Promise(function (resolve, reject) {
       navigator.geolocation.getCurrentPosition(
         (position) => resolve(position),
-        (err) => reject(`Couldn't get your location (${err})`)
+        (err) => {
+          reject(`Couldn't get your location (${err})`);
+          alert(`Couldn't get your location`);
+        }
       );
       navigator.geolocation.getCurrentPosition(resolve, reject);
     });
