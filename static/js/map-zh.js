@@ -15,8 +15,8 @@ function initMap() {
       navigator.geolocation.getCurrentPosition(
         (position) => resolve(position),
         (err) => {
-          reject(`Couldn't get your location (${err})`);
-          alert(`無法找到您現在的位置`);
+          reject(`Couldn't get your location`);
+          alert(`無法找到您現在的位置 (${err.message})`);
         }
       );
       navigator.geolocation.getCurrentPosition(resolve, reject);
