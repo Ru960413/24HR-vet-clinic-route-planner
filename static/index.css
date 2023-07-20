@@ -7,82 +7,6 @@
   background-color: #f3f8f6;
 }
 
-@media only screen and (max-width: 600px) {
-  .info-container {
-    min-width: fit-content !important;
-    margin: auto;
-    border: solid 2px navy;
-    border-radius: 10px;
-    box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
-    background-color: #f0f8ff;
-  }
-
-  .greeting-zh {
-    font-size: 1.8rem !important;
-  }
-
-  .greeting-en {
-    font-size: 1.8rem !important;
-  }
-
-  .ex-en {
-    font-size: 1.2rem !important;
-  }
-
-  .ex-zh {
-    font-size: 1.2rem !important;
-  }
-
-  .back {
-    font-size: 1.2rem !important;
-  }
-
-  .info {
-    font-size: 1rem !important;
-  }
-
-  .title {
-    font-size: 1.6rem !important;
-  }
-
-  .language-1,
-  .language-2 {
-    padding: 5px;
-    font-size: 1.2rem !important;
-  }
-
-  .nav-item {
-    margin: 1rem !important;
-  }
-
-  .area,
-  .area-zh {
-    font-size: 0.8rem !important;
-  }
-
-  .city,
-  .city-zh {
-    font-size: 1rem !important;
-    margin-top: 2rem !important;
-  }
-
-  th,
-  td {
-    padding: 5px !important;
-    font-size: 0.6rem;
-  }
-
-  .toc_title {
-    font-size: 1.2rem !important;
-  }
-  .toc_item {
-    font-size: 0.8rem !important;
-  }
-  .disclaimer-en,
-  .disclaimer-zh {
-    font-size: 0.8rem !important;
-  }
-}
 /* TODO: 改字型 DONE */
 
 .greeting-container,
@@ -101,9 +25,7 @@
 .disclaimer-container,
 .explanation {
   flex-direction: column;
-  margin-top: 2rem;
-  margin-left: 2rem;
-  margin-right: 2rem;
+  margin: 2rem 2rem 0 2rem;
 }
 
 .disclaimer-en,
@@ -164,6 +86,10 @@ th,
 td {
   border: 2px solid navy;
   border-collapse: collapse;
+}
+
+th {
+  background-color: hsl(208, 100%, 97%);
 }
 
 table,
@@ -323,4 +249,122 @@ a {
 a:hover {
   text-decoration: none;
   color: blue;
+}
+
+@media only screen and (max-width: 700px) {
+  html {
+    font-size: 62.5%;
+  }
+  .info-container {
+    /* min-width: fit-content; */
+    margin: auto;
+    border: solid 2px navy;
+    border-radius: 10px;
+    box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
+    background-color: #f0f8ff;
+  }
+
+  th {
+    display: none;
+  }
+
+  td {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    border: none;
+  }
+
+  tr:nth-of-type(2n) {
+    background-color: hsl(156, 26%, 96%) !important;
+  }
+
+  td:nth-of-type(1)::before {
+    content: "Clinic";
+    text-transform: uppercase;
+  }
+
+  td:nth-of-type(2)::before {
+    content: "Address";
+    text-transform: uppercase;
+  }
+
+  td:nth-of-type(3)::before {
+    content: "Website";
+    text-transform: uppercase;
+  }
+
+  td:nth-of-type(4)::before {
+    content: "Note";
+    text-transform: uppercase;
+  }
+
+  td:nth-of-type(5)::before {
+    content: "Phone Num";
+    text-transform: uppercase;
+  }
+  /* .greeting-zh {
+    font-size: 1.8rem;
+  }
+
+  .greeting-en {
+    font-size: 1.8rem;
+  }
+
+  .ex-en {
+    font-size: 1.2rem;
+  }
+
+  .ex-zh {
+    font-size: 1.2rem;
+  }
+
+  .back {
+    font-size: 1.2rem;
+  }
+
+  .info {
+    font-size: 1rem;
+  }
+
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .language-1,
+  .language-2 {
+    padding: 5px;
+    font-size: 1.2rem;
+  }
+
+  .nav-item {
+    margin: 1rem;
+  }
+
+  .area,
+  .area-zh {
+    font-size: 0.8rem;
+  }
+
+  .city,
+  .city-zh {
+    font-size: 1rem;
+    margin-top: 2rem;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    font-size: 0.6rem;
+  }
+
+  .toc_title {
+    font-size: 1.2rem;
+  }
+  .toc_item {
+    font-size: 0.8rem;
+  }
+  .disclaimer-en,
+  .disclaimer-zh {
+    font-size: 0.8rem;
+  } */
 }
