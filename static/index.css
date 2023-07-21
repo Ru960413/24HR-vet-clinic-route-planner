@@ -1,6 +1,6 @@
 .info-container {
   max-width: 1200px;
-  margin: auto;
+  margin: 0 auto;
   border: solid 2px #a7a5a5;
   border-radius: 10px;
   box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
@@ -84,7 +84,7 @@
 table,
 th,
 td {
-  border: 2px solid navy;
+  border: 1px solid navy;
   border-collapse: collapse;
 }
 
@@ -97,7 +97,7 @@ table,
 .area-zh {
   margin-left: 1rem;
   margin-right: 1rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
 }
 
 table {
@@ -258,7 +258,7 @@ a:hover {
   .info-container {
     /* min-width: fit-content; */
     margin: auto;
-    border: solid 2px navy;
+    border: solid 1px navy;
     border-radius: 10px;
     box-shadow: 10px 7px 10px -8px rgba(0, 0, 0, 0.7);
     background-color: #f0f8ff;
@@ -267,11 +267,14 @@ a:hover {
   th {
     display: none;
   }
-
+  tr {
+    border-bottom: solid 1px navy;
+  }
   td {
     display: grid;
-    grid-template-columns: 150px 1fr;
+    grid-template-columns: 80px 1fr;
     border: none;
+    grid-gap: 20px;
   }
 
   tr:nth-of-type(2n) {
@@ -302,69 +305,15 @@ a:hover {
     content: "Phone Num";
     text-transform: uppercase;
   }
-  /* .greeting-zh {
-    font-size: 1.8rem;
-  }
 
-  .greeting-en {
-    font-size: 1.8rem;
+  #myBtn {
+    right: 75px;
   }
+}
 
-  .ex-en {
-    font-size: 1.2rem;
-  }
-
-  .ex-zh {
-    font-size: 1.2rem;
-  }
-
-  .back {
-    font-size: 1.2rem;
-  }
-
-  .info {
-    font-size: 1rem;
-  }
-
-  .title {
-    font-size: 1.6rem;
-  }
-
-  .language-1,
-  .language-2 {
-    padding: 5px;
-    font-size: 1.2rem;
-  }
-
-  .nav-item {
-    margin: 1rem;
-  }
-
-  .area,
-  .area-zh {
-    font-size: 0.8rem;
-  }
-
-  .city,
-  .city-zh {
-    font-size: 1rem;
-    margin-top: 2rem;
-  }
-
-  th,
+@media (max-width: 400px) {
   td {
-    padding: 5px;
-    font-size: 0.6rem;
+    grid-template-columns: 80px 1fr;
+    grid-gap: 10px;
   }
-
-  .toc_title {
-    font-size: 1.2rem;
-  }
-  .toc_item {
-    font-size: 0.8rem;
-  }
-  .disclaimer-en,
-  .disclaimer-zh {
-    font-size: 0.8rem;
-  } */
 }
