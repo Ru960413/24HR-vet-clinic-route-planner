@@ -4,16 +4,21 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{% block title %}{% endblock title %}</title>
-    <meta name="description" content="" />
+    <meta name="description" content="24-hour emergency veterinary clinics in Taiwan" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/static/index.css" rel="stylesheet" />
-    {% block link %}{% endblock link %} {% block style %} {% endblock style %}
+    {% block link %}{% endblock link %}
+    {% block style %}{% endblock style %}
   </head>
 
   <body>
-    <div class="info-container">{% block content %} {% endblock content %}</div>
-    {% block script %} {% endblock script %}
+    <div class="info-container">
+      {% block content %}{% endblock content %}
+    </div>
+    {% block script %}{% endblock script %}
   </body>
 
-  <footer><p>Made by Hui Ru Hu. Feb 2023.</p></footer>
+  <footer>
+    <p>Made with 🐾 by Hui Ru Hu · 2023</p>
+  </footer>
 </html>

@@ -1,37 +1,51 @@
-{% extends 'layout.html' %} {% block title %} 24HR Vet Clinics in Taiwan {%
-endblock title %} {% block content %} {% block style %}
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif:wght@700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@700&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Noto+Serif+TC&display=swap");
-  @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap");
-</style>
-{% endblock style %}
+{% extends 'layout.html' %} {% block title %} 24HR Vet Clinics in Taiwan {% endblock title %}
 
-<div class="greeting-container">
-  <h1 class="greeting-zh">歡迎來到24小時動物醫院地圖</h1>
-  <h1 class="greeting-en">Welcome to 24-hour Emergency Vet Map</h1>
-</div>
+{% block content %}
 
-<div class="explanation">
-  <h4 class="ex-zh">找到你附近的急診獸醫院</h4>
-  <h4 class="ex-en">Find emergency vet clinics near you</h4>
-</div>
+<nav class="navbar">
+  <span class="nav-brand">🐾 24HR Vet Taiwan</span>
+  <div class="nav-links">
+    <a href="/detail-en">Clinic List</a>
+    <a href="/contact">Contact</a>
+  </div>
+</nav>
 
-<div class="choose-language">
-  <a class="language-1" href="/route-en">English</a>
-  <a class="language-2" href="/route-zh">中文</a>
+<div class="hero">
+  <p class="hero-eyebrow">Taiwan · Emergency Animal Care</p>
+  <h1>Find a vet,<br><em>right now.</em></h1>
+  <p class="hero-sub">24-hour emergency vet clinics across Taiwan — because pets can't wait.</p>
+
+  <div class="choose-language">
+    <a class="language-1" href="/route-en">🗺 Map in English</a>
+    <a class="language-2" href="/route-zh">中文地圖</a>
+  </div>
 </div>
 
 <div class="disclaimer-container">
   <p class="disclaimer-en">
-    The information was last updated on February 2023, please
-    <a href="/contact">contact me</a> if there's any update
+    Last updated February 2023 · <a href="/contact">Submit a correction</a>
   </p>
   <p class="disclaimer-zh">
-    資訊的最後更新時間為2023年2月，若有任何更新請<a href="/contact-zh"
-      >聯絡我</a
-    >
+    最後更新：2023年2月 · <a href="/contact-zh">回報更新</a>
   </p>
 </div>
+
+<div class="features">
+  <div class="feature">
+    <div class="feature-icon">📍</div>
+    <h3>Interactive Map</h3>
+    <p>See all clinics pinned on a live Google Map near you</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🌙</div>
+    <h3>Night Hours</h3>
+    <p>Clinics with specific after-hours & emergency notes included</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🐇</div>
+    <h3>All Animals</h3>
+    <p>Dogs, cats, rabbits, rodents, reptiles & more</p>
+  </div>
+</div>
+
 {% endblock content %}
