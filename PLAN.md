@@ -40,14 +40,14 @@
 
 ## Phase 3：前端合併
 
-- [ ] `map-zh.js` + `map-en.js` 合併成一支，文案抽成 i18n 字典，資料改吃 API
-- [ ] 模板合併：route-planner、details、contact 各留一份，語言用變數帶入
-- [ ] 頁面數 9 → 約 5
+- [x] `map-zh.js` + `map-en.js` → `map.js`，i18n 字典，資料改吃 API
+- [x] 模板合併：route-planner、details、contact 各一份，語言用變數帶入
+- [x] 模板 9 → 6；details 頁已改為資料動態產生（Phase 4 該項一併完成）
 
 ## Phase 4：UI 翻新
 
 - [ ] 響應式設計（急診情境大多是手機使用）
-- [ ] details 頁改成由資料動態產生（現在是 1000 行手寫 HTML）
+- [x] details 頁改成由資料動態產生（Phase 3 一併完成）
 - [ ] 每間診所顯示「資料確認於 YYYY-MM」
 - [ ] 加「資訊有誤？回報」連結（Google Form）
 
