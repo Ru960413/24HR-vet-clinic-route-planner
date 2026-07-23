@@ -27,7 +27,8 @@
 - [ ] 逐筆重新查證急診資訊（2023 至今變化大），更新 `last_verified`
       （✓ 上弦已查證並拆成板橋/林口兩院區，2026-07-23）
 - [x] 刪除舊的 csv/、雙 JSON
-- [ ] `24HR_VET_API_V3` 決定去留（needEdit.md 已全數套用，剩參考價值）
+- [x] `24HR_VET_API_V3` 確認可淘汰：needEdit 已套用、API/腳本/筆記全數被新版取代
+      （本地資料夾與 GitHub repo 由使用者自行刪除/封存；.env 的 GEMINI_API_KEY 建議撤銷）
 
 > 注意：診所資料另有兩份硬編碼複本在 `map-zh.js` / `map-en.js` 裡（目前網站
 > 實際使用的是這兩份），Phase 2/3 改接 API 後移除。
