@@ -34,9 +34,9 @@
 
 ## Phase 2：後端重構
 
-- [ ] Flask 提供單一 API：`GET /api/clinics`（回傳雙語欄位，或支援 `?lang=zh|en`）
-- [ ] 路由合併：`/route/<lang>`、`/details/<lang>` 取代 zh/en 各一條
-- [ ] 更新 requirements.txt、確認本機可跑
+- [x] Flask 提供單一 API：`GET /api/clinics`（不帶參數回雙語完整欄位，`?lang=zh|en` 回單語）
+- [x] 路由合併：`/route/<lang>`、`/details/<lang>`，舊網址 301 轉址
+- [x] 更新 requirements.txt（釘到實測版本、移除沒用到的 Flask-Mail）、本機實測通過
 
 ## Phase 3：前端合併
 
