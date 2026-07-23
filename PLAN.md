@@ -63,8 +63,9 @@
 
 ## Phase 6：部署
 
-- [ ] 確認部署平台（原 Procfile 是 Heroku 時代的，評估 Render / Fly.io / Railway）
-- [ ] API key 網域限制、環境變數整理
+- [x] 部署平台：Railway（repo 連動自動部署，2026-07-23 上線驗證通過）
+- [ ] API key 拆兩把：瀏覽器 key 鎖網域(Maps JS)、伺服器 key 進 GitHub Secret
+      `MAPS_KEY`(Places+Geocoding)——使用者在 Cloud Console 操作，完成後移除程式內 fallback
 
 ---
 進度追蹤：完成一項就把 checkbox 打勾。每個 Phase 結束 commit 一次。
