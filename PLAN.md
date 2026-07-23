@@ -14,9 +14,9 @@
 
 ## Phase 0：基礎整理（先讓 repo 乾淨）
 
-- [ ] 修好 `info_zh.json` 的引號跳脫錯誤，驗證兩個 JSON 都能解析
-- [ ] 檢視未 commit 的 UI 修改，決定保留或捨棄，收乾淨後 commit
-- [ ] `.gitignore` 加入 `__pycache__/`、`.DS_Store`，移除已追蹤的快取檔
+- [x] 修好 `info_zh.json` 的引號跳脫錯誤，驗證兩個 JSON 都能解析
+- [x] 檢視未 commit 的 UI 修改，決定保留或捨棄，收乾淨後 commit
+- [x] `.gitignore` 加入 `__pycache__/`、`.DS_Store`，移除已追蹤的快取檔
 
 ## Phase 1：資料統一（核心）
 
