@@ -417,3 +417,18 @@ p { font-family: 'DM Sans', 'Noto Sans TC', sans-serif; }
 
 /* ── BILINGUAL ACCENTS ── */
 .hero-sub-en, .feature-en { display: inline-block; margin-top: 4px; font-size: 0.85em; opacity: 0.65; }
+
+/* ── VERIFIED BADGE & REPORT LINE ── */
+.verified {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--teal);
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+  white-space: nowrap;
+}
+.report-line { font-size: 0.8rem; color: var(--text-muted); margin: 8px 0 0; }
+.report-line a { color: var(--accent); text-decoration: none; }
+.report-line a:hover { text-decoration: underline; }
+.table-wrap { overflow-x: auto; }
+.table-wrap table { min-width: 640px; }

@@ -19,10 +19,13 @@
     </ol>
   </div>
 
+  <p class="report-line">{{ t.verified_hint }} <a href="/contact/{{ lang }}">{{ t.report_link }}</a></p>
+
   {% for city in cities %}
   <h3 class="city" id="{{ city.anchor }}">{{ city.name }}</h3>
   {% for district in city.districts %}
   <h4 class="area">{{ district.name }}</h4>
+  <div class="table-wrap">
   <table>
     <tr>
       <th>{{ t.th_name }}</th>
@@ -33,7 +36,7 @@
     </tr>
     {% for c in district.clinics %}
     <tr>
-      <td>{{ c.name }}</td>
+      <td>{{ c.name }}{% if c.last_verified %}<span class="verified" title="{{ t.verified }} {{ c.last_verified }}">✓ {{ c.last_verified[:7] }}</span>{% endif %}</td>
       <td>{{ c.address }}</td>
       <td>
         {% if c.website %}<a href="{{ c.website }}" target="_blank" rel="noopener">{{ t.link }}</a>{% endif %}
@@ -45,6 +48,7 @@
     </tr>
     {% endfor %}
   </table>
+  </div>
   {% endfor %}
   {% endfor %}
 </div>
