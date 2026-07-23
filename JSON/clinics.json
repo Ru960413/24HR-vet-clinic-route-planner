@@ -18,7 +18,12 @@
     "place_id": "ChIJFwTtdQ-sQjQRDdUv6eFR9Zo",
     "last_verified": null,
     "active": true,
-    "district_en": "Zhongshan District"
+    "district_en": "Zhongshan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 2,
@@ -39,7 +44,12 @@
     "place_id": "ChIJRTpxt-OrQjQRSeWl6PptYaI",
     "last_verified": null,
     "active": true,
-    "district_en": "Zhongshan District"
+    "district_en": "Zhongshan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 3,
@@ -60,7 +70,12 @@
     "place_id": "ChIJs16ioTGqQjQR4lxBaSK0YUs",
     "last_verified": null,
     "active": true,
-    "district_en": "Daan District"
+    "district_en": "Daan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 4,
@@ -81,7 +96,12 @@
     "place_id": "ChIJvZ4EhYOpQjQRDm6XRV---YE",
     "last_verified": null,
     "active": true,
-    "district_en": "Daan District"
+    "district_en": "Daan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 5,
@@ -102,7 +122,12 @@
     "place_id": "ChIJEz5U6ZqpQjQR9kG3FQXQY78",
     "last_verified": null,
     "active": true,
-    "district_en": "Zhongzheng District"
+    "district_en": "Zhongzheng District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 6,
@@ -123,7 +148,12 @@
     "place_id": "ChIJ7UQOWmupQjQRhrjn-j12sPM",
     "last_verified": null,
     "active": true,
-    "district_en": "Datong District"
+    "district_en": "Datong District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 7,
@@ -144,7 +174,12 @@
     "place_id": "ChIJjcggTZdo3y8Rrd6RhZCwqog",
     "last_verified": null,
     "active": true,
-    "district_en": "Datong District"
+    "district_en": "Datong District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 8,
@@ -165,7 +200,12 @@
     "place_id": "ChIJSwFKzaWpQjQRMuY3LKifXeI",
     "last_verified": null,
     "active": true,
-    "district_en": "Wanhua District"
+    "district_en": "Wanhua District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 9,
@@ -186,7 +226,12 @@
     "place_id": "ChIJ94eQWgerQjQRFwTtE2i1bis",
     "last_verified": null,
     "active": true,
-    "district_en": "Neihu District"
+    "district_en": "Neihu District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": true
   },
   {
     "id": 10,
@@ -207,7 +252,12 @@
     "place_id": "ChIJ3QeZwJarQjQRdRucQezyKKY",
     "last_verified": null,
     "active": true,
-    "district_en": "Songshan District"
+    "district_en": "Songshan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 11,
@@ -228,7 +278,12 @@
     "place_id": "ChIJU_UVpJKrQjQR1hFtwsRnVzk",
     "last_verified": null,
     "active": true,
-    "district_en": "Songshan District"
+    "district_en": "Songshan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 12,
@@ -249,7 +304,12 @@
     "place_id": "ChIJU5vwbAGqQjQRKoQ7nDjiN_Q",
     "last_verified": null,
     "active": true,
-    "district_en": "Wenshan District"
+    "district_en": "Wenshan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 13,
@@ -270,7 +330,14 @@
     "place_id": "ChIJj6ms3tGvQjQRZTK1vHJPtVw",
     "last_verified": null,
     "active": true,
-    "district_en": "Shilin District"
+    "district_en": "Shilin District",
+    "species": [
+      "dog",
+      "cat",
+      "rodent",
+      "rabbit"
+    ],
+    "species_verified": true
   },
   {
     "id": 14,
@@ -291,7 +358,12 @@
     "place_id": "ChIJCW7YE5KvQjQRcOc5CTFd5Pw",
     "last_verified": null,
     "active": true,
-    "district_en": "Shilin District"
+    "district_en": "Shilin District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "place_id": "ChIJXdFN66OrQjQRNUxdudQcUXw",
@@ -312,7 +384,12 @@
     "lat": 25.040685,
     "lng": 121.57555099999999,
     "id": 15,
-    "district_en": "Xinyi District"
+    "district_en": "Xinyi District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 16,
@@ -333,7 +410,12 @@
     "place_id": "ChIJ3z5z3TypQjQRYbz6RVDBReg",
     "last_verified": "2026-07-23",
     "active": true,
-    "district_en": "Banqiao District"
+    "district_en": "Banqiao District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 17,
@@ -354,7 +436,12 @@
     "place_id": "ChIJb6aXDcynQjQRDGcy7FkmgDg",
     "last_verified": "2026-07-23",
     "active": true,
-    "district_en": "Linkou District"
+    "district_en": "Linkou District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 18,
@@ -375,7 +462,12 @@
     "place_id": "ChIJC0ZM6DyoQjQRWRKNj_1Yos0",
     "last_verified": null,
     "active": true,
-    "district_en": "Banqiao District"
+    "district_en": "Banqiao District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 19,
@@ -396,7 +488,12 @@
     "place_id": "ChIJwcWmhSypQjQRjFty0SLEmJ8",
     "last_verified": null,
     "active": true,
-    "district_en": "Banqiao District"
+    "district_en": "Banqiao District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 20,
@@ -417,7 +514,12 @@
     "place_id": "ChIJDVNPYkKpQjQREYuwRWzYaJI",
     "last_verified": null,
     "active": true,
-    "district_en": "Zhonghe District"
+    "district_en": "Zhonghe District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 21,
@@ -438,7 +540,16 @@
     "place_id": "ChIJr63FCZMDaDQRYdAbWXABC9k",
     "last_verified": null,
     "active": true,
-    "district_en": "Zhonghe District"
+    "district_en": "Zhonghe District",
+    "species": [
+      "dog",
+      "cat",
+      "rodent",
+      "rabbit",
+      "bird",
+      "turtle"
+    ],
+    "species_verified": true
   },
   {
     "id": 22,
@@ -459,7 +570,12 @@
     "place_id": "ChIJaaMtv-upQjQRQU9hUnmWcFw",
     "last_verified": null,
     "active": true,
-    "district_en": "Yonghe District"
+    "district_en": "Yonghe District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "place_id": "ChIJG7JoBQCpQjQRjMtGg719wDA",
@@ -480,7 +596,12 @@
     "lat": 25.06111,
     "lng": 121.4567973,
     "id": 23,
-    "district_en": "Xinzhuang District"
+    "district_en": "Xinzhuang District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": true
   },
   {
     "id": 24,
@@ -501,7 +622,12 @@
     "place_id": "ChIJpT9aFnUfaDQR1Ej2Vs0m8Pg",
     "last_verified": null,
     "active": true,
-    "district_en": "Taoyuan District"
+    "district_en": "Taoyuan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 25,
@@ -522,7 +648,12 @@
     "place_id": "ChIJt5G1Rh0faDQRuNaeaz6dLS8",
     "last_verified": null,
     "active": true,
-    "district_en": "Taoyuan District"
+    "district_en": "Taoyuan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 26,
@@ -543,7 +674,12 @@
     "place_id": "ChIJQbMhOVojaDQRKcAZN6cbx8Y",
     "last_verified": null,
     "active": true,
-    "district_en": "Zhongli District"
+    "district_en": "Zhongli District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 27,
@@ -564,7 +700,12 @@
     "place_id": "ChIJzzoZt881aDQRG7pOjUDFThA",
     "last_verified": null,
     "active": true,
-    "district_en": "East District"
+    "district_en": "East District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 28,
@@ -585,7 +726,14 @@
     "place_id": "ChIJgVHVYDQ3aDQR8SFW2Yxy3-A",
     "last_verified": null,
     "active": true,
-    "district_en": "East District"
+    "district_en": "East District",
+    "species": [
+      "dog",
+      "cat",
+      "rodent",
+      "rabbit"
+    ],
+    "species_verified": true
   },
   {
     "id": 29,
@@ -606,7 +754,17 @@
     "place_id": "ChIJz2tAhZo1aDQRNBsZRmQj8Rk",
     "last_verified": null,
     "active": true,
-    "district_en": "Xiangshan District"
+    "district_en": "Xiangshan District",
+    "species": [
+      "dog",
+      "cat",
+      "rodent",
+      "rabbit",
+      "bird",
+      "reptile",
+      "sugar_glider"
+    ],
+    "species_verified": true
   },
   {
     "id": 30,
@@ -627,7 +785,12 @@
     "place_id": "ChIJn70nAxE3aDQRkIRQHzigNVc",
     "last_verified": null,
     "active": true,
-    "district_en": "Zhubei City"
+    "district_en": "Zhubei City",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 31,
@@ -648,7 +811,12 @@
     "place_id": "ChIJJRzrucI9aTQR1r_GH8V0mHQ",
     "last_verified": null,
     "active": true,
-    "district_en": "West District"
+    "district_en": "West District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 32,
@@ -669,7 +837,12 @@
     "place_id": "ChIJtenXhaQ9aTQRS5PvamovCf4",
     "last_verified": null,
     "active": true,
-    "district_en": "West District"
+    "district_en": "West District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 33,
@@ -690,7 +863,12 @@
     "place_id": "ChIJseyTw5Y9aTQRi4_mzXSsjxQ",
     "last_verified": null,
     "active": true,
-    "district_en": "Nantun District"
+    "district_en": "Nantun District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 34,
@@ -711,7 +889,12 @@
     "place_id": "ChIJCedGUo09aTQR-j6FTlYhAEs",
     "last_verified": null,
     "active": true,
-    "district_en": "Nantun District"
+    "district_en": "Nantun District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 35,
@@ -732,7 +915,14 @@
     "place_id": "ChIJDcNFJwYXaTQRVwAUOXNMHc8",
     "last_verified": null,
     "active": true,
-    "district_en": "Beitun District"
+    "district_en": "Beitun District",
+    "species": [
+      "dog",
+      "cat",
+      "rodent",
+      "rabbit"
+    ],
+    "species_verified": true
   },
   {
     "id": 36,
@@ -753,7 +943,12 @@
     "place_id": "ChIJGfCcInk9aTQRZVXCW9KgIX8",
     "last_verified": null,
     "active": true,
-    "district_en": "North District"
+    "district_en": "North District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 37,
@@ -774,7 +969,12 @@
     "place_id": "ChIJn00V7I49aTQRPXcqPTom3Sg",
     "last_verified": null,
     "active": true,
-    "district_en": "Dali District"
+    "district_en": "Dali District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 38,
@@ -795,7 +995,12 @@
     "place_id": "ChIJHxyKMeU3aTQROwoU5FZSPw8",
     "last_verified": null,
     "active": true,
-    "district_en": "Yuanlin City"
+    "district_en": "Yuanlin City",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 39,
@@ -816,7 +1021,12 @@
     "place_id": "ChIJjWb_3aywbjQRTIJI5VEU7WU",
     "last_verified": null,
     "active": true,
-    "district_en": "Huwei Township"
+    "district_en": "Huwei Township",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 40,
@@ -837,7 +1047,12 @@
     "place_id": "ChIJ3wL0K6h1bjQREvp6nmUPjOM",
     "last_verified": null,
     "active": true,
-    "district_en": "East District"
+    "district_en": "East District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 41,
@@ -858,7 +1073,12 @@
     "place_id": "ChIJr0lz5GB2bjQRigWMaZsquYw",
     "last_verified": null,
     "active": true,
-    "district_en": "West Central District"
+    "district_en": "West Central District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 42,
@@ -879,7 +1099,12 @@
     "place_id": "ChIJXXQMvS53bjQRAWhQ3_hjXFU",
     "last_verified": null,
     "active": true,
-    "district_en": "South District"
+    "district_en": "South District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 43,
@@ -900,7 +1125,12 @@
     "place_id": "ChIJDTbilnh2bjQR57AnKDfQFxI",
     "last_verified": null,
     "active": true,
-    "district_en": "South District"
+    "district_en": "South District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 44,
@@ -921,7 +1151,14 @@
     "place_id": "ChIJtfz0Q30RbjQR6TJsOtsKbVA",
     "last_verified": null,
     "active": true,
-    "district_en": "Renwu District"
+    "district_en": "Renwu District",
+    "species": [
+      "dog",
+      "cat",
+      "rodent",
+      "rabbit"
+    ],
+    "species_verified": true
   },
   {
     "id": 45,
@@ -942,7 +1179,12 @@
     "place_id": "ChIJ0y1f3SMFbjQRYd5JSDsk3k8",
     "last_verified": null,
     "active": true,
-    "district_en": "Sanmin District"
+    "district_en": "Sanmin District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 46,
@@ -963,7 +1205,12 @@
     "place_id": "ChIJh1uDlJgFbjQR21JPlaPupu4",
     "last_verified": null,
     "active": true,
-    "district_en": "Zuoying District"
+    "district_en": "Zuoying District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 47,
@@ -984,7 +1231,12 @@
     "place_id": "ChIJccPry7kEbjQR_GsBRo9ME8Y",
     "last_verified": null,
     "active": true,
-    "district_en": "Lingya District"
+    "district_en": "Lingya District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 48,
@@ -1005,7 +1257,12 @@
     "place_id": "ChIJewdDEpQEbjQRay_If9oq1DU",
     "last_verified": null,
     "active": true,
-    "district_en": "Lingya District"
+    "district_en": "Lingya District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 49,
@@ -1026,7 +1283,12 @@
     "place_id": "ChIJCVz4EFkbbjQRsk1lytBABPQ",
     "last_verified": null,
     "active": true,
-    "district_en": "Fengshan District"
+    "district_en": "Fengshan District",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 50,
@@ -1047,7 +1309,12 @@
     "place_id": "ChIJqUc4gkQXbjQRYMBCTkt3gA0",
     "last_verified": null,
     "active": true,
-    "district_en": "Pingtung City"
+    "district_en": "Pingtung City",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   },
   {
     "id": 51,
@@ -1068,6 +1335,11 @@
     "place_id": "ChIJj4mQZpSfaDQRiZFolwKIk0U",
     "last_verified": null,
     "active": true,
-    "district_en": "Hualien City"
+    "district_en": "Hualien City",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   }
 ]

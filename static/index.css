@@ -395,3 +395,25 @@ p { font-family: 'DM Sans', 'Noto Sans TC', sans-serif; }
 .map-info { color: #222; font-family: 'DM Sans', 'Noto Sans TC', sans-serif; line-height: 1.7; }
 .map-info a { color: #1a6f61; }
 .map-error { color: var(--accent); text-align: center; padding: 8px 0; }
+
+/* ── SPECIES FILTER ── */
+#filter-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-top: 20px; }
+#filter-bar:empty { display: none; }
+.chip {
+  padding: 6px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text-muted);
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.chip:hover { border-color: var(--accent); color: var(--text); }
+.chip.active { background: var(--accent); border-color: var(--accent); color: #0e1012; }
+.filter-hint { font-size: 0.72rem; color: var(--text-muted); margin-left: 4px; }
+@media (max-width: 600px) { .filter-hint { flex-basis: 100%; margin-left: 0; } }
+
+/* ── BILINGUAL ACCENTS ── */
+.hero-sub-en, .feature-en { display: inline-block; margin-top: 4px; font-size: 0.85em; opacity: 0.65; }
