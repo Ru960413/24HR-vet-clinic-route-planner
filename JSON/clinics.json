@@ -281,8 +281,8 @@
   },
   {
     "id": 15,
-    "name_zh": "上弦動物醫院",
-    "name_en": "Sensation Animal Emergency Hospital",
+    "name_zh": "上弦動物醫院（板橋院區）",
+    "name_en": "Sensa Animal Hospital (Banqiao Branch)",
     "address_zh": "新北市板橋區府中路126號之1",
     "address_en": "No. 126-1, Fuzhong Rd., Banqiao Dist., New Taipei City",
     "city_zh": "新北市",
@@ -290,17 +290,37 @@
     "district_zh": "板橋區",
     "note_zh": "24小時急診",
     "note_en": "24-hour emergency service",
-    "phone": "",
+    "phone": "02-2272-8119",
     "emergency_phone": "",
-    "website": "",
-    "lat": 25.0142,
-    "lng": 121.4617,
+    "website": "https://senbio.tech",
+    "lat": 25.0094168,
+    "lng": 121.4546999,
     "place_id": null,
-    "last_verified": null,
+    "last_verified": "2026-07-23",
     "active": true
   },
   {
     "id": 16,
+    "name_zh": "上弦動物醫院（林口院區）",
+    "name_en": "Sensa Animal Hospital (Linkou Branch)",
+    "address_zh": "新北市林口區忠福路129號",
+    "address_en": "No. 129, Zhongfu Rd., Linkou Dist., New Taipei City",
+    "city_zh": "新北市",
+    "city_en": "New Taipei City",
+    "district_zh": "林口區",
+    "note_zh": "24小時急診",
+    "note_en": "24-hour emergency service",
+    "phone": "02-2609-0119",
+    "emergency_phone": "",
+    "website": "https://senbio.tech",
+    "lat": 25.0772016,
+    "lng": 121.3615519,
+    "place_id": null,
+    "last_verified": "2026-07-23",
+    "active": true
+  },
+  {
+    "id": 17,
     "name_zh": "牧村動物醫院",
     "name_en": "Mutsun Animal Hospital",
     "address_zh": "新北市板橋區中山路二段28號",
@@ -320,7 +340,7 @@
     "active": true
   },
   {
-    "id": 17,
+    "id": 18,
     "name_zh": "長佐動物醫院",
     "name_en": "Chang Tzuo Animal Hospital",
     "address_zh": "新北市板橋區藝文街348號1樓",
@@ -340,7 +360,7 @@
     "active": true
   },
   {
-    "id": 18,
+    "id": 19,
     "name_zh": "中日動物醫院",
     "name_en": "Chung Ri Animal Hospital",
     "address_zh": "新北市中和區中山路三段2號",
@@ -360,7 +380,7 @@
     "active": true
   },
   {
-    "id": 19,
+    "id": 20,
     "name_zh": "亞東動物醫院",
     "name_en": "YaDong Animal Hospital",
     "address_zh": "新北市中和區中正路639號2樓",
@@ -380,7 +400,7 @@
     "active": true
   },
   {
-    "id": 20,
+    "id": 21,
     "name_zh": "樂活動物醫院",
     "name_en": "Le Huo Animal Hospital",
     "address_zh": "新北市永和區中興街107號",
@@ -400,7 +420,7 @@
     "active": true
   },
   {
-    "id": 21,
+    "id": 22,
     "name_zh": "品湛動物醫院",
     "name_en": "Elite Animal Hospital",
     "address_zh": "桃園市桃園區民生路495-9號",
@@ -420,7 +440,7 @@
     "active": true
   },
   {
-    "id": 22,
+    "id": 23,
     "name_zh": "元氣動物醫院（三民總院）",
     "name_en": "Genki Veterinary Hospital(Sanmin Branch)",
     "address_zh": "桃園市桃園區三民路三段381號",
@@ -440,7 +460,7 @@
     "active": true
   },
   {
-    "id": 23,
+    "id": 24,
     "name_zh": "磨鼻子動物醫院",
     "name_en": "Bisous Animal Hospital",
     "address_zh": "桃園市中壢區延平路20號",
@@ -460,7 +480,7 @@
     "active": true
   },
   {
-    "id": 24,
+    "id": 25,
     "name_zh": "築心動物醫院",
     "name_en": "Zhu Xin Animal Hospital",
     "address_zh": "新竹市東區經國路一段654號",
@@ -480,7 +500,7 @@
     "active": true
   },
   {
-    "id": 25,
+    "id": 26,
     "name_zh": "全天候動物醫院",
     "name_en": "All Weather Animal Hospital",
     "address_zh": "新竹市東區關新路225號1樓",
@@ -500,7 +520,7 @@
     "active": true
   },
   {
-    "id": 26,
+    "id": 27,
     "name_zh": "大福小幸動物醫院",
     "name_en": "Happinesss Animal Hospital",
     "address_zh": "新竹市香山區經國路三段92巷6號",
@@ -520,7 +540,7 @@
     "active": true
   },
   {
-    "id": 27,
+    "id": 28,
     "name_zh": "沐暮星動物醫院",
     "name_en": "Mumustar Animal Hospital",
     "address_zh": "新竹縣竹北市縣政二路南段75號",
@@ -540,7 +560,7 @@
     "active": true
   },
   {
-    "id": 28,
+    "id": 29,
     "name_zh": "全國動物醫院（台中總院）",
     "name_en": "National Veterinary Hospital(Taichung Main Branch)",
     "address_zh": "台中市西區五權八街100號",
@@ -560,7 +580,7 @@
     "active": true
   },
   {
-    "id": 29,
+    "id": 30,
     "name_zh": "羅大宇動物醫院",
     "name_en": "Lodayu Animal Hospital",
     "address_zh": "台中市西區存中街153號號",
@@ -580,7 +600,7 @@
     "active": true
   },
   {
-    "id": 30,
+    "id": 31,
     "name_zh": "吉米哈利動物醫院",
     "name_en": "James Herriot Animal Hospital",
     "address_zh": "台中市南屯區大聖街250號",
@@ -600,7 +620,7 @@
     "active": true
   },
   {
-    "id": 31,
+    "id": 32,
     "name_zh": "格林威治動物醫院",
     "name_en": "Gleam ways Animal Hospital",
     "address_zh": "台中市南屯區文心路一段486號",
@@ -620,7 +640,7 @@
     "active": true
   },
   {
-    "id": 32,
+    "id": 33,
     "name_zh": "康德動物醫院",
     "name_en": "Kant Animal Hospital",
     "address_zh": "台中市北屯區崇德路二段270號",
@@ -640,7 +660,7 @@
     "active": true
   },
   {
-    "id": 33,
+    "id": 34,
     "name_zh": "沐恩動物醫院",
     "name_en": "Muen Animal Hospital",
     "address_zh": "台中市北區健行路865號",
@@ -660,7 +680,7 @@
     "active": true
   },
   {
-    "id": 34,
+    "id": 35,
     "name_zh": "慈愛動物醫院-台中總院",
     "name_en": "Loving Kindness Animal Hospital(Taichung Main branch)",
     "address_zh": "台中市大里區國光路二段539號",
@@ -680,7 +700,7 @@
     "active": true
   },
   {
-    "id": 35,
+    "id": 36,
     "name_zh": "忠愛動物醫院",
     "name_en": "Chung Ai Veterinary Hospital",
     "address_zh": "彰化縣員林市中山路二段490號",
@@ -700,7 +720,7 @@
     "active": true
   },
   {
-    "id": 36,
+    "id": 37,
     "name_zh": "和牧動物醫院",
     "name_en": "Ho Mu Animal Hospital",
     "address_zh": "雲林縣虎尾鎮光復路454號",
@@ -720,7 +740,7 @@
     "active": true
   },
   {
-    "id": 37,
+    "id": 38,
     "name_zh": "全國動物醫院（台南分院）",
     "name_en": "National Veterinary Hospital(Tainan Branch)",
     "address_zh": "台南市東區崇德路620號2樓",
@@ -740,7 +760,7 @@
     "active": true
   },
   {
-    "id": 38,
+    "id": 39,
     "name_zh": "諾亞動物醫院",
     "name_en": "Noah Animal Hospital",
     "address_zh": "台南市中西區成功路297號",
@@ -760,7 +780,7 @@
     "active": true
   },
   {
-    "id": 39,
+    "id": 40,
     "name_zh": "慕光動物醫院",
     "name_en": "Ad Astra Veterinary Hospital",
     "address_zh": "臺南市南區西門路一段569號",
@@ -780,7 +800,7 @@
     "active": true
   },
   {
-    "id": 40,
+    "id": 41,
     "name_zh": "慈愛動物醫院（台南總院）",
     "name_en": "Loving Kindness Animal Hospital(Tainan Branch)",
     "address_zh": "台南市南區西門路一段473號",
@@ -800,7 +820,7 @@
     "active": true
   },
   {
-    "id": 41,
+    "id": 42,
     "name_zh": "聯盟動物醫院（仁武總院）",
     "name_en": "Alliance Veterinary Hospital(Renwu Main Branch)",
     "address_zh": "高雄市仁武區鳳仁路231號E棟",
@@ -820,7 +840,7 @@
     "active": true
   },
   {
-    "id": 42,
+    "id": 43,
     "name_zh": "宏力動物醫院",
     "name_en": "Hung Li Animal Hospital",
     "address_zh": "高雄市三民區明誠一路326號",
@@ -840,7 +860,7 @@
     "active": true
   },
   {
-    "id": 43,
+    "id": 44,
     "name_zh": "中興梅西動物醫療中心",
     "name_en": "Jong-Shing Animal Hospital",
     "address_zh": "高雄市左營區文府路498號",
@@ -860,7 +880,7 @@
     "active": true
   },
   {
-    "id": 44,
+    "id": 45,
     "name_zh": "烏鐸動物醫院",
     "name_en": "Udoch Animal Hospital",
     "address_zh": "高雄市苓雅區中正一路139號",
@@ -880,7 +900,7 @@
     "active": true
   },
   {
-    "id": 45,
+    "id": 46,
     "name_zh": "冠安動物醫院",
     "name_en": "GuanAn Animal Hospital",
     "address_zh": "高雄市苓雅區中正二路131-1號",
@@ -900,7 +920,7 @@
     "active": true
   },
   {
-    "id": 46,
+    "id": 47,
     "name_zh": "希望動物醫院",
     "name_en": "Hope Veterinary Hospital",
     "address_zh": "高雄市鳳山區凱旋路100號",
@@ -920,7 +940,7 @@
     "active": true
   },
   {
-    "id": 47,
+    "id": 48,
     "name_zh": "名仁動物醫院",
     "name_en": "MingRen Veterinary Hospital",
     "address_zh": "屏東縣屏東市仁愛路7號",
@@ -940,7 +960,7 @@
     "active": true
   },
   {
-    "id": 48,
+    "id": 49,
     "name_zh": "上海動物醫院",
     "name_en": "Shanghai Animal Hospital",
     "address_zh": "花蓮縣花蓮市上海街63號",
