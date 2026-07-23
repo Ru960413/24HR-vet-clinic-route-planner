@@ -20,14 +20,17 @@
 
 ## Phase 1：資料統一（核心）
 
-- [ ] 設計單一資料格式：一間診所一筆，雙語欄位放同一筆
-      （`name_zh`/`name_en`、`address_zh`/`address_en`、`note_zh`/`note_en`、
-      `phone`、`emergency_phone`、`website`、`lat`、`lng`、`city`、`district`、
-      `place_id`、`last_verified`、`active`）
-- [ ] 寫遷移腳本：合併 info_zh + info_en（zh 45+ 筆、en 45 筆，需比對配對）→ `clinics.json`（或 SQLite）
-- [ ] 套用 `needEdit.md` 裡所有待改項目（太僕急診專線、板橋上弦新增、元氣藝文分院刪除等）
+- [x] 設計單一資料格式：一間診所一筆，雙語欄位放同一筆 → `JSON/clinics.json`
+- [x] 寫遷移腳本（`scripts/migrate_data.py`）：以中文版為基準合併，48 筆；
+      英文版缺的 4 間（上弦/長佐/吉米哈利/慕光）已補翻譯，落後的 8 筆英文備註已同步
+- [x] 套用 `needEdit.md`：確認全部項目已在資料中（中文版原本就套用了，英文版本次補齊）
 - [ ] 逐筆重新查證急診資訊（2023 至今變化大），更新 `last_verified`
-- [ ] 刪除舊的 csv/、雙 JSON，`24HR_VET_API_V3` 決定去留（建議併回本 repo）
+      （上弦動物醫院缺電話，優先查）
+- [x] 刪除舊的 csv/、雙 JSON
+- [ ] `24HR_VET_API_V3` 決定去留（needEdit.md 已全數套用，剩參考價值）
+
+> 注意：診所資料另有兩份硬編碼複本在 `map-zh.js` / `map-en.js` 裡（目前網站
+> 實際使用的是這兩份），Phase 2/3 改接 API 後移除。
 
 ## Phase 2：後端重構
 
