@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}{{ t.contact_title }}{% endblock title %}
+
+{% block content %}
+<div class="main-container">
+  <div class="navbar">
+    <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
+    <h3 class="nav-item title">{{ t.contact_title }}</h3>
+    <div class="nav-item"></div>
+  </div>
+  <form id="contact-form" action="https://formsubmit.co/huiruhu96@gmail.com" method="POST">
+    <input type="hidden" name="_next" value="{{ thankyou_url }}" />
+
+    <label>{{ t.form_name }}</label>
+    <input class="input-field" type="text" name="name" required />
+
+    <label>{{ t.form_subject }}</label>
+    <input class="input-field" type="text" name="subject" required />
+
+    <label>{{ t.form_email }}</label>
+    <input class="input-field" type="email" name="email" required />
+
+    <label>{{ t.form_message }}</label>
+    <textarea class="input-field" name="message" required></textarea>
+
+    <input id="submit-btn" type="submit" value="{{ t.form_send }}" />
+  </form>
+</div>
+{% endblock content %}

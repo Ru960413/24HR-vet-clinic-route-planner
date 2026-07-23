@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block title %}{{ t.details_title }}{% endblock title %}
+
+{% block content %}
+<div class="vet-clinic-list">
+  <div class="navbar">
+    <div class="nav-item"><a href="/route/{{ lang }}" class="back">&#x3c;</a></div>
+    <h3 class="nav-item title">{{ t.details_heading }}</h3>
+  </div>
+
+  <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" id="myBtn" title="Top">Top</button>
+
+  <div id="toc_container">
+    <p class="toc_title">{{ t.toc_title }}</p>
+    <ol class="toc_list">
+      {% for city in cities %}
+      <li><a href="#{{ city.anchor }}" class="toc_item">{{ city.name }}{{ t.toc_suffix }}</a></li>
+      {% endfor %}
+    </ol>
+  </div>
+
+  {% for city in cities %}
+  <h3 class="city" id="{{ city.anchor }}">{{ city.name }}</h3>
+  {% for district in city.districts %}
+  <h4 class="area">{{ district.name }}</h4>
+  <table>
+    <tr>
+      <th>{{ t.th_name }}</th>
+      <th>{{ t.th_address }}</th>
+      <th>{{ t.th_website }}</th>
+      <th>{{ t.th_note }}</th>
+      <th>{{ t.th_phone }}</th>
+    </tr>
+    {% for c in district.clinics %}
+    <tr>
+      <td>{{ c.name }}</td>
+      <td>{{ c.address }}</td>
+      <td>
+        {% if c.website %}<a href="{{ c.website }}" target="_blank" rel="noopener">{{ t.link }}</a>{% endif %}
+      </td>
+      <td>{{ c.note }}</td>
+      <td>
+        {% for p in c.phones %}<a href="tel:{{ p.tel }}">{{ p.label }}</a>{% if not loop.last %} / {% endif %}{% endfor %}
+      </td>
+    </tr>
+    {% endfor %}
+  </table>
+  {% endfor %}
+  {% endfor %}
+</div>
+{% endblock content %}
+
+{% block script %}
+<script>
+  const btn = document.getElementById("myBtn");
+  window.addEventListener("scroll", () => {
+    btn.style.display = window.scrollY > 400 ? "block" : "none";
+  });
+</script>
+{% endblock script %}

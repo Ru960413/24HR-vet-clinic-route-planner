@@ -1,16 +1,61 @@
 import json
 import os
+import re
 
-from flask import Flask, abort, jsonify, redirect, render_template, request
+from flask import Flask, abort, jsonify, redirect, render_template, request, url_for
 from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
 
 CLINICS_PATH = os.path.join(os.path.dirname(__file__), "JSON", "clinics.json")
+MAPS_KEY = os.environ.get("MAPS_KEY", "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c")
 
 # clinics.json is tiny and changes rarely — cache it, reload when the file does
 _cache = {"mtime": None, "data": None}
+
+UI_TEXT = {
+    "zh": {
+        "route_title": "急診獸醫院地圖",
+        "more_info": "更多獸醫院的詳細資訊",
+        "details_title": "獸醫院詳細資訊",
+        "details_heading": "全台提供24小時急診服務的獸醫院",
+        "toc_title": "內容摘要",
+        "toc_suffix": "獸醫院",
+        "th_name": "醫院名稱",
+        "th_address": "地址",
+        "th_website": "網站",
+        "th_note": "備註",
+        "th_phone": "電話",
+        "link": "連結",
+        "contact_title": "聯絡我",
+        "form_name": "姓名",
+        "form_subject": "主旨",
+        "form_email": "Email",
+        "form_message": "訊息",
+        "form_send": "送出",
+    },
+    "en": {
+        "route_title": "Emergency Vet Map",
+        "more_info": "More info about vet clinics",
+        "details_title": "Clinic Details",
+        "details_heading": "Emergency Veterinary Services in Taiwan",
+        "toc_title": "Contents",
+        "toc_suffix": " Emergency Vet Clinics",
+        "th_name": "Name",
+        "th_address": "Address",
+        "th_website": "Website",
+        "th_note": "Note",
+        "th_phone": "Phone",
+        "link": "Link",
+        "contact_title": "Get In Touch",
+        "form_name": "Name",
+        "form_subject": "Subject",
+        "form_email": "Email",
+        "form_message": "Message",
+        "form_send": "Send",
+    },
+}
 
 
 def load_clinics():
@@ -22,16 +67,25 @@ def load_clinics():
     return _cache["data"]
 
 
-LANG_FIELDS = ["name", "address", "city", "note"]
+LANG_FIELDS = ["name", "address", "city", "district", "note"]
 
 
 def localize(clinic, lang):
     out = {k: v for k, v in clinic.items()
-           if not any(k.startswith(f + "_") for f in LANG_FIELDS + ["district"])}
+           if not any(k.startswith(f + "_") for f in LANG_FIELDS)}
     for f in LANG_FIELDS:
-        out[f] = clinic.get(f"{f}_{lang}", clinic.get(f"{f}_zh"))
-    out["district"] = clinic["district_zh"]
+        out[f] = clinic.get(f"{f}_{lang}") or clinic.get(f"{f}_zh")
     return out
+
+
+def split_phones(raw):
+    return [{"label": p.strip(), "tel": re.sub(r"[^0-9+]", "", p)}
+            for p in raw.split(" or ") if p.strip()]
+
+
+def require_lang(lang):
+    if lang not in ("zh", "en"):
+        abort(404)
 
 
 @app.route("/api/clinics")
@@ -52,26 +106,31 @@ def index():
 
 @app.route("/route/<lang>")
 def route_planner(lang):
-    if lang not in ("zh", "en"):
-        abort(404)
-    return render_template(f"route-planner-{lang}.html")
+    require_lang(lang)
+    return render_template("route-planner.html", lang=lang, t=UI_TEXT[lang], maps_key=MAPS_KEY)
 
 
 @app.route("/details/<lang>")
 def details(lang):
-    if lang not in ("zh", "en"):
-        abort(404)
-    return render_template(f"details-{lang}.html")
+    require_lang(lang)
+    cities = []
+    for c in (localize(x, lang) for x in load_clinics() if x["active"]):
+        c["phones"] = split_phones(c["phone"])
+        if not cities or cities[-1]["key"] != c["city"]:
+            cities.append({"key": c["city"], "name": c["city"],
+                           "anchor": re.sub(r"\W", "", c["city"]), "districts": []})
+        districts = cities[-1]["districts"]
+        if not districts or districts[-1]["name"] != c["district"]:
+            districts.append({"name": c["district"], "clinics": []})
+        districts[-1]["clinics"].append(c)
+    return render_template("details.html", lang=lang, t=UI_TEXT[lang], cities=cities)
 
 
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
-
-
-@app.route("/contact-zh")
-def contact_zh():
-    return render_template("contact-zh.html")
+@app.route("/contact/<lang>")
+def contact(lang):
+    require_lang(lang)
+    return render_template("contact-form.html", lang=lang, t=UI_TEXT[lang],
+                           thankyou_url=url_for("thankyou", _external=True))
 
 
 @app.route("/thankyou.html")
@@ -80,24 +139,14 @@ def thankyou():
 
 
 # legacy URLs (bookmarks, search engines)
-@app.route("/route-en")
-def legacy_route_en():
-    return redirect("/route/en", 301)
-
-
-@app.route("/route-zh")
-def legacy_route_zh():
-    return redirect("/route/zh", 301)
-
-
-@app.route("/detail-en")
-def legacy_detail_en():
-    return redirect("/details/en", 301)
-
-
-@app.route("/detail-zh")
-def legacy_detail_zh():
-    return redirect("/details/zh", 301)
+LEGACY = {
+    "/route-en": "/route/en", "/route-zh": "/route/zh",
+    "/detail-en": "/details/en", "/detail-zh": "/details/zh",
+    "/contact": "/contact/en", "/contact-zh": "/contact/zh",
+}
+for old, new in LEGACY.items():
+    app.add_url_rule(old, f"legacy_{old.strip('/')}",
+                     lambda new=new: redirect(new, 301))
 
 
 if __name__ == "__main__":

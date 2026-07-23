@@ -17,7 +17,8 @@
     "lng": 121.54960489999999,
     "place_id": "ChIJFwTtdQ-sQjQRDdUv6eFR9Zo",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zhongshan District"
   },
   {
     "id": 2,
@@ -37,7 +38,8 @@
     "lng": 121.5406477,
     "place_id": "ChIJRTpxt-OrQjQRSeWl6PptYaI",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zhongshan District"
   },
   {
     "id": 3,
@@ -57,7 +59,8 @@
     "lng": 121.5514468,
     "place_id": "ChIJs16ioTGqQjQR4lxBaSK0YUs",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Daan District"
   },
   {
     "id": 4,
@@ -72,12 +75,13 @@
     "note_en": "Call before going or contact via Facebook page",
     "phone": "02-2357-0217",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/profile.php?id=100044480677446",
     "lat": 25.029916999999998,
     "lng": 121.528995,
     "place_id": "ChIJvZ4EhYOpQjQRDm6XRV---YE",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Daan District"
   },
   {
     "id": 5,
@@ -97,7 +101,8 @@
     "lng": 121.5361745,
     "place_id": "ChIJEz5U6ZqpQjQR9kG3FQXQY78",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zhongzheng District"
   },
   {
     "id": 6,
@@ -117,7 +122,8 @@
     "lng": 121.51495910000001,
     "place_id": "ChIJ7UQOWmupQjQRhrjn-j12sPM",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Datong District"
   },
   {
     "id": 7,
@@ -137,7 +143,8 @@
     "lng": 121.5148743,
     "place_id": "ChIJjcggTZdo3y8Rrd6RhZCwqog",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Datong District"
   },
   {
     "id": 8,
@@ -157,7 +164,8 @@
     "lng": 121.5055673,
     "place_id": "ChIJSwFKzaWpQjQRMuY3LKifXeI",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Wanhua District"
   },
   {
     "id": 9,
@@ -177,7 +185,8 @@
     "lng": 121.58031629999999,
     "place_id": "ChIJ94eQWgerQjQRFwTtE2i1bis",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Neihu District"
   },
   {
     "id": 10,
@@ -197,7 +206,8 @@
     "lng": 121.5671829,
     "place_id": "ChIJ3QeZwJarQjQRdRucQezyKKY",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Songshan District"
   },
   {
     "id": 11,
@@ -217,7 +227,8 @@
     "lng": 121.55384249999999,
     "place_id": "ChIJU_UVpJKrQjQR1hFtwsRnVzk",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Songshan District"
   },
   {
     "id": 12,
@@ -237,7 +248,8 @@
     "lng": 121.54069639999999,
     "place_id": "ChIJU5vwbAGqQjQRKoQ7nDjiN_Q",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Wenshan District"
   },
   {
     "id": 13,
@@ -257,7 +269,8 @@
     "lng": 121.5282977,
     "place_id": "ChIJj6ms3tGvQjQRZTK1vHJPtVw",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Shilin District"
   },
   {
     "id": 14,
@@ -277,7 +290,8 @@
     "lng": 121.52156339999999,
     "place_id": "ChIJCW7YE5KvQjQRcOc5CTFd5Pw",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Shilin District"
   },
   {
     "place_id": "ChIJXdFN66OrQjQRNUxdudQcUXw",
@@ -297,7 +311,8 @@
     "website": "http://yongchunvet.com/",
     "lat": 25.040685,
     "lng": 121.57555099999999,
-    "id": 15
+    "id": 15,
+    "district_en": "Xinyi District"
   },
   {
     "id": 16,
@@ -317,7 +332,8 @@
     "lng": 121.4551455,
     "place_id": "ChIJ3z5z3TypQjQRYbz6RVDBReg",
     "last_verified": "2026-07-23",
-    "active": true
+    "active": true,
+    "district_en": "Banqiao District"
   },
   {
     "id": 17,
@@ -337,7 +353,8 @@
     "lng": 121.3615519,
     "place_id": "ChIJb6aXDcynQjQRDGcy7FkmgDg",
     "last_verified": "2026-07-23",
-    "active": true
+    "active": true,
+    "district_en": "Linkou District"
   },
   {
     "id": 18,
@@ -352,12 +369,13 @@
     "note_en": "Call after 8PM",
     "phone": "02-8951-1172",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/mtpet/",
     "lat": 25.015064199999998,
     "lng": 121.4727114,
     "place_id": "ChIJC0ZM6DyoQjQRWRKNj_1Yos0",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Banqiao District"
   },
   {
     "id": 19,
@@ -377,7 +395,8 @@
     "lng": 121.45066719999998,
     "place_id": "ChIJwcWmhSypQjQRjFty0SLEmJ8",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Banqiao District"
   },
   {
     "id": 20,
@@ -397,7 +416,8 @@
     "lng": 121.47980460000001,
     "place_id": "ChIJDVNPYkKpQjQREYuwRWzYaJI",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zhonghe District"
   },
   {
     "id": 21,
@@ -417,7 +437,8 @@
     "lng": 121.485059,
     "place_id": "ChIJr63FCZMDaDQRYdAbWXABC9k",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zhonghe District"
   },
   {
     "id": 22,
@@ -432,12 +453,13 @@
     "note_en": "Call between 9PM to 2AM, Sunday off",
     "phone": "02-2922-5805",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/people/樂活動物醫院/100064025791340/",
     "lat": 25.0130652,
     "lng": 121.5176448,
     "place_id": "ChIJaaMtv-upQjQRQU9hUnmWcFw",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Yonghe District"
   },
   {
     "place_id": "ChIJG7JoBQCpQjQRjMtGg719wDA",
@@ -457,7 +479,8 @@
     "website": "https://covenant-vet.com/",
     "lat": 25.06111,
     "lng": 121.4567973,
-    "id": 23
+    "id": 23,
+    "district_en": "Xinzhuang District"
   },
   {
     "id": 24,
@@ -477,7 +500,8 @@
     "lng": 121.3093662,
     "place_id": "ChIJpT9aFnUfaDQR1Ej2Vs0m8Pg",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Taoyuan District"
   },
   {
     "id": 25,
@@ -497,7 +521,8 @@
     "lng": 121.3069444,
     "place_id": "ChIJt5G1Rh0faDQRuNaeaz6dLS8",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Taoyuan District"
   },
   {
     "id": 26,
@@ -512,12 +537,13 @@
     "note_en": "",
     "phone": "03-453-5740",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://zh-tw.facebook.com/BisousAH",
     "lat": 24.963806599999998,
     "lng": 121.2331276,
     "place_id": "ChIJQbMhOVojaDQRKcAZN6cbx8Y",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zhongli District"
   },
   {
     "id": 27,
@@ -537,7 +563,8 @@
     "lng": 120.9745209,
     "place_id": "ChIJzzoZt881aDQRG7pOjUDFThA",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "East District"
   },
   {
     "id": 28,
@@ -557,7 +584,8 @@
     "lng": 121.02001029999998,
     "place_id": "ChIJgVHVYDQ3aDQR8SFW2Yxy3-A",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "East District"
   },
   {
     "id": 29,
@@ -572,12 +600,13 @@
     "note_en": "Call before going Provide service for rodents, sugar gliders, birds, and reptiles",
     "phone": "03-530-0175",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/HappinesssAnimalHospital/",
     "lat": 24.797989899999997,
     "lng": 120.9525492,
     "place_id": "ChIJz2tAhZo1aDQRNBsZRmQj8Rk",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Xiangshan District"
   },
   {
     "id": 30,
@@ -597,7 +626,8 @@
     "lng": 121.01277129999998,
     "place_id": "ChIJn70nAxE3aDQRkIRQHzigNVc",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zhubei City"
   },
   {
     "id": 31,
@@ -617,7 +647,8 @@
     "lng": 120.6624305,
     "place_id": "ChIJJRzrucI9aTQR1r_GH8V0mHQ",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "West District"
   },
   {
     "id": 32,
@@ -632,12 +663,13 @@
     "note_en": "Provide service from 9:30PM to 11PM",
     "phone": "04-2372-8378",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://zh-tw.facebook.com/LOanimalhospital/",
     "lat": 24.1411746,
     "lng": 120.656937,
     "place_id": "ChIJtenXhaQ9aTQRS5PvamovCf4",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "West District"
   },
   {
     "id": 33,
@@ -657,7 +689,8 @@
     "lng": 120.6506914,
     "place_id": "ChIJseyTw5Y9aTQRi4_mzXSsjxQ",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Nantun District"
   },
   {
     "id": 34,
@@ -672,12 +705,13 @@
     "note_en": "",
     "phone": "04-2320-2279",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/gleamways",
     "lat": 24.152127999999998,
     "lng": 120.64705160000001,
     "place_id": "ChIJCedGUo09aTQR-j6FTlYhAEs",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Nantun District"
   },
   {
     "id": 35,
@@ -692,12 +726,13 @@
     "note_en": "Call before going & Provide service for dogs, cats, rodents, and rabbits",
     "phone": "04-2241-2700",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/kantvet/",
     "lat": 24.175348,
     "lng": 120.6859193,
     "place_id": "ChIJDcNFJwYXaTQRVwAUOXNMHc8",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Beitun District"
   },
   {
     "id": 36,
@@ -712,12 +747,13 @@
     "note_en": "Call before going & Sunday Off",
     "phone": "04-2207-7271",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/MuEnAHinTaichung",
     "lat": 24.159046999999997,
     "lng": 120.6694723,
     "place_id": "ChIJGfCcInk9aTQRZVXCW9KgIX8",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "North District"
   },
   {
     "id": 37,
@@ -732,12 +768,13 @@
     "note_en": "",
     "phone": "04-2406-6688",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/Lkah009",
     "lat": 24.111774099999998,
     "lng": 120.6788988,
     "place_id": "ChIJn00V7I49aTQRPXcqPTom3Sg",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Dali District"
   },
   {
     "id": 38,
@@ -757,7 +794,8 @@
     "lng": 120.57142739999999,
     "place_id": "ChIJHxyKMeU3aTQROwoU5FZSPw8",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Yuanlin City"
   },
   {
     "id": 39,
@@ -772,12 +810,13 @@
     "note_en": "Call before going & Sunday Off",
     "phone": "05-633-0811",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/people/和牧動物醫院/100063877410190/",
     "lat": 23.710944299999998,
     "lng": 120.43443669999998,
     "place_id": "ChIJjWb_3aywbjQRTIJI5VEU7WU",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Huwei Township"
   },
   {
     "id": 40,
@@ -797,7 +836,8 @@
     "lng": 120.22735899999999,
     "place_id": "ChIJ3wL0K6h1bjQREvp6nmUPjOM",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "East District"
   },
   {
     "id": 41,
@@ -817,7 +857,8 @@
     "lng": 120.20098949999999,
     "place_id": "ChIJr0lz5GB2bjQRigWMaZsquYw",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "West Central District"
   },
   {
     "id": 42,
@@ -837,7 +878,8 @@
     "lng": 120.197403,
     "place_id": "ChIJXXQMvS53bjQRAWhQ3_hjXFU",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "South District"
   },
   {
     "id": 43,
@@ -857,7 +899,8 @@
     "lng": 120.1974914,
     "place_id": "ChIJDTbilnh2bjQR57AnKDfQFxI",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "South District"
   },
   {
     "id": 44,
@@ -877,7 +920,8 @@
     "lng": 120.3469454,
     "place_id": "ChIJtfz0Q30RbjQR6TJsOtsKbVA",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Renwu District"
   },
   {
     "id": 45,
@@ -897,7 +941,8 @@
     "lng": 120.32477089999999,
     "place_id": "ChIJ0y1f3SMFbjQRYd5JSDsk3k8",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Sanmin District"
   },
   {
     "id": 46,
@@ -917,7 +962,8 @@
     "lng": 120.3167105,
     "place_id": "ChIJh1uDlJgFbjQR21JPlaPupu4",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Zuoying District"
   },
   {
     "id": 47,
@@ -937,7 +983,8 @@
     "lng": 120.33087090000001,
     "place_id": "ChIJccPry7kEbjQR_GsBRo9ME8Y",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Lingya District"
   },
   {
     "id": 48,
@@ -957,7 +1004,8 @@
     "lng": 120.31554500000001,
     "place_id": "ChIJewdDEpQEbjQRay_If9oq1DU",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Lingya District"
   },
   {
     "id": 49,
@@ -972,12 +1020,13 @@
     "note_en": "Call before going",
     "phone": "07-753-7300",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://zh-tw.facebook.com/HopeVMHospital/",
     "lat": 22.607494499999998,
     "lng": 120.3588147,
     "place_id": "ChIJCVz4EFkbbjQRsk1lytBABPQ",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Fengshan District"
   },
   {
     "id": 50,
@@ -992,12 +1041,13 @@
     "note_en": "Call before going",
     "phone": "08-751-2022",
     "emergency_phone": "",
-    "website": "",
+    "website": "https://www.facebook.com/profile.php?id=100064113933440",
     "lat": 22.668113899999998,
     "lng": 120.49100179999998,
     "place_id": "ChIJqUc4gkQXbjQRYMBCTkt3gA0",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Pingtung City"
   },
   {
     "id": 51,
@@ -1017,6 +1067,7 @@
     "lng": 121.60215769999998,
     "place_id": "ChIJj4mQZpSfaDQRiZFolwKIk0U",
     "last_verified": null,
-    "active": true
+    "active": true,
+    "district_en": "Hualien City"
   }
 ]
