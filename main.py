@@ -33,6 +33,9 @@ UI_TEXT = {
         "verified": "資料確認於",
         "verified_hint": "標示 ✓ 的診所為近期查證過的資料；急診資訊變動快，前往前建議先電話確認。",
         "report_link": "資訊有誤？回報給我",
+        "about_title": "關於這張地圖",
+        "kofi": "請這張地圖喝杯咖啡",
+        "back_to_map": "回地圖",
         "contact_title": "聯絡我",
         "form_name": "姓名",
         "form_subject": "主旨",
@@ -56,6 +59,9 @@ UI_TEXT = {
         "verified": "Verified",
         "verified_hint": "Clinics marked ✓ were recently verified; emergency info changes fast — please call before going.",
         "report_link": "Spotted an error? Report it",
+        "about_title": "About This Map",
+        "kofi": "Buy this map a coffee",
+        "back_to_map": "Back to map",
         "contact_title": "Get In Touch",
         "form_name": "Name",
         "form_subject": "Subject",
@@ -132,6 +138,12 @@ def details(lang):
             districts.append({"name": c["district"], "clinics": []})
         districts[-1]["clinics"].append(c)
     return render_template("details.html", lang=lang, t=UI_TEXT[lang], cities=cities)
+
+
+@app.route("/about/<lang>")
+def about(lang):
+    require_lang(lang)
+    return render_template("about.html", lang=lang, t=UI_TEXT[lang])
 
 
 @app.route("/contact/<lang>")
