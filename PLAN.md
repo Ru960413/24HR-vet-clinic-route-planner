@@ -64,8 +64,8 @@
 ## Phase 6：部署
 
 - [x] 部署平台：Railway（repo 連動自動部署，2026-07-23 上線驗證通過）
-- [ ] API key 拆兩把：瀏覽器 key 鎖網域(Maps JS)、伺服器 key 進 GitHub Secret
-      `MAPS_KEY`(Places+Geocoding)——使用者在 Cloud Console 操作，完成後移除程式內 fallback
+- [x] API key 拆兩把完成（2026-07-24）：瀏覽器 key 鎖網域、伺服器 key 進 GitHub
+      Secret `MAPS_KEY`；workflow 端對端實測通過（Issue #4），腳本 fallback 已移除
 
 ---
 進度追蹤：完成一項就把 checkbox 打勾。每個 Phase 結束 commit 一次。
