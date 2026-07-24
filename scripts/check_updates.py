@@ -14,7 +14,7 @@ import time
 
 import requests
 
-API_KEY = os.environ.get("MAPS_KEY", "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c")
+API_KEY = os.environ["MAPS_KEY"]  # server key — set MAPS_KEY=... (no fallback: the old public key is referrer-locked)
 MOVE_THRESHOLD_M = 150
 
 CITIES = ["台北", "新北", "基隆", "桃園", "新竹", "苗栗", "台中", "彰化", "南投",

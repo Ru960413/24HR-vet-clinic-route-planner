@@ -8,7 +8,8 @@ import math
 import time
 import requests
 
-API_KEY = "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c"
+import os
+API_KEY = os.environ["MAPS_KEY"]  # server key — set MAPS_KEY=... (no fallback: the old public key is referrer-locked)
 HEADERS = {"X-Goog-Api-Key": API_KEY}
 
 

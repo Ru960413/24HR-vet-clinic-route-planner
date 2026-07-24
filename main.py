@@ -9,6 +9,8 @@ app = Flask(__name__)
 CORS(app)
 
 CLINICS_PATH = os.path.join(os.path.dirname(__file__), "JSON", "clinics.json")
+# browser key: public by design (ships in the page source) and referrer-locked
+# to the production domain + localhost, so the fallback here is safe
 MAPS_KEY = os.environ.get("MAPS_KEY", "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c")
 
 # clinics.json is tiny and changes rarely — cache it, reload when the file does
