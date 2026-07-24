@@ -10,6 +10,7 @@
 import json
 import math
 import os
+import re
 import time
 
 import requests
@@ -57,6 +58,15 @@ def search(query):
 def main():
     clinics = json.load(open("JSON/clinics.json", encoding="utf-8"))
     known_ids = {c["place_id"] for c in clinics if c["place_id"]}
+    for c in clinics:
+        known_ids.update(c.get("alt_place_ids", []))
+    # street+number tail of every known clinic address (text after the last
+    # 市/區/鄉/鎮/里 marker), to drop duplicate Google listings of clinics we
+    # already track under a different place_id
+    def street_tail(addr):
+        tail = re.split(r"[市區鄉鎮村里]", addr.replace("臺", "台"))[-1]
+        return tail if re.search(r"\d+號", tail) else ""
+    known_streets = {t for c in clinics if (t := street_tail(c["address_zh"]))}
     problems, candidates = [], []
 
     # 1+2: drift check for known clinics
@@ -83,6 +93,11 @@ def main():
                 pid = p["id"]
                 if pid in known_ids or pid in seen:
                     continue
+                addr = p.get("formattedAddress", "")
+                if "台灣" not in addr and "臺灣" not in addr:
+                    continue  # Google sometimes returns HK/overseas hits
+                if street_tail(addr) in known_streets:
+                    continue  # duplicate listing of a clinic we already have
                 seen.add(pid)
                 name = p["displayName"]["text"]
                 # only surface results that look like emergency/24hr service,
