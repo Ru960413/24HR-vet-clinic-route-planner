@@ -13,6 +13,8 @@ const I18N = {
     navigate: "導航",
     species: "服務對象",
     loadError: "無法載入獸醫院資料，請重新整理頁面",
+    mapDown: "地圖今日流量已滿或暫時無法載入——完整的急診診所清單一樣查得到：",
+    mapDownBtn: "開啟診所清單",
     filterAll: "全部",
     filterHint: "特寵篩選只顯示有明確標示可看診的醫院；前往前請先電話確認。",
     speciesNames: { dog: "犬", cat: "貓", rodent: "鼠", rabbit: "兔", bird: "鳥",
@@ -27,6 +29,8 @@ const I18N = {
     navigate: "Navigate",
     species: "Treats",
     loadError: "Couldn't load clinic data — please refresh the page",
+    mapDown: "The map hit today's traffic cap or failed to load — the full clinic list still works:",
+    mapDownBtn: "Open clinic list",
     filterAll: "All",
     filterHint: "Exotic-pet filters only show clinics that explicitly list the species; please call before going.",
     speciesNames: { dog: "Dogs", cat: "Cats", rodent: "Rodents", rabbit: "Rabbits", bird: "Birds",
@@ -91,6 +95,23 @@ function buildFilterBar(map, clinics, entries, t) {
     });
   });
 }
+
+// Load-shedding: if Maps JS can't start (daily quota exhausted, auth error,
+// network), swap the map area for a link to the list page, which needs no
+// Google quota at all.
+function mapFallback() {
+  const el = document.getElementById("map");
+  if (!el || el.dataset.fallback) return;
+  el.dataset.fallback = "1";
+  const lang = el.dataset.lang === "en" ? "en" : "zh";
+  const t = I18N[lang];
+  el.outerHTML = `<div class="map-fallback">
+    <p>${t.mapDown}</p>
+    <a class="back-map-btn" href="/details/${lang}">${t.mapDownBtn}</a>
+  </div>`;
+}
+window.gm_authFailure = mapFallback; // Google invokes this on key/quota failures
+setTimeout(() => { if (!window.google || !window.google.maps) mapFallback(); }, 8000);
 
 async function initMap() {
   const el = document.getElementById("map");

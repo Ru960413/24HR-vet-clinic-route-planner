@@ -127,16 +127,20 @@ def route_planner(lang):
 @app.route("/details/<lang>")
 def details(lang):
     require_lang(lang)
-    cities = []
+    # group city -> district in first-seen order; clinics with the same
+    # district merge into one table even if they aren't adjacent in the data
+    cities, city_ix = [], {}
     for c in (localize(x, lang) for x in load_clinics() if x["active"]):
         c["phones"] = split_phones(c["phone"])
-        if not cities or cities[-1]["key"] != c["city"]:
-            cities.append({"key": c["city"], "name": c["city"],
-                           "anchor": re.sub(r"\W", "", c["city"]), "districts": []})
-        districts = cities[-1]["districts"]
-        if not districts or districts[-1]["name"] != c["district"]:
-            districts.append({"name": c["district"], "clinics": []})
-        districts[-1]["clinics"].append(c)
+        if c["city"] not in city_ix:
+            city_ix[c["city"]] = {"name": c["city"], "anchor": re.sub(r"\W", "", c["city"]),
+                                  "districts": [], "_dix": {}}
+            cities.append(city_ix[c["city"]])
+        city = city_ix[c["city"]]
+        if c["district"] not in city["_dix"]:
+            city["_dix"][c["district"]] = {"name": c["district"], "clinics": []}
+            city["districts"].append(city["_dix"][c["district"]])
+        city["_dix"][c["district"]]["clinics"].append(c)
     return render_template("details.html", lang=lang, t=UI_TEXT[lang], cities=cities)
 
 
