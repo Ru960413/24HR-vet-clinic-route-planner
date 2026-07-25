@@ -51,6 +51,19 @@
   </div>
   {% endfor %}
   {% endfor %}
+
+  <h3 class="city">{{ t.no_coverage_title }}</h3>
+  <p class="report-line">{{ t.no_coverage_hint }}</p>
+  <div class="table-wrap">
+  <table>
+    {% for r in no_coverage %}
+    <tr>
+      <td>{{ r.region }}</td>
+      <td>{{ r.nearest }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  </div>
 </div>
 {% endblock content %}
 

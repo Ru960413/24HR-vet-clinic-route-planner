@@ -30,6 +30,8 @@ UI_TEXT = {
         "th_note": "備註",
         "th_phone": "電話",
         "link": "連結",
+        "no_coverage_title": "目前無夜間急診資源的地區",
+        "no_coverage_hint": "以下地區經查目前沒有 24 小時或夜間急診獸醫院。緊急時請先電話聯絡當地診所，或前往鄰近縣市：",
         "verified": "資料確認於",
         "verified_hint": "標示 ✓ 的診所為近期查證過的資料；急診資訊變動快，前往前建議先電話確認。",
         "report_link": "資訊有誤？回報給我",
@@ -56,6 +58,8 @@ UI_TEXT = {
         "th_note": "Note",
         "th_phone": "Phone",
         "link": "Link",
+        "no_coverage_title": "Areas currently without night emergency care",
+        "no_coverage_hint": "These areas currently have no 24-hour or night-emergency vet clinic. In an emergency, call a local clinic first or head to a neighboring county:",
         "verified": "Verified",
         "verified_hint": "Clinics marked ✓ were recently verified; emergency info changes fast — please call before going.",
         "report_link": "Spotted an error? Report it",
@@ -141,7 +145,9 @@ def details(lang):
             city["_dix"][c["district"]] = {"name": c["district"], "clinics": []}
             city["districts"].append(city["_dix"][c["district"]])
         city["_dix"][c["district"]]["clinics"].append(c)
-    return render_template("details.html", lang=lang, t=UI_TEXT[lang], cities=cities)
+    no_coverage = [dict(zip(("region", "nearest"), r[lang])) for r in NO_COVERAGE]
+    return render_template("details.html", lang=lang, t=UI_TEXT[lang], cities=cities,
+                           no_coverage=no_coverage)
 
 
 @app.route("/about/<lang>")
@@ -160,6 +166,24 @@ def contact(lang):
 @app.route("/thankyou.html")
 def thankyou():
     return render_template("thankyou.html")
+
+
+# regions verified (2026-07) to have no night/24h emergency vet at all;
+# shown on the details page so rural users don't search in vain
+NO_COVERAGE = [
+    {"zh": ("宜蘭縣", "最近的急診在大台北地區（雪隧車程約 1 小時）"),
+     "en": ("Yilan County", "Nearest emergency care is in greater Taipei (~1 hr via Hsuehshan Tunnel)")},
+    {"zh": ("苗栗縣", "最近的急診在新竹市區或台中市區"),
+     "en": ("Miaoli County", "Nearest emergency care is in Hsinchu City or Taichung City")},
+    {"zh": ("南投縣", "最近的急診在台中市區"),
+     "en": ("Nantou County", "Nearest emergency care is in Taichung City")},
+    {"zh": ("嘉義縣市", "最近的急診在雲林虎尾或台南市區"),
+     "en": ("Chiayi", "Nearest emergency care is in Huwei (Yunlin) or Tainan City")},
+    {"zh": ("台東縣", "最近的急診在花蓮市區或高雄市區（車程皆遠，請務必先電話聯絡）"),
+     "en": ("Taitung County", "Nearest emergency care is in Hualien City or Kaohsiung City (both far — call ahead)")},
+    {"zh": ("澎湖・金門・馬祖", "島內目前皆無夜間急診；緊急時請先電話聯絡當地日間診所"),
+     "en": ("Penghu / Kinmen / Matsu", "No night emergency care on the islands; call a local daytime clinic first")},
+]
 
 
 # legacy URLs (bookmarks, search engines)
