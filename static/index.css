@@ -475,3 +475,27 @@ p { font-family: 'DM Sans', 'Noto Sans TC', sans-serif; }
   padding: 32px;
 }
 .map-fallback p { color: var(--text-muted); max-width: 420px; }
+
+/* ── SUPPORT LINK ── */
+.nav-kofi { color: var(--accent) !important; margin-left: 16px; }
+.nav-kofi:hover { text-decoration: underline; }
+
+/* ── FAQ & DISCLAIMER ── */
+.faq { margin-top: 48px; }
+.faq h3 {
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  font-size: 1.3rem; font-weight: 600; color: var(--accent);
+  margin-bottom: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+}
+.faq dt { font-weight: 500; margin-top: 18px; color: var(--text); }
+.faq dd { margin: 6px 0 0; color: var(--text-muted); font-size: 0.92rem; line-height: 1.8; }
+.faq dd a { color: var(--accent); text-decoration: none; }
+.disclaimer-box {
+  margin-top: 32px; padding: 20px 24px;
+  background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent);
+  border-radius: 6px; font-size: 0.85rem; color: var(--text-muted); line-height: 1.8;
+}
+
+/* ── GOOGLE RATING IN INFO WINDOW ── */
+.g-rating { margin-top: 4px; font-size: 0.85em; color: #555; }
+.g-rating a { color: #1a6f61; }

@@ -10,8 +10,10 @@ CORS(app)
 
 CLINICS_PATH = os.path.join(os.path.dirname(__file__), "JSON", "clinics.json")
 # browser key: public by design (ships in the page source) and referrer-locked
-# to the production domain + localhost, so the fallback here is safe
-MAPS_KEY = os.environ.get("MAPS_KEY", "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c")
+# to the production domain + localhost, so the fallback here is safe.
+# NOTE: deliberately NOT "MAPS_KEY" — that env var holds the server key for
+# scripts/, and Flask auto-loads .env, which would feed the wrong key to the map
+MAPS_KEY = os.environ.get("MAPS_BROWSER_KEY", "AIzaSyDGIhVa1IgIS69H7oOjC5l4nog_ZY5L1_c")
 
 # clinics.json is tiny and changes rarely — cache it, reload when the file does
 _cache = {"mtime": None, "data": None}
@@ -38,6 +40,8 @@ UI_TEXT = {
         "about_title": "關於這張地圖",
         "kofi": "請這張地圖喝杯抹茶",
         "back_to_map": "回地圖",
+        "support": "支持",
+        "faq_title": "常見問題",
         "contact_title": "聯絡我",
         "form_name": "姓名",
         "form_subject": "主旨",
@@ -66,6 +70,8 @@ UI_TEXT = {
         "about_title": "About This Map",
         "kofi": "Buy this map a matcha",
         "back_to_map": "Back to map",
+        "support": "Support",
+        "faq_title": "FAQ",
         "contact_title": "Get In Touch",
         "form_name": "Name",
         "form_subject": "Subject",

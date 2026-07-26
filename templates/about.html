@@ -23,6 +23,39 @@
   <p>Thank you for stopping by, for sharing your life with an animal, and for every cup of matcha that keeps this map glowing 🍵🐾</p>
   {% endif %}
 
+  <div class="faq">
+    <h3>{{ t.faq_title }}</h3>
+    {% if lang == 'zh' %}
+    <dl>
+      <dt>資料是怎麼來的？多久更新一次？</dt>
+      <dd>以 Google 商家資料自動比對為底，每一間再逐一人工查證（清單頁標 ✓ 的就是近期查證過的）。系統每個月會自動掃描全台，偵測歇業、搬家和新開的急診醫院。</dd>
+      <dt>為什麼不直接搜 Google Maps 就好？</dt>
+      <dd>直接搜「24小時獸醫」會混入很多「24 小時住院照護但沒有急診」的診所，甚至明寫「無急診服務」的也會出現。而急診真正需要的資訊——要不要先打電話、急診專線、掛號費、特寵收不收——Google 上大多沒有，這裡都幫你查證註記好了。</dd>
+      <dt>發現資訊有誤，或想推薦沒收錄的醫院？</dt>
+      <dd>用<a href="/contact/zh">回報表單</a>告訴我，查證後就會更新，感謝每一位幫忙的飼主 🙏</dd>
+    </dl>
+    {% else %}
+    <dl>
+      <dt>Where does the data come from? How often is it updated?</dt>
+      <dd>Google business data provides the base, and every clinic is then verified by hand (the ✓ marks on the list page show recent verification). An automated monthly sweep detects closures, relocations and newly opened emergency clinics.</dd>
+      <dt>Why not just search Google Maps?</dt>
+      <dd>A raw search for "24hr vet" mixes in clinics that offer 24-hour <em>inpatient care</em> but no emergency service — some even state "no emergency service". And what an emergency actually requires — whether to call first, dedicated emergency lines, registration fees, whether exotic pets are seen — mostly isn't on Google. It's verified and noted here.</dd>
+      <dt>Spotted an error, or know a clinic that's missing?</dt>
+      <dd>Tell me via the <a href="/contact/en">report form</a> — it gets verified and updated. Thank you 🙏</dd>
+    </dl>
+    {% endif %}
+
+    {% if lang == 'zh' %}
+    <div class="disclaimer-box">
+      <strong>免責聲明</strong>：本網站僅提供急診獸醫院的資訊整理與導引，不構成任何醫療建議；各診所的醫療品質與評價，請飼主自行評估判斷。就醫決定及其結果，本站不承擔任何責任。急診資訊變動快，前往前請務必先電話確認。
+    </div>
+    {% else %}
+    <div class="disclaimer-box">
+      <strong>Disclaimer</strong>: This site only aggregates and organizes emergency vet clinic information; it does not constitute medical advice. Please evaluate each clinic's quality of care yourself. This site assumes no responsibility for treatment decisions or their outcomes. Emergency information changes quickly — always call before going.
+    </div>
+    {% endif %}
+  </div>
+
   <div class="about-actions">
     <a class="kofi-btn" href="https://ko-fi.com/soulbrushstudio" target="_blank" rel="noopener">🍵 {{ t.kofi }}</a>
     <a class="back-map-btn" href="/route/{{ lang }}">{{ t.back_to_map }}</a>

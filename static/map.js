@@ -13,6 +13,7 @@ const I18N = {
     navigate: "導航",
     species: "服務對象",
     loadError: "無法載入獸醫院資料，請重新整理頁面",
+    viewOnGoogle: "在 Google 上查看評價",
     mapDown: "地圖今日流量已滿或暫時無法載入——完整的急診診所清單一樣查得到：",
     mapDownBtn: "開啟診所清單",
     filterAll: "全部",
@@ -29,6 +30,7 @@ const I18N = {
     navigate: "Navigate",
     species: "Treats",
     loadError: "Couldn't load clinic data — please refresh the page",
+    viewOnGoogle: "Reviews on Google",
     mapDown: "The map hit today's traffic cap or failed to load — the full clinic list still works:",
     mapDownBtn: "Open clinic list",
     filterAll: "All",
@@ -71,6 +73,40 @@ function infoContent(c, t) {
   return `<div class="map-info">${lines.join("<br>")}</div>`;
 }
 
+function gmapsUrl(c) {
+  return `https://www.google.com/maps/place/?q=place_id:${c.place_id}`;
+}
+
+// Live Google rating, fetched only when an info window opens (never stored,
+// per Places ToS). Falls back to a plain "reviews on Google" link when the
+// browser key doesn't allow Places or the fetch fails.
+async function loadRating(c, node, t) {
+  try {
+    const { Place } = await google.maps.importLibrary("places");
+    const place = new Place({ id: c.place_id });
+    await place.fetchFields({ fields: ["rating", "userRatingCount", "googleMapsURI"] });
+    if (place.rating) {
+      const url = place.googleMapsURI || gmapsUrl(c);
+      node.innerHTML = `★ ${place.rating.toFixed(1)} (${place.userRatingCount}) · <a href="${url}" target="_blank" rel="noopener">Google</a>`;
+      return;
+    }
+  } catch (e) { /* Places API not enabled for this key, or over quota */ }
+  node.innerHTML = `<a href="${gmapsUrl(c)}" target="_blank" rel="noopener">${t.viewOnGoogle}</a>`;
+}
+
+function infoElement(c, t) {
+  const el = document.createElement("div");
+  el.className = "map-info";
+  el.innerHTML = infoContent(c, t).replace(/^<div class="map-info">|<\/div>$/g, "");
+  if (c.place_id) {
+    const r = document.createElement("div");
+    r.className = "g-rating";
+    el.appendChild(r);
+    loadRating(c, r, t);
+  }
+  return el;
+}
+
 function buildFilterBar(map, clinics, entries, t) {
   const bar = document.getElementById("filter-bar");
   if (!bar) return;
@@ -100,6 +136,9 @@ function buildFilterBar(map, clinics, entries, t) {
 // network), swap the map area for a link to the list page, which needs no
 // Google quota at all.
 function mapFallback() {
+  // never tear down a map that already rendered (e.g. a later blocked
+  // Places call must not nuke a working map)
+  if (window.__mapAlive) return;
   const el = document.getElementById("map");
   if (!el || el.dataset.fallback) return;
   el.dataset.fallback = "1";
@@ -119,6 +158,7 @@ async function initMap() {
   const t = I18N[lang];
 
   const map = new google.maps.Map(el, { center: TAIWAN_CENTER, zoom: 8 });
+  google.maps.event.addListenerOnce(map, "tilesloaded", () => { window.__mapAlive = true; });
   const infoWindow = new google.maps.InfoWindow({});
 
   try {
@@ -132,7 +172,8 @@ async function initMap() {
         title: c.name,
       });
       marker.addListener("click", () => {
-        infoWindow.setContent(infoContent(c, t));
+        if (!c._info) c._info = infoElement(c, t); // build once; rating fetch runs on first open
+        infoWindow.setContent(c._info);
         infoWindow.open(map, marker);
       });
       return { clinic: c, marker };
