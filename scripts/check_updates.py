@@ -47,11 +47,23 @@ def place_details(place_id):
                          "X-Goog-FieldMask": "location,businessStatus,formattedAddress,displayName"})
 
 
+def opens_late(p):
+    """Open past midnight (or to 23:00+), or 24/7 — an emergency signal even
+    when the listing name never says 急診 (how 高醫/嘉義 was missed in July)."""
+    for seg in p.get("regularOpeningHours", {}).get("periods") or []:
+        o, c = seg.get("open"), seg.get("close")
+        if o and not c:
+            return True  # 24/7 listings have an open with no close
+        if o and c and (c.get("day") != o.get("day") or c.get("hour", 0) >= 23):
+            return True
+    return False
+
+
 def search(query):
     d = call(requests.post, "https://places.googleapis.com/v1/places:searchText",
              json={"textQuery": query, "languageCode": "zh-TW"},
              headers={"X-Goog-Api-Key": API_KEY,
-                      "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.businessStatus"})
+                      "X-Goog-FieldMask": "places.id,places.displayName,places.formattedAddress,places.businessStatus,places.regularOpeningHours.periods"})
     return d.get("places", [])
 
 
@@ -107,10 +119,12 @@ def main():
                 # and drop obvious non-candidates (human ERs, "no emergency
                 # service" disclaimers, unrelated 24h businesses)
                 looks_emergency = any(k in name for k in ("24", "急診", "急救", "夜間"))
+                late = opens_late(p)
                 noise = any(k in name for k in ("沒有急診", "無法接急診", "非24小時", "暫時取消",
                                                 "自助洗", "基督教醫院", "醫院急診室", "急診請先電聯"))
-                if looks_emergency and not noise and "動物" in name + p.get("formattedAddress", ""):
-                    candidates.append(f"[候選] {name} | {p.get('formattedAddress', '?')}")
+                if (looks_emergency or late) and not noise and "動物" in name + addr:
+                    tag = "[候選]" if looks_emergency else "[候選·營業至深夜]"
+                    candidates.append(f"{tag} {name} | {addr}")
             time.sleep(1.0)
 
     if not problems and not candidates:
