@@ -60,6 +60,9 @@ def main():
     known_ids = {c["place_id"] for c in clinics if c["place_id"]}
     for c in clinics:
         known_ids.update(c.get("alt_place_ids", []))
+    # user-reviewed rejections and duplicate listings (JSON/excluded.json)
+    if os.path.exists("JSON/excluded.json"):
+        known_ids.update(json.load(open("JSON/excluded.json", encoding="utf-8")))
     # street+number tail of every known clinic address (text after the last
     # 市/區/鄉/鎮/里 marker), to drop duplicate Google listings of clinics we
     # already track under a different place_id
