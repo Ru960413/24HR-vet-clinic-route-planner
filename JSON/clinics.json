@@ -1161,7 +1161,33 @@
     "id": 44
   },
   {
-    "id": 45,
+    "name_zh": "謙谷若松動物醫院",
+    "name_en": "Qiangu Wakamatsu Animal Hospital",
+    "address_zh": "台中市南屯區大英街31號",
+    "address_en": "No. 31, Daying St., Nantun Dist., Taichung City",
+    "city_zh": "台中市",
+    "city_en": "Taichung City",
+    "district_zh": "南屯區",
+    "district_en": "Nantun District",
+    "note_zh": "夜間門診每日21:00~24:00，採預約制，預約專線04-2473-0766",
+    "note_en": "Night clinic 9PM-12AM daily, by appointment: 04-2473-0766",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false,
+    "phone": "04-2473-0766",
+    "emergency_phone": "",
+    "website": "https://sites.google.com/view/qgrsah",
+    "lat": 24.142028999999997,
+    "lng": 120.64872999999999,
+    "place_id": "ChIJb6n0TRI9aTQRdFo9TIcHFTU",
+    "last_verified": "2026-08-04",
+    "active": true,
+    "id": 45
+  },
+  {
+    "id": 46,
     "name_zh": "忠愛動物醫院",
     "name_en": "Chung Ai Veterinary Hospital",
     "address_zh": "彰化縣員林市中山路二段490號",
@@ -1187,7 +1213,7 @@
     "species_verified": false
   },
   {
-    "id": 46,
+    "id": 47,
     "name_zh": "和牧動物醫院",
     "name_en": "Ho Mu Animal Hospital",
     "address_zh": "雲林縣虎尾鎮光復路454號",
@@ -1236,10 +1262,10 @@
     "place_id": "ChIJlUUBLJmWbjQR1LNiVenurNw",
     "last_verified": "2026-08-04",
     "active": true,
-    "id": 47
+    "id": 48
   },
   {
-    "id": 48,
+    "id": 49,
     "name_zh": "全國動物醫院（台南分院）",
     "name_en": "National Veterinary Hospital(Tainan Branch)",
     "address_zh": "台南市東區崇德路620號2樓",
@@ -1265,7 +1291,7 @@
     "species_verified": false
   },
   {
-    "id": 49,
+    "id": 50,
     "name_zh": "諾亞動物醫院",
     "name_en": "Noah Animal Hospital",
     "address_zh": "台南市中西區成功路297號",
@@ -1291,7 +1317,7 @@
     "species_verified": false
   },
   {
-    "id": 50,
+    "id": 51,
     "name_zh": "慕光動物醫院",
     "name_en": "Ad Astra Veterinary Hospital",
     "address_zh": "臺南市南區西門路一段569號",
@@ -1317,7 +1343,7 @@
     "species_verified": false
   },
   {
-    "id": 51,
+    "id": 52,
     "name_zh": "慈愛動物醫院（台南總院）",
     "name_en": "Loving Kindness Animal Hospital(Tainan Branch)",
     "address_zh": "台南市南區西門路一段473號",
@@ -1343,7 +1369,7 @@
     "species_verified": false
   },
   {
-    "id": 52,
+    "id": 53,
     "name_zh": "聯盟動物醫院（仁武總院）",
     "name_en": "Alliance Veterinary Hospital(Renwu Main Branch)",
     "address_zh": "高雄市仁武區鳳仁路231號E棟",
@@ -1371,7 +1397,7 @@
     "species_verified": true
   },
   {
-    "id": 53,
+    "id": 54,
     "name_zh": "宏力動物醫院",
     "name_en": "Hung Li Animal Hospital",
     "address_zh": "高雄市三民區明誠一路326號",
@@ -1397,7 +1423,7 @@
     "species_verified": false
   },
   {
-    "id": 54,
+    "id": 55,
     "name_zh": "中興梅西動物醫療中心",
     "name_en": "Jong-Shing Animal Hospital",
     "address_zh": "高雄市左營區文府路498號",
@@ -1423,7 +1449,7 @@
     "species_verified": false
   },
   {
-    "id": 55,
+    "id": 56,
     "name_zh": "烏鐸動物醫院",
     "name_en": "Udoch Animal Hospital",
     "address_zh": "高雄市苓雅區中正一路139號",
@@ -1449,7 +1475,7 @@
     "species_verified": false
   },
   {
-    "id": 56,
+    "id": 57,
     "name_zh": "冠安動物醫院",
     "name_en": "GuanAn Animal Hospital",
     "address_zh": "高雄市苓雅區中正二路131-1號",
@@ -1475,7 +1501,7 @@
     "species_verified": false
   },
   {
-    "id": 57,
+    "id": 58,
     "name_zh": "希望動物醫院",
     "name_en": "Hope Veterinary Hospital",
     "address_zh": "高雄市鳳山區凱旋路100號",
@@ -1527,10 +1553,62 @@
     "place_id": "ChIJJbR-TgAFbjQRgtrth64JqU0",
     "last_verified": "2026-07-24",
     "active": true,
-    "id": 58
+    "id": 59
   },
   {
-    "id": 59,
+    "name_zh": "順心動物醫院",
+    "name_en": "Shun Hsin Animal Hospital",
+    "address_zh": "高雄市三民區大順二路233號",
+    "address_en": "No. 233, Dashun 2nd Rd., Sanmin Dist., Kaohsiung City",
+    "city_zh": "高雄市",
+    "city_en": "Kaohsiung City",
+    "district_zh": "三民區",
+    "district_en": "Sanmin District",
+    "note_zh": "24小時營業",
+    "note_en": "Open 24 hours",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false,
+    "phone": "07-380-9382",
+    "emergency_phone": "",
+    "website": "https://yatongvet.com/",
+    "lat": 22.6445433,
+    "lng": 120.3259118,
+    "place_id": "ChIJ-zca2T8FbjQRHz3A2orEY6M",
+    "last_verified": "2026-08-04",
+    "active": true,
+    "id": 60
+  },
+  {
+    "name_zh": "東林動物醫院",
+    "name_en": "Dong Lin Animal Hospital",
+    "address_zh": "高雄市前鎮區二聖二路64號",
+    "address_en": "No. 64, Ersheng 2nd Rd., Qianzhen Dist., Kaohsiung City",
+    "city_zh": "高雄市",
+    "city_en": "Kaohsiung City",
+    "district_zh": "前鎮區",
+    "district_en": "Qianzhen District",
+    "note_zh": "急診時段20:30~24:00",
+    "note_en": "Emergency 8:30PM-12AM",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false,
+    "phone": "07-336-9696",
+    "emergency_phone": "",
+    "website": "https://www.facebook.com/donglin.ah/",
+    "lat": 22.613264899999997,
+    "lng": 120.3162299,
+    "place_id": "ChIJQ7VO05oFbjQRlX10PkgigUI",
+    "last_verified": "2026-08-04",
+    "active": true,
+    "id": 61
+  },
+  {
+    "id": 62,
     "name_zh": "名仁動物醫院",
     "name_en": "MingRen Veterinary Hospital",
     "address_zh": "屏東縣屏東市仁愛路7號",
@@ -1556,7 +1634,7 @@
     "species_verified": false
   },
   {
-    "id": 60,
+    "id": 63,
     "name_zh": "上海動物醫院",
     "name_en": "Shanghai Animal Hospital",
     "address_zh": "花蓮縣花蓮市上海街63號",
