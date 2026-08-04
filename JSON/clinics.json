@@ -796,14 +796,11 @@
     "city_en": "Taoyuan City",
     "district_zh": "中壢區",
     "district_en": "Zhongli District",
-    "note_zh": "急診時段21:00~09:00 急診掛號費500元 特寵（鼠、鸚鵡、龜）可看診",
-    "note_en": "Emergency 9PM-9AM; NT$500 emergency registration fee; sees rodents, parrots and turtles",
+    "note_zh": "急診時段21:00~09:00 急診掛號費500元 僅看犬貓",
+    "note_en": "Emergency 9PM-9AM; NT$500 emergency registration fee; dogs & cats only",
     "species": [
       "dog",
-      "cat",
-      "rodent",
-      "bird",
-      "turtle"
+      "cat"
     ],
     "species_verified": true,
     "phone": "03-287-7119",
@@ -812,7 +809,7 @@
     "lat": 25.007933899999998,
     "lng": 121.20599870000001,
     "place_id": "ChIJb9xCVBohaDQRJdHYfqPNUoM",
-    "last_verified": "2026-07-24",
+    "last_verified": "2026-08-04",
     "active": true,
     "id": 31
   },
@@ -913,8 +910,8 @@
     "lat": 24.797989899999997,
     "lng": 120.9525492,
     "place_id": "ChIJz2tAhZo1aDQRNBsZRmQj8Rk",
-    "last_verified": null,
-    "active": true,
+    "last_verified": "2026-08-04",
+    "active": false,
     "district_en": "Xiangshan District",
     "species": [
       "dog",
@@ -1216,7 +1213,33 @@
     "species_verified": false
   },
   {
-    "id": 47,
+    "name_zh": "高醫動物醫院",
+    "name_en": "Kao Yi Animal Hospital",
+    "address_zh": "嘉義市西區高鐵大道86號",
+    "address_en": "No. 86, Gaotie Blvd., West Dist., Chiayi City",
+    "city_zh": "嘉義市",
+    "city_en": "Chiayi City",
+    "district_zh": "西區",
+    "district_en": "West District",
+    "note_zh": "營業至凌晨00:30，急診請先電話聯絡",
+    "note_en": "Open until 12:30AM; call ahead for emergencies",
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false,
+    "phone": "05-235-1339",
+    "emergency_phone": "",
+    "website": "https://www.facebook.com/198518956854775",
+    "lat": 23.477781699999998,
+    "lng": 120.4305524,
+    "place_id": "ChIJlUUBLJmWbjQR1LNiVenurNw",
+    "last_verified": "2026-08-04",
+    "active": true,
+    "id": 47
+  },
+  {
+    "id": 48,
     "name_zh": "全國動物醫院（台南分院）",
     "name_en": "National Veterinary Hospital(Tainan Branch)",
     "address_zh": "台南市東區崇德路620號2樓",
@@ -1242,7 +1265,7 @@
     "species_verified": false
   },
   {
-    "id": 48,
+    "id": 49,
     "name_zh": "諾亞動物醫院",
     "name_en": "Noah Animal Hospital",
     "address_zh": "台南市中西區成功路297號",
@@ -1268,7 +1291,7 @@
     "species_verified": false
   },
   {
-    "id": 49,
+    "id": 50,
     "name_zh": "慕光動物醫院",
     "name_en": "Ad Astra Veterinary Hospital",
     "address_zh": "臺南市南區西門路一段569號",
@@ -1294,7 +1317,7 @@
     "species_verified": false
   },
   {
-    "id": 50,
+    "id": 51,
     "name_zh": "慈愛動物醫院（台南總院）",
     "name_en": "Loving Kindness Animal Hospital(Tainan Branch)",
     "address_zh": "台南市南區西門路一段473號",
@@ -1320,7 +1343,7 @@
     "species_verified": false
   },
   {
-    "id": 51,
+    "id": 52,
     "name_zh": "聯盟動物醫院（仁武總院）",
     "name_en": "Alliance Veterinary Hospital(Renwu Main Branch)",
     "address_zh": "高雄市仁武區鳳仁路231號E棟",
@@ -1348,7 +1371,7 @@
     "species_verified": true
   },
   {
-    "id": 52,
+    "id": 53,
     "name_zh": "宏力動物醫院",
     "name_en": "Hung Li Animal Hospital",
     "address_zh": "高雄市三民區明誠一路326號",
@@ -1374,7 +1397,7 @@
     "species_verified": false
   },
   {
-    "id": 53,
+    "id": 54,
     "name_zh": "中興梅西動物醫療中心",
     "name_en": "Jong-Shing Animal Hospital",
     "address_zh": "高雄市左營區文府路498號",
@@ -1400,7 +1423,7 @@
     "species_verified": false
   },
   {
-    "id": 54,
+    "id": 55,
     "name_zh": "烏鐸動物醫院",
     "name_en": "Udoch Animal Hospital",
     "address_zh": "高雄市苓雅區中正一路139號",
@@ -1426,7 +1449,7 @@
     "species_verified": false
   },
   {
-    "id": 55,
+    "id": 56,
     "name_zh": "冠安動物醫院",
     "name_en": "GuanAn Animal Hospital",
     "address_zh": "高雄市苓雅區中正二路131-1號",
@@ -1452,7 +1475,7 @@
     "species_verified": false
   },
   {
-    "id": 56,
+    "id": 57,
     "name_zh": "希望動物醫院",
     "name_en": "Hope Veterinary Hospital",
     "address_zh": "高雄市鳳山區凱旋路100號",
@@ -1504,10 +1527,10 @@
     "place_id": "ChIJJbR-TgAFbjQRgtrth64JqU0",
     "last_verified": "2026-07-24",
     "active": true,
-    "id": 57
+    "id": 58
   },
   {
-    "id": 58,
+    "id": 59,
     "name_zh": "名仁動物醫院",
     "name_en": "MingRen Veterinary Hospital",
     "address_zh": "屏東縣屏東市仁愛路7號",
@@ -1533,7 +1556,7 @@
     "species_verified": false
   },
   {
-    "id": 59,
+    "id": 60,
     "name_zh": "上海動物醫院",
     "name_en": "Shanghai Animal Hospital",
     "address_zh": "花蓮縣花蓮市上海街63號",
