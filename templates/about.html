@@ -56,8 +56,18 @@
     {% endif %}
   </div>
 
+  <div class="faq" id="support">
+    <h3>🍵 {{ t.campaign_title }}</h3>
+    {% if lang == 'zh' %}
+    <p class="campaign-text">地圖的運行有實際成本：主機、地圖服務 API、資料查核的雜支——一年大約 NT$6,000。募款目標就誠實地設在成本價；多出來的每一杯抹茶，會存進「更多為動物做的小工具」的罐子裡。</p>
+    {% else %}
+    <p class="campaign-text">Running this map has real costs — hosting, map APIs, and verification odds and ends — about NT$6,000 a year. The fundraising goal is set honestly at cost; every matcha beyond it goes into the jar for more small tools for animals.</p>
+    {% endif %}
+  </div>
+
   <div class="about-actions">
-    <a class="kofi-btn" href="https://ko-fi.com/soulbrushstudio" target="_blank" rel="noopener">🍵 {{ t.kofi }}</a>
+    <a class="kofi-btn" href="https://soulbrush.oen.tw/" target="_blank" rel="noopener">🍵 {{ t.support_twd }}</a>
+    <a class="back-map-btn" href="https://ko-fi.com/soulbrushstudio" target="_blank" rel="noopener">{{ t.support_intl }}</a>
     <a class="back-map-btn" href="/route/{{ lang }}">{{ t.back_to_map }}</a>
   </div>
 </div>
