@@ -131,7 +131,12 @@ def api_clinics():
 
 @app.route("/")
 def index():
-    return render_template("index.html")
+    latest = max(c["last_verified"] or "" for c in load_clinics())
+    y, m = latest[:4], latest[5:7].lstrip("0")
+    months_en = ["", "January", "February", "March", "April", "May", "June", "July",
+                 "August", "September", "October", "November", "December"]
+    return render_template("index.html", updated_zh=f"{y}年{m}月",
+                           updated_en=f"{months_en[int(m)]} {y}")
 
 
 @app.route("/route/<lang>")
