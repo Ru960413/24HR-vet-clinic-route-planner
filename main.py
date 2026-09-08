@@ -118,6 +118,18 @@ def require_lang(lang):
         abort(404)
 
 
+CANONICAL_HOST = "vetmap.soulbrush.art"
+
+
+@app.before_request
+def redirect_legacy_host():
+    # the old railway.app URL lives on in viral posts and QR codes —
+    # permanently forward it (and any other alias) to the canonical domain
+    if request.host != CANONICAL_HOST and "localhost" not in request.host \
+            and "127.0.0.1" not in request.host:
+        return redirect(f"https://{CANONICAL_HOST}{request.full_path.rstrip('?')}", 301)
+
+
 @app.route("/api/clinics")
 def api_clinics():
     clinics = [c for c in load_clinics() if c["active"]]
