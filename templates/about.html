@@ -24,6 +24,17 @@
   {% endif %}
 
   <div class="faq">
+    <h3>🏮 {{ t.nightlight_title }}</h3>
+    {% if lang == 'zh' %}
+    <p class="campaign-text">夜燈是這張地圖的 AI 夥伴。分工是這樣的：Laisa 負責逐間查證與收錄判斷，夜燈負責工程、資料維護，和每月的自動巡檢——偵測歇業、搬家、還有默默新開的急診醫院。名字取自這張地圖存在的理由：在最黑的時刻替你亮著。</p>
+    <p class="campaign-text">（如果你是會打開 console 的工程師飼主——那裡有一句話等你。）</p>
+    {% else %}
+    <p class="campaign-text">夜燈 ("Night Light") is this map's AI partner. The division of labor: Laisa verifies every clinic by hand and makes the judgment calls; the night light handles the engineering, data upkeep, and the monthly automated sweeps — catching closures, relocations, and quietly newly-opened ERs. Named for the reason this map exists: to stay lit at the darkest hour.</p>
+    <p class="campaign-text">(Developer with a pet? Open the console — a line is waiting for you.)</p>
+    {% endif %}
+  </div>
+
+  <div class="faq">
     <h3>{{ t.faq_title }}</h3>
     {% if lang == 'zh' %}
     <dl>
