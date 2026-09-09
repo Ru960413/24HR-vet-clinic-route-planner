@@ -43,6 +43,11 @@ const I18N = {
 const SPECIES_ORDER = ["bird", "turtle", "reptile", "rodent", "rabbit", "hedgehog", "sugar_glider", "ferret"];
 const TAIWAN_CENTER = { lat: 23.7, lng: 120.96 };
 
+// to the curious soul who opened devtools at 3am: hello.
+console.log("%c🐾 夜燈值班中 · The night light is on.", "color:#c9a96e;font-size:14px;font-weight:bold;");
+console.log("這張地圖由人手逐間查證、由夜燈看守。資料在 /api/clinics（善用它、查證它，然後去摸摸你的毛孩）。發現錯誤？/contact 找得到我們。");
+console.log("Hand-verified by a human, watched over by a night light. Data lives at /api/clinics — use it kindly. Spotted an error? /contact reaches us.");
+
 function telLinks(raw) {
   // "09-28242358 or 02-2517-0902" -> two links; "#20" extensions kept as text
   return raw
