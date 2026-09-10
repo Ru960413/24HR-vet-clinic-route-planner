@@ -1,0 +1,77 @@
+{% extends 'layout.html' %}
+{% block title %}深夜還亮著的燈・桌布{% endblock title %}
+
+{% block style %}
+<style>
+  /* 《燈》的深色宇宙——比站台更深一階的夜 */
+  .wp-hero{padding:56px 0 8px;text-align:center}
+  .wp-eyebrow{font-size:.72rem;letter-spacing:.26em;color:var(--accent);text-transform:uppercase}
+  .wp-hero h1{font-family:'Cormorant Garamond','Noto Serif TC',serif;font-weight:600;
+    font-size:clamp(1.8rem,4.5vw,2.6rem);margin:10px 0 14px}
+  .wp-lede{color:var(--text-muted);max-width:34em;margin:0 auto;line-height:2;font-size:.93rem}
+  .wp-lede a{color:var(--accent);text-decoration:none}
+  .wp-lede a:hover{text-decoration:underline}
+  .wp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin:40px 0 8px}
+  .wp-card{background:#0b0e14;border:1px solid var(--border);border-radius:8px;
+    overflow:hidden;display:flex;flex-direction:column}
+  .wp-card img{width:100%;height:auto;display:block}
+  .wp-meta{padding:16px 18px 18px;display:flex;flex-direction:column;gap:10px}
+  .wp-name{font-family:'Cormorant Garamond','Noto Serif TC',serif;font-size:1.05rem;font-weight:600}
+  .wp-desc{font-size:.8rem;color:var(--text-muted);line-height:1.7}
+  .wp-dl{align-self:flex-start;padding:9px 22px;border-radius:4px;background:var(--accent);
+    color:#0e1012;font-size:.85rem;font-weight:500;text-decoration:none;letter-spacing:.04em;
+    transition:all .2s}
+  .wp-dl:hover{background:#d4b57a;transform:translateY(-1px)}
+  .wp-note{text-align:center;font-size:.78rem;color:var(--text-muted);margin:22px 0 8px;line-height:2}
+  .wp-note a{color:var(--accent);text-decoration:none}
+  .wp-note a:hover{text-decoration:underline}
+  @media(max-width:760px){.wp-grid{grid-template-columns:1fr;max-width:380px;margin-left:auto;margin-right:auto}}
+</style>
+{% endblock style %}
+
+{% block content %}
+<div class="navbar">
+  <div class="nav-item"><a href="/" class="back">&#x3c;</a></div>
+  <h3 class="nav-item title">桌布</h3>
+  <div class="nav-item"><a href="/route/zh" class="info">回地圖</a></div>
+</div>
+
+<div class="wp-hero">
+  <p class="wp-eyebrow">Free wallpapers · 1179×2556</p>
+  <h1>深夜還亮著的燈</h1>
+  <p class="wp-lede">一個夜晚的三幕——取自同名作品：全台 68 間急診獸醫院的守夜時段視覺化。<br>
+  <strong>燈亮給所有人</strong>——免費下載、不用登入。喜歡的話，可以<a href="https://soulbrush.oen.tw/" target="_blank" rel="noopener">請這張地圖喝杯抹茶 🍵</a></p>
+</div>
+
+<div class="wp-grid">
+  <div class="wp-card">
+    <img src="/static/wallpapers/night-lights-2100.png" alt="晚間九點的台灣，急診獸醫院的燈陸續亮起" loading="lazy">
+    <div class="wp-meta">
+      <div class="wp-name">21:00・點燈潮</div>
+      <p class="wp-desc">晚上九點，夜班陸續點燈——大多數夜間急診從此刻開始。</p>
+      <a class="wp-dl" href="/static/wallpapers/night-lights-2100.png" download="深夜還亮著的燈 2100.png">下載</a>
+    </div>
+  </div>
+  <div class="wp-card">
+    <img src="/static/wallpapers/night-lights-0300.png" alt="凌晨三點的台灣，四十八盞燈還亮著" loading="lazy">
+    <div class="wp-meta">
+      <div class="wp-name">03:00・四十八盞</div>
+      <p class="wp-desc">凌晨三點，整座島最安靜的時刻——還有 48 盞燈醒著。</p>
+      <a class="wp-dl" href="/static/wallpapers/night-lights-0300.png" download="深夜還亮著的燈 0300.png">下載</a>
+    </div>
+  </div>
+  <div class="wp-card">
+    <img src="/static/wallpapers/night-lights-0600.png" alt="清晨六點的台灣，高雄的黎明班獨自亮著" loading="lazy">
+    <div class="wp-meta">
+      <div class="wp-name">06:00・黎明班</div>
+      <p class="wp-desc">清晨六點，高雄亮起全台唯一的黎明班。</p>
+      <a class="wp-dl" href="/static/wallpapers/night-lights-0600.png" download="深夜還亮著的燈 0600.png">下載</a>
+    </div>
+  </div>
+</div>
+
+<p class="wp-note">
+  作品《<a href="/about/zh">深夜還亮著的燈</a>》by 🏮夜燈・資料 2026.09・時段為近似解析，實際急診資訊以<a href="/route/zh">地圖</a>為準<br>
+  Wallpapers from "The Lights Still On at Night" — free for personal use. Like them? <a href="https://soulbrush.oen.tw/" target="_blank" rel="noopener">Buy the map a matcha</a> 🍵
+</p>
+{% endblock content %}

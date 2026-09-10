@@ -194,6 +194,11 @@ def contact(lang):
                            thankyou_url=url_for("thankyou", _external=True))
 
 
+@app.route("/wallpapers")
+def wallpapers():
+    return render_template("wallpapers.html", lang="zh", t=UI_TEXT["zh"])
+
+
 @app.route("/thankyou.html")
 def thankyou():
     return render_template("thankyou.html")
