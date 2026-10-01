@@ -59,7 +59,7 @@
     {% for r in no_coverage %}
     <tr>
       <td>{{ r.region }}</td>
-      <td>{{ r.nearest }}</td>
+      <td>{{ r.nearest }}{% if r.evening %}<br><small>{{ t.evening_label }}{{ r.evening }}</small>{% endif %}</td>
     </tr>
     {% endfor %}
   </table>

@@ -34,6 +34,7 @@ UI_TEXT = {
         "link": "連結",
         "no_coverage_title": "目前無夜間急診資源的地區",
         "no_coverage_hint": "以下地區經查目前沒有 24 小時或夜間急診獸醫院。緊急時請先電話聯絡當地診所，或前往鄰近縣市：",
+        "evening_label": "🌙 晚間門診（非深夜急診，請先電話）：",
         "verified": "資料確認於",
         "verified_hint": "標示 ✓ 的診所為近期查證過的資料；急診資訊變動快，前往前建議先電話確認。",
         "report_link": "資訊有誤？回報給我",
@@ -68,6 +69,7 @@ UI_TEXT = {
         "link": "Link",
         "no_coverage_title": "Areas currently without night emergency care",
         "no_coverage_hint": "These areas currently have no 24-hour or night-emergency vet clinic. In an emergency, call a local clinic first or head to a neighboring county:",
+        "evening_label": "🌙 Evening hours (not a late-night ER — call first): ",
         "verified": "Verified",
         "verified_hint": "Clinics marked ✓ were recently verified; emergency info changes fast — please call before going.",
         "report_link": "Spotted an error? Report it",
@@ -176,7 +178,9 @@ def details(lang):
             city["_dix"][c["district"]] = {"name": c["district"], "clinics": []}
             city["districts"].append(city["_dix"][c["district"]])
         city["_dix"][c["district"]]["clinics"].append(c)
-    no_coverage = [dict(zip(("region", "nearest"), r[lang])) for r in NO_COVERAGE]
+    no_coverage = [dict(zip(("region", "nearest"), r[lang]),
+                        evening=r.get("evening", {}).get(lang))
+                   for r in NO_COVERAGE]
     return render_template("details.html", lang=lang, t=UI_TEXT[lang], cities=cities,
                            no_coverage=no_coverage)
 
@@ -208,7 +212,9 @@ def thankyou():
 # shown on the details page so rural users don't search in vain
 NO_COVERAGE = [
     {"zh": ("宜蘭縣", "最近的急診在大台北地區（雪隧車程約 1 小時）"),
-     "en": ("Yilan County", "Nearest emergency care is in greater Taipei (~1 hr via Hsuehshan Tunnel)")},
+     "en": ("Yilan County", "Nearest emergency care is in greater Taipei (~1 hr via Hsuehshan Tunnel)"),
+     "evening": {"zh": "弘隼動物醫院（宜蘭市）門診至 21:00・03-932-7600（查證 2026-10）",
+                 "en": "Hong Sun Animal Hospital (Yilan City) open until 9PM · 03-932-7600 (verified Oct 2026)"}},
     {"zh": ("苗栗縣", "最近的急診在新竹市區或台中市區"),
      "en": ("Miaoli County", "Nearest emergency care is in Hsinchu City or Taichung City")},
     {"zh": ("南投縣", "最近的急診在台中市區"),
