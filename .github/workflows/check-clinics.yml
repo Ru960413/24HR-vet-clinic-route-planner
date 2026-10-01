@@ -2,7 +2,7 @@ name: Monthly clinic data check
 
 on:
   schedule:
-    - cron: "0 22 1 * *"   # 1st of every month, 06:00 Taipei time
+    - cron: "0 0 1 * *"    # 1st of every month, 08:00 Taipei time (00:00 UTC — the old "0 22 1" actually fired on the 2nd Taipei time)
   workflow_dispatch: {}     # allow manual runs from the Actions tab
 
 permissions:
