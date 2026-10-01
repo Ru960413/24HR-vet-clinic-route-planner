@@ -223,8 +223,12 @@ NO_COVERAGE = [
      "en": ("Chiayi (late night)", "Kao Yi Animal Hospital is open until 12:30AM; after that, the nearest emergency care is in Huwei (Yunlin) or Tainan City")},
     {"zh": ("台東縣", "最近的急診在花蓮市區或高雄市區（車程皆遠，請務必先電話聯絡）"),
      "en": ("Taitung County", "Nearest emergency care is in Hualien City or Kaohsiung City (both far — call ahead)")},
-    {"zh": ("澎湖・金門・馬祖", "島內目前皆無夜間急診；緊急時請先電話聯絡當地日間診所"),
-     "en": ("Penghu / Kinmen / Matsu", "No night emergency care on the islands; call a local daytime clinic first")},
+    {"zh": ("澎湖縣", "無夜間急診；緊急時請先電話聯絡當地日間診所"),
+     "en": ("Penghu County", "No night emergency care; call a local daytime clinic first"),
+     "evening": {"zh": "湖光動物醫院澎湖分院（馬公・預約制）僅週三、四門診至 21:00・06-926-9691（查證 2026-10）",
+                 "en": "Hu Kuang Animal Hospital Penghu Branch (Magong, by appointment) Wed & Thu only, until 9PM · 06-926-9691 (verified Oct 2026)"}},
+    {"zh": ("金門・馬祖", "金門無夜間急診，緊急時請先電話聯絡當地日間診所；馬祖島上目前沒有獸醫院"),
+     "en": ("Kinmen / Matsu", "Kinmen has no night emergency care — call a local daytime clinic first; Matsu currently has no veterinary clinic at all")},
 ]
 
 

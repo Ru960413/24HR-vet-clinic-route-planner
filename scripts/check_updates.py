@@ -121,7 +121,8 @@ def main():
                 looks_emergency = any(k in name for k in ("24", "急診", "急救", "夜間"))
                 late = opens_late(p)
                 noise = any(k in name for k in ("沒有急診", "無法接急診", "非24小時", "暫時取消",
-                                                "自助洗", "基督教醫院", "醫院急診室", "急診請先電聯"))
+                                                "自助洗", "基督教醫院", "醫院急診室", "急診請先電聯",
+                                                "家禽", "畜牧", "經濟動物", "不看貓狗", "野戰醫院"))
                 if (looks_emergency or late) and not noise and "動物" in name + addr:
                     tag = "[候選]" if looks_emergency else "[候選·營業至深夜]"
                     candidates.append(f"{tag} {name} | {addr}")
