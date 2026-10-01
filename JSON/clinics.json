@@ -1840,5 +1840,31 @@
       "cat"
     ],
     "species_verified": false
+  },
+  {
+    "id": 71,
+    "name_zh": "旭日動物醫院",
+    "name_en": "Xuri Animal Hospital",
+    "address_zh": "台南市永康區小東路647巷42弄1號",
+    "address_en": "No.1, Aly. 42, Ln. 647, Xiaodong Rd., Yongkang District, Tainan City",
+    "city_zh": "台南市",
+    "city_en": "Tainan City",
+    "district_zh": "永康區",
+    "district_en": "Yongkang District",
+    "note_zh": "深夜時段至00:00（週六至20:00）。來電評估制：急診不保證收治，請先電話說明動物狀況，院方視人手與病床決定，無法收治時會協助轉介其他院所",
+    "note_en": "Late-night until 00:00 (Sat until 20:00). Call-first triage: emergency intake not guaranteed — phone ahead and describe your animal's condition; the clinic decides based on staffing and bed availability, and will help refer you elsewhere if they cannot take the case",
+    "phone": "06-312-8959",
+    "emergency_phone": "",
+    "website": "",
+    "lat": 23.0004391,
+    "lng": 120.2387757,
+    "place_id": "ChIJKQARwwx3bjQRmWE2ve2c4-U",
+    "last_verified": "2026-10-01",
+    "active": true,
+    "species": [
+      "dog",
+      "cat"
+    ],
+    "species_verified": false
   }
 ]
