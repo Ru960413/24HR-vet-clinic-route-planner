@@ -213,8 +213,8 @@ def thankyou():
 NO_COVERAGE = [
     {"zh": ("宜蘭縣", "最近的急診在大台北地區（雪隧車程約 1 小時）"),
      "en": ("Yilan County", "Nearest emergency care is in greater Taipei (~1 hr via Hsuehshan Tunnel)"),
-     "evening": {"zh": "弘隼動物醫院（宜蘭市）門診至 21:00・03-932-7600（查證 2026-10）",
-                 "en": "Hong Sun Animal Hospital (Yilan City) open until 9PM · 03-932-7600 (verified Oct 2026)"}},
+     "evening": {"zh": "凱亞動物醫院（宜蘭市）門診至 21:00、週四週日休・03-932-5670；維倫斯動物醫院（宜蘭市）每日門診至 21:00，非門診時段急診採加價收費、收治與否請先電洽・03-935-3550（皆查證 2026-10）",
+                 "en": "Kai Ya Animal Hospital (Yilan City) until 9PM, closed Thu & Sun · 03-932-5670; Wei Lun Si Animal Hospital (Yilan City) daily until 9PM, off-hours emergencies at surcharge — call first · 03-935-3550 (both verified Oct 2026)"}},
     {"zh": ("苗栗縣", "最近的急診在新竹市區或台中市區"),
      "en": ("Miaoli County", "Nearest emergency care is in Hsinchu City or Taichung City"),
      "evening": {"zh": "聖心動物醫院（竹南）週一至六門診至 21:00・037-461-332；銅鑼元宏獸醫診所（銅鑼）門診至 21:00、週三休，急症請先電話確認・037-981-328（皆查證 2026-10）",
