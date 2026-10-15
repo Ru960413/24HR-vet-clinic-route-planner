@@ -17,7 +17,8 @@ const I18N = {
     mapDown: "地圖今日流量已滿或暫時無法載入——完整的急診診所清單一樣查得到：",
     mapDownBtn: "開啟診所清單",
     filterAll: "全部",
-    filterHint: "特寵篩選只顯示有明確標示可看診的醫院；前往前請先電話確認。",
+    filterOpenNow: "🌙 此刻開著",
+    filterHint: "特寵篩選只顯示有明確標示可看診的醫院；「此刻開著」依各院備註時段推算，可能與現場有出入——前往前請務必先電話確認。",
     speciesNames: { dog: "犬", cat: "貓", rodent: "鼠", rabbit: "兔", bird: "鳥",
       turtle: "龜", reptile: "爬蟲", hedgehog: "刺蝟", sugar_glider: "蜜袋鼯", ferret: "貂" },
   },
@@ -34,7 +35,8 @@ const I18N = {
     mapDown: "The map hit today's traffic cap or failed to load — the full clinic list still works:",
     mapDownBtn: "Open clinic list",
     filterAll: "All",
-    filterHint: "Exotic-pet filters only show clinics that explicitly list the species; please call before going.",
+    filterOpenNow: "🌙 Open now",
+    filterHint: "Exotic filters only show clinics that explicitly list the species; \"Open now\" is estimated from each clinic's noted hours and may differ from reality — always call before going.",
     speciesNames: { dog: "Dogs", cat: "Cats", rodent: "Rodents", rabbit: "Rabbits", bird: "Birds",
       turtle: "Turtles", reptile: "Reptiles", hedgehog: "Hedgehogs", sugar_glider: "Sugar gliders", ferret: "Ferrets" },
   },
@@ -54,6 +56,36 @@ console.log("Hand-verified by a human, watched over by a night light. Data lives
 function esc(s) {
   return String(s ?? "").replace(/[&<>"']/g,
     (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+}
+
+// "Is this lamp lit right now?" — computed in Asia/Taipei regardless of the
+// viewer's timezone. er_hours comes from each clinic's verified note ("24",
+// or windows like [[21,2]]); er_off_days lists weekly closed days (0=Sun),
+// matched against the day each window STARTS (so Saturday's overnight shift
+// still counts as open at 1 AM Sunday).
+function taipeiNow() {
+  const parts = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Asia/Taipei", weekday: "short", hour: "numeric", minute: "numeric", hour12: false,
+  }).formatToParts(new Date());
+  const get = (type) => parts.find((p) => p.type === type).value;
+  const days = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+  return { day: days[get("weekday")], t: (parseInt(get("hour"), 10) % 24) + parseInt(get("minute"), 10) / 60 };
+}
+
+function openNow(c) {
+  if (!c.er_hours) return true; // no structured hours: never hide a lamp we can't compute
+  const { day, t } = taipeiNow();
+  const off = c.er_off_days || [];
+  if (c.er_hours === "24") return !off.includes(day);
+  const windows = Array.isArray(c.er_hours[0]) ? c.er_hours : [c.er_hours];
+  return windows.some(([s, e]) => {
+    if (e <= s) { // overnight window: tonight's shift, or yesterday's still running
+      if (t >= s) return !off.includes(day);
+      if (t < e) return !off.includes((day + 6) % 7);
+      return false;
+    }
+    return t >= s && t < e && !off.includes(day);
+  });
 }
 
 function telLinks(raw) {
@@ -125,23 +157,34 @@ function buildFilterBar(map, clinics, entries, t) {
   if (!bar) return;
   const present = new Set(clinics.flatMap((c) => (c.species_verified ? c.species : [])));
   const keys = SPECIES_ORDER.filter((s) => present.has(s));
-  if (!keys.length) return;
 
   const chips = [["all", t.filterAll], ...keys.map((s) => [s, t.speciesNames[s]])];
   bar.innerHTML =
+    `<button class="chip chip-now" data-now="1">${t.filterOpenNow}</button>` +
     chips.map(([key, label]) => `<button class="chip${key === "all" ? " active" : ""}" data-species="${key}">${label}</button>`).join("") +
     `<span class="filter-hint">${t.filterHint}</span>`;
 
+  const state = { species: "all", nowOnly: false };
+  function apply() {
+    entries.forEach(({ clinic, marker }) => {
+      const okSpecies = state.species === "all" ||
+        (clinic.species_verified && clinic.species.includes(state.species));
+      const okNow = !state.nowOnly || openNow(clinic);
+      marker.setMap(okSpecies && okNow ? map : null);
+    });
+  }
   bar.addEventListener("click", (ev) => {
     const btn = ev.target.closest(".chip");
     if (!btn) return;
-    bar.querySelectorAll(".chip").forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    const sel = btn.dataset.species;
-    entries.forEach(({ clinic, marker }) => {
-      const show = sel === "all" || (clinic.species_verified && clinic.species.includes(sel));
-      marker.setMap(show ? map : null);
-    });
+    if (btn.dataset.now) {
+      state.nowOnly = !state.nowOnly;
+      btn.classList.toggle("active", state.nowOnly);
+    } else {
+      bar.querySelectorAll(".chip[data-species]").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      state.species = btn.dataset.species;
+    }
+    apply();
   });
 }
 

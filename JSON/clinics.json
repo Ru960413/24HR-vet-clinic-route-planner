@@ -23,7 +23,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 2,
@@ -49,7 +51,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 3,
@@ -75,7 +79,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 4,
@@ -101,7 +107,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 5,
@@ -127,7 +135,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "name_zh": "大安動物醫院（新生南路）",
@@ -153,7 +163,9 @@
     "place_id": "ChIJleIT6DqpQjQRGJ4YBxYeVmw",
     "last_verified": "2026-07-25",
     "active": true,
-    "id": 6
+    "id": 6,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 7,
@@ -205,7 +217,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 9,
@@ -231,7 +245,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 10,
@@ -257,7 +273,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": true
+    "species_verified": true,
+    "er_hours": [
+      21.5,
+      8.5
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 11,
@@ -283,7 +304,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 12,
@@ -309,7 +332,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 13,
@@ -335,7 +360,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 14,
@@ -363,7 +390,9 @@
       "rodent",
       "rabbit"
     ],
-    "species_verified": true
+    "species_verified": true,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 15,
@@ -389,7 +418,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "place_id": "ChIJXdFN66OrQjQRNUxdudQcUXw",
@@ -415,7 +446,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "exact"
   },
   {
     "id": 17,
@@ -441,7 +474,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "exact"
   },
   {
     "id": 18,
@@ -467,7 +502,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "exact"
   },
   {
     "id": 19,
@@ -493,7 +530,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24",
+    "er_off_days": [
+      0
+    ]
   },
   {
     "id": 20,
@@ -519,7 +561,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      21,
+      0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 21,
@@ -545,7 +592,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 22,
@@ -575,7 +624,9 @@
       "bird",
       "turtle"
     ],
-    "species_verified": true
+    "species_verified": true,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 23,
@@ -601,7 +652,15 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      21,
+      2
+    ],
+    "er_hours_quality": "exact",
+    "er_off_days": [
+      0
+    ]
   },
   {
     "place_id": "ChIJG7JoBQCpQjQRjMtGg719wDA",
@@ -627,7 +686,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": true
+    "species_verified": true,
+    "er_hours": [
+      21.0,
+      9.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "麗明動物醫院",
@@ -655,7 +719,9 @@
     "place_id": "ChIJV2XCO44daDQRIsMX3MfKzXU",
     "last_verified": "2026-07-24",
     "active": true,
-    "id": 25
+    "id": 25,
+    "er_hours": "24",
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "飛梅利動物醫院",
@@ -681,7 +747,12 @@
     "place_id": "ChIJiXApkXWpQjQRLwH7oPPKv3Y",
     "last_verified": "2026-07-25",
     "active": true,
-    "id": 26
+    "id": 26,
+    "er_hours": [
+      22.0,
+      2.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "辛巴動物醫院",
@@ -707,7 +778,12 @@
     "place_id": "ChIJvSrUzVVTXTQRfXnKpZT1m8A",
     "last_verified": "2026-07-24",
     "active": true,
-    "id": 27
+    "id": 27,
+    "er_hours": [
+      21.0,
+      24.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 28,
@@ -733,7 +809,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 29,
@@ -759,7 +837,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 30,
@@ -785,7 +865,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "name_zh": "青谷動物醫院",
@@ -811,7 +893,12 @@
     "place_id": "ChIJb9xCVBohaDQRJdHYfqPNUoM",
     "last_verified": "2026-08-04",
     "active": true,
-    "id": 31
+    "id": 31,
+    "er_hours": [
+      21.0,
+      9.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "全日動物醫院",
@@ -837,7 +924,12 @@
     "place_id": "ChIJ-b1WzEUfaDQRnXNrqggP6Ew",
     "last_verified": "2026-07-24",
     "active": true,
-    "id": 32
+    "id": 32,
+    "er_hours": [
+      21.0,
+      9.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 33,
@@ -863,7 +955,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      21,
+      2
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 34,
@@ -891,7 +988,9 @@
       "rodent",
       "rabbit"
     ],
-    "species_verified": true
+    "species_verified": true,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 35,
@@ -948,7 +1047,12 @@
     "place_id": "ChIJAQAAAN81aDQRh6H1M_OUQ2s",
     "last_verified": "2026-09-04",
     "active": true,
-    "id": 36
+    "id": 36,
+    "er_hours": [
+      22.0,
+      2.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "杜瑪犬貓專科醫院",
@@ -974,7 +1078,12 @@
     "place_id": "ChIJB36OFX41aDQR40qWNxo6n3I",
     "last_verified": "2026-09-04",
     "active": true,
-    "id": 37
+    "id": 37,
+    "er_hours": [
+      20.5,
+      1.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "高飛動物醫院",
@@ -1000,7 +1109,12 @@
     "place_id": "ChIJhXUTl9U3aDQRfIaBWmJfKMo",
     "last_verified": "2026-09-04",
     "active": true,
-    "id": 38
+    "id": 38,
+    "er_hours": [
+      20,
+      23.0
+    ],
+    "er_hours_quality": "approx"
   },
   {
     "id": 39,
@@ -1026,7 +1140,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "name_zh": "城光動物醫院",
@@ -1052,7 +1168,12 @@
     "place_id": "ChIJnz-_tp03aDQRHKxgNzzaURI",
     "last_verified": "2026-09-04",
     "active": true,
-    "id": 40
+    "id": 40,
+    "er_hours": [
+      21.0,
+      8.5
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 41,
@@ -1078,7 +1199,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 42,
@@ -1104,7 +1227,14 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      [
+        21.5,
+        22
+      ]
+    ],
+    "er_hours_quality": "approx"
   },
   {
     "id": 43,
@@ -1156,7 +1286,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 45,
@@ -1184,7 +1316,9 @@
       "rodent",
       "rabbit"
     ],
-    "species_verified": true
+    "species_verified": true,
+    "er_hours": "24",
+    "er_hours_quality": "exact"
   },
   {
     "id": 46,
@@ -1210,7 +1344,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24",
+    "er_off_days": [
+      0
+    ]
   },
   {
     "id": 47,
@@ -1236,7 +1375,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "name_zh": "夏洛克動物醫院",
@@ -1262,7 +1403,12 @@
     "place_id": "ChIJm-jpOccXaTQR_GWF1MEg2UA",
     "last_verified": "2026-07-24",
     "active": true,
-    "id": 48
+    "id": 48,
+    "er_hours": [
+      21.0,
+      9.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "謙谷若松動物醫院",
@@ -1288,7 +1434,12 @@
     "place_id": "ChIJb6n0TRI9aTQRdFo9TIcHFTU",
     "last_verified": "2026-08-04",
     "active": true,
-    "id": 49
+    "id": 49,
+    "er_hours": [
+      21.0,
+      24.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "樂樂復健動物醫院",
@@ -1314,7 +1465,12 @@
     "place_id": "ChIJxVVlFzc9aTQRXQuzNBgwmJ8",
     "last_verified": "2026-09-04",
     "active": true,
-    "id": 50
+    "id": 50,
+    "er_hours": [
+      21.0,
+      2.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 51,
@@ -1340,7 +1496,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      20,
+      3
+    ],
+    "er_hours_quality": "approx"
   },
   {
     "id": 52,
@@ -1366,7 +1527,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24",
+    "er_off_days": [
+      0
+    ]
   },
   {
     "name_zh": "高醫動物醫院",
@@ -1392,7 +1558,12 @@
     "place_id": "ChIJlUUBLJmWbjQR1LNiVenurNw",
     "last_verified": "2026-08-04",
     "active": true,
-    "id": 53
+    "id": 53,
+    "er_hours": [
+      20,
+      0.5
+    ],
+    "er_hours_quality": "approx"
   },
   {
     "id": 54,
@@ -1418,7 +1589,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 55,
@@ -1444,7 +1617,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24",
+    "er_off_days": [
+      0
+    ]
   },
   {
     "id": 56,
@@ -1470,7 +1648,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      21.0,
+      1.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 57,
@@ -1496,7 +1679,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "name_zh": "蕾米動物醫院",
@@ -1522,7 +1707,12 @@
     "place_id": "ChIJXUM4CjF3bjQR7PIrmeggZY0",
     "last_verified": "2026-09-04",
     "active": true,
-    "id": 58
+    "id": 58,
+    "er_hours": [
+      21.0,
+      22.5
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 59,
@@ -1550,7 +1740,12 @@
       "rodent",
       "rabbit"
     ],
-    "species_verified": true
+    "species_verified": true,
+    "er_hours": [
+      21,
+      2
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 60,
@@ -1576,7 +1771,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 61,
@@ -1602,7 +1799,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      21,
+      2
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 62,
@@ -1628,7 +1830,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 63,
@@ -1654,7 +1858,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 64,
@@ -1680,7 +1886,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "name_zh": "星羽動物醫院（三民院）",
@@ -1709,7 +1917,12 @@
     "place_id": "ChIJJbR-TgAFbjQRgtrth64JqU0",
     "last_verified": "2026-07-24",
     "active": true,
-    "id": 65
+    "id": 65,
+    "er_hours": [
+      21.5,
+      2.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "順心動物醫院",
@@ -1735,7 +1948,9 @@
     "place_id": "ChIJ-zca2T8FbjQRHz3A2orEY6M",
     "last_verified": "2026-08-04",
     "active": true,
-    "id": 66
+    "id": 66,
+    "er_hours": "24",
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "東林動物醫院",
@@ -1761,7 +1976,12 @@
     "place_id": "ChIJQ7VO05oFbjQRlX10PkgigUI",
     "last_verified": "2026-08-04",
     "active": true,
-    "id": 67
+    "id": 67,
+    "er_hours": [
+      20.5,
+      24.0
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "name_zh": "希安動物醫院",
@@ -1787,7 +2007,18 @@
     "place_id": "ChIJh2Kg7sUFbjQRXc2CP_QEtYs",
     "last_verified": "2026-09-04",
     "active": true,
-    "id": 68
+    "id": 68,
+    "er_hours": [
+      [
+        22,
+        2
+      ],
+      [
+        6,
+        10
+      ]
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 69,
@@ -1813,7 +2044,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 70,
@@ -1839,7 +2072,9 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": "24",
+    "er_hours_quality": "assumed24"
   },
   {
     "id": 71,
@@ -1865,7 +2100,12 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      15,
+      24
+    ],
+    "er_hours_quality": "approx"
   },
   {
     "id": 72,
@@ -1891,6 +2131,16 @@
       "dog",
       "cat"
     ],
-    "species_verified": false
+    "species_verified": false,
+    "er_hours": [
+      [
+        18,
+        2
+      ]
+    ],
+    "er_hours_quality": "exact",
+    "er_off_days": [
+      3
+    ]
   }
 ]
