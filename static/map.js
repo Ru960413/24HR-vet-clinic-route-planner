@@ -48,29 +48,37 @@ console.log("%c🐾 夜燈值班中 · The night light is on.", "color:#c9a96e;f
 console.log("這張地圖由人手逐間查證、由夜燈看守。資料在 /api/clinics（善用它、查證它，然後去摸摸你的毛孩）。發現錯誤？/contact 找得到我們。");
 console.log("Hand-verified by a human, watched over by a night light. Data lives at /api/clinics — use it kindly. Spotted an error? /contact reaches us.");
 
+// clinics.json is our own curated data, but every field that reaches
+// innerHTML goes through here anyway — one bad paste in a note field
+// should render as text, not run as markup
+function esc(s) {
+  return String(s ?? "").replace(/[&<>"']/g,
+    (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]));
+}
+
 function telLinks(raw) {
   // "09-28242358 or 02-2517-0902" -> two links; "#20" extensions kept as text
   return raw
     .split(/\s+or\s+/)
     .map((part) => {
       const digits = part.replace(/[^0-9+]/g, "");
-      return `<a href="tel:${digits}">${part.trim()}</a>`;
+      return `<a href="tel:${digits}">${esc(part.trim())}</a>`;
     })
     .join(" / ");
 }
 
 function infoContent(c, t) {
-  const lines = [`<strong>${c.name}</strong>`, c.address];
-  if (c.note) lines.push(`<strong>${t.note}: ${c.note}</strong>`);
+  const lines = [`<strong>${esc(c.name)}</strong>`, esc(c.address)];
+  if (c.note) lines.push(`<strong>${t.note}: ${esc(c.note)}</strong>`);
   if (c.species_verified) {
-    lines.push(`${t.species}: ${c.species.map((s) => t.speciesNames[s] || s).join("、")}`);
+    lines.push(`${t.species}: ${c.species.map((s) => esc(t.speciesNames[s] || s)).join("、")}`);
   }
   if (c.phone) lines.push(`${t.phone}: ${telLinks(c.phone)}`);
   if (c.emergency_phone && !c.phone.includes(c.emergency_phone.replace(/-/g, ""))) {
     lines.push(`${t.emergency}: ${telLinks(c.emergency_phone)}`);
   }
   const links = [];
-  if (c.website) links.push(`<a href="${c.website}" target="_blank" rel="noopener">${t.website}</a>`);
+  if (c.website) links.push(`<a href="${esc(c.website)}" target="_blank" rel="noopener">${t.website}</a>`);
   links.push(
     `<a href="https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}&travelmode=driving" target="_blank" rel="noopener">${t.navigate}</a>`
   );

@@ -147,7 +147,9 @@ def api_clinics():
 
 @app.route("/")
 def index():
-    latest = max(c["last_verified"] or "" for c in load_clinics())
+    latest = max((c["last_verified"] or "" for c in load_clinics()), default="")
+    if not latest:
+        latest = "2026-07-25"  # launch date; only reachable if every stamp were ever cleared
     y, m = latest[:4], latest[5:7].lstrip("0")
     months_en = ["", "January", "February", "March", "April", "May", "June", "July",
                  "August", "September", "October", "November", "December"]
