@@ -1,110 +1,63 @@
-# 24HR Vet Clinic Map & Route Planner
+# 24HR 急診獸醫地圖 · Taiwan Emergency Vet Map 🐾
 
-- [24HR Vet Clinic Map \& Route Planner](#24hr-vet-clinic-map--route-planner)
-  - [My Website](#my-website)
-  - [English Version](#english-version)
-    - [Welcome Page](#welcome-page)
-    - [Tech Used](#tech-used)
-    - [Introduction](#introduction)
-    - [Motivation \& Goal](#motivation--goal)
-    - [Key Features](#key-features)
-    - [What I learnt while building this project](#what-i-learnt-while-building-this-project)
-    - [The next version](#the-next-version)
-  - [中文版](#中文版)
-    - [專案介紹](#專案介紹)
-    - [動機與目標](#動機與目標)
-    - [專案重點](#專案重點)
+**Live: <https://vetmap.soulbrush.art>**
 
-## My Website
+69 家人工逐間查證的深夜急診獸醫院・中英雙語・每月自動巡檢・免費無廣告
+69 hand-verified night-emergency vet clinics across Taiwan · bilingual · monthly automated sweeps · free, no ads
 
-<https://24hr-vet-clinic-route-planner-production.up.railway.app/>
+![急診獸醫院地圖](pics/map_2026.png "Map page with species filter")
 
-## English Version
+## What this is · 這是什麼
 
-### Welcome Page
+深夜毛孩出事的時候，最不該花時間的事就是「查哪裡還開著」。這張地圖只做一件事：告訴你**現在還亮著的燈在哪裡**——附電話、附備註（要不要先打電話、收不收特寵、急診到幾點），每一筆都由人工打電話或翻官方粉專確認過，不是爬蟲抓來的。
 
-![Welcome Page](pics/WelcomePage.png "Welcome Page")
+When your animal has an emergency at 3 AM, the last thing you should be doing is researching which clinics are still open. This map does one thing: shows you **which lights are still on right now** — with phone numbers and verified notes. Every entry is confirmed by a human (phone calls, official pages), not scraped.
 
-### Tech Used
+## Features · 功能
 
-    1. HTML
-    2. CSS
-    3. JavaScript(FrontEnd)
-    4. Python(BackEnd)
-    5. Flask
-    6. Google Map API(GeoLocation API & Maps JavaScript API)
-    7. Railway(Deployment)
+- **地圖頁** `/route/<lang>`：全台急診獸醫院地圖，點 marker 看備註／電話／導航／**即時 Google 評價**（開窗才抓取，從不儲存）
+- **特寵篩選**：鳥、龜、鼠、兔等 chips——只顯示**明確查證過**收治該物種的醫院（`species_verified` 為真才列，寧可少列）
+- **清單頁** `/details/<lang>`：依縣市分組的完整表格，結尾是**無資源地區表**——哪裡「沒有」深夜急診我們也查證並誠實列出，含各區**晚間層**（無急診地區午夜前仍開著的門診）
+- **Load-shedding**：Google Maps 額度耗盡或載入失敗時，自動降級為純清單頁——資訊永不斷線
+- **雙語**：中文為權威資料源，英文全站同步
+- **隱私**：無 cookie 匿名計數（GoatCounter），不追蹤、不記錄任何個人資料
 
-### Introduction
+## Architecture · 架構
 
-When I was designing the site, in order to increase the usability, I made it as a bilingual website.
+```
+JSON/clinics.json        ← 唯一資料源（雙語欄位、place_id、last_verified、active、species）
+JSON/excluded.json       ← 人工否決名單（月報不再重複端上）
+JSON/hours_baseline.json ← 班表基準檔（偵測「悄悄收掉急診」型退化）
+main.py                  ← Flask：/api/clinics、頁面渲染、301 舊域名轉址
+static/map.js            ← 地圖邏輯：i18n、特寵篩選、即時評價、load-shedding
+scripts/check_updates.py ← 月巡：歇業/搬遷/班表退化偵測＋逐縣市新診所發現 → GitHub Issue
+```
 
-This is a site that can help you get the direction to the vet clinics nearby, as well as get the details of each of the vet clinics.
+- 自動化**從不直接改資料**——月報開 Issue、人工查證後才入庫（Google 的班表錯誤率高得驚人，我們戳破過假通宵班表、畜牧診所、甚至被標成獸醫院的人類醫院）
+- 瀏覽器金鑰（referrer 鎖定）與伺服器金鑰嚴格分離
+- Railway 自動部署；舊 railway.app 網址 301 永久轉址（爆紅貼文裡的連結永遠有效）
 
-It consists of 2 major parts: the FrontEnd portion for which user can get the direction to the vet clinics and dial the phone number of the vet clinics by simply clicking the markers on the map; the BackEnd portion, converts the csv files, which stores all the information about the vet clinics, generates the latitude and longitude of the vet clinics and stores them as json formats to support the FrontEnd's need to generate the maps.
+**Tech**: Python / Flask · Vanilla JS · Google Maps JS API + Places API (New) · GitHub Actions · Railway
 
-### Motivation & Goal
+## Data honesty · 資料誠實原則
 
-In my opinion it's important to always have a copy of emergency vet clinics just in case we will need it someday. When I was researching about it, I realize that there's not much English information, so I think why don't I create a digital copy of all the information and also make it accessible for both Mandarin speaker and English speaker. By building/creating this site, I hope it will help whoever is in need 🙂!
+1. **查證要慢**：一間一間人工確認才上架
+2. **下架要快**：「列了但沒急診」比漏列危險——疑慮即下架，查證後再回來
+3. **「沒有」也是資訊**：無資源地區表是這張地圖最誠實的部分（馬祖島上目前沒有獸醫院——我們查了，就照實寫）
 
-### Key Features
+## Origin story · 動機與目標
 
-1. Get the direction to emergency vet clinics base on users location: by clicking the marker on the map, an information window will pop up. If "Get Direction" link is clicked user will be guided to google map for direction. User can also call the vet clinics by clicking the phone number.
+*(原文保留自 2023 年初版 README · preserved from the original)*
 
-   ![Route planning page](pics/Route_planning.png "Route planning page")
+前陣子，我計劃將全台灣的急診獸醫院資料搜集起來以備不時之需。雖然這是一個平常不想要用到的清單，但卻有其必要性，於是我開始整理，不過卻發現英文的資料少之又少，因此我想：既然我有不錯的英文能力也會寫程式，那不如就把資料彙整成一個大家都能用的地圖網站吧。希望飼主們能夠藉由這個網站的資料更即時的讓需要醫療的動物們獲得照顧。
 
-   ![Asking to access user's location](pics/Asking_for_location.png "Asking to access user's location")
+In my opinion it's important to always have a copy of emergency vet clinics just in case we will need it someday. When I was researching about it, I realized that there's not much English information, so I thought: why don't I create a digital copy of all the information and make it accessible for both Mandarin and English speakers. By building this site, I hope it will help whoever is in need 🙂!
 
-   ![Info window popup](pics/Vet_clinic_detail.jpg "info window popup")
+## Support · 支持
 
-2. Bilingual support: choose preferable language at the welcome page of the site.
-
-   ![Bilingual support](pics/Bilingual_support.jpg "Bilingual support")
-
-3. Find the detail information of emergency vet clinics by clicking "More Info bout vet clinics"
-
-### What I learnt while building this project
-
-    - Working with Google Map APIs -> add maps and markers
-    - FrontEnd BackEnd integration -> working with JavaScript and Python
-    - building a bilingual website
-    - Responsive Website Design -> How to make my website user friendly for different screen types
-    - Better my JavaScript skill
-
-### The next version
-
-    - UI improvement
-    - Info update
+地圖免費營運於各服務的免費額度內。想支持的話：[關於頁](https://vetmap.soulbrush.art/about/zh)有一張 NT$150 的《深夜還亮著的燈》手機桌布（同款也[免費下載](https://vetmap.soulbrush.art/wallpapers)——燈亮給所有人，抹茶留給想請的人🍵）。
 
 ---
 
-## 中文版
-
-### 專案介紹
-
-為了增加網站的能見度和實用性，我最初在設計網站時便把網站涉及成雙語網站，以便在台灣的中文以及英文使用者都能夠順暢的運用它，它藉由抓取使用者定位的方式，讓使用者們能夠得到所在位置附近的急診獸醫院資料，進而打電話進行詢問和導航到目的地。
-
-整個專案主要能分為兩個部分，分別是以 JavaScript 為主要邏輯的前端；以及以 Python 和 Flask 統整資料的後端。後端主要負責將 CSV 檔將每一個獸醫院的地址利用 Google Map API 的運算以產生經緯度並重新儲存於新的 CSV 檔中，最後再轉換成 JSON 格式供前端的 JavaScript 使用
-；而前端則是負責將由後端而來的 JSON 格式的資料，藉由 Map JavaScript API 的轉處理成為 marker 的 Info window，並將 marker 放置於地圖上。
-
-### 動機與目標
-
-前陣子，我計劃將全台灣的急診獸醫院資料搜集起來以備不時之需。雖然這是一個平常不想要用到的清單，但卻有其必要性，於是我開始整理，不過卻發現英文的資料少之又少，因此我想：既然我偶不錯的英文能力也會寫程式，那不如就把資料彙整成一個大家都能用的地圖網站吧，而後便耗時約一個半月整理中英文資料並且建置網站。希望飼主們能夠藉由這個網站的資料更即時的讓需要醫療的動物們獲得照顧。
-
-### 專案重點
-
-1. 根據使用者所在之位置取得最近的獸醫院: 在取得使用者的位置後，當使用者點選任一 marker 即可得到獸醫院之詳細資訊，可導航至所選之獸醫院（會連結至 google map 於另一個視窗開啟導航頁面），也可以點選電話號碼直接撥打至獸醫院。
-
-   ![路經規劃](pics/定位.png "路經規劃")
-
-   ![取得存取使用者位置之允許](pics/抓取定位.png "取得存取使用者位置之允許")
-
-   ![取得使用者位置](pics/說明.png "取得使用者位置")
-
-   ![彈出式Info window](pics/中文_infoWindow.png "彈出式info window")
-
-2. 中英文雙語頁面: 可於首頁選取中文或英文。
-
-   ![Bilingual support](pics/Bilingual_support.jpg "Bilingual support")
-
-3. 點選“更多獸醫院的詳細資訊”即可查看全台有提供急診的獸醫院資訊
+*Maintained by Laisa, with her AI partner 夜燈 🏮 — the night light that keeps watch over this map.*
+*發現資料錯誤？[回報表單](https://vetmap.soulbrush.art/contact/zh)找得到我們。Spotted an error? [Tell us](https://vetmap.soulbrush.art/contact/en).*
