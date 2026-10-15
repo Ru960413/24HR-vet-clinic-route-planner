@@ -44,7 +44,7 @@ def place_details(place_id):
     return call(requests.get, f"https://places.googleapis.com/v1/places/{place_id}",
                 params={"languageCode": "zh-TW"},
                 headers={"X-Goog-Api-Key": API_KEY,
-                         "X-Goog-FieldMask": "location,businessStatus,formattedAddress,displayName"})
+                         "X-Goog-FieldMask": "location,businessStatus,formattedAddress,displayName,regularOpeningHours.periods"})
 
 
 def opens_late(p):
@@ -75,6 +75,9 @@ def main():
     # user-reviewed rejections and duplicate listings (JSON/excluded.json)
     if os.path.exists("JSON/excluded.json"):
         known_ids.update(json.load(open("JSON/excluded.json", encoding="utf-8")))
+    global hours_baseline
+    hours_baseline = (json.load(open("JSON/hours_baseline.json", encoding="utf-8"))
+                      if os.path.exists("JSON/hours_baseline.json") else {})
     # street+number tail of every known clinic address (text after the last
     # 市/區/鄉/鎮/里 marker), to drop duplicate Google listings of clinics we
     # already track under a different place_id
@@ -93,6 +96,18 @@ def main():
         status = d.get("businessStatus", "UNKNOWN")
         if status != "OPERATIONAL":
             problems.append(f"[狀態] {c['name_zh']}: businessStatus={status}")
+        # hours-regression net (added 2026-10-15, change-detection form): a
+        # clinic can stay OPERATIONAL while quietly dropping its night service
+        # — 慈愛台北總院 did exactly that on 2026-07-24 and three monthly
+        # sweeps missed it. Phone-first 24h clinics list only daytime hours on
+        # Google year-round, so flagging raw state drowns the signal; instead
+        # compare against JSON/hours_baseline.json and raise a hand only when
+        # deep-night coverage FLIPS true->false. After human verification,
+        # update the baseline entry (or deactivate the clinic) by hand.
+        if status == "OPERATIONAL" and d.get("regularOpeningHours"):
+            base = hours_baseline.get(c["place_id"], {}).get("deep_night")
+            if base is True and not opens_late(d):
+                problems.append(f"[急診異動?] {c['name_zh']}: Google 班表的深夜時段消失了（基準 {hours_baseline[c['place_id']].get('seeded')} 時仍有）——慈愛北型退化，請人工查證")
         loc = d.get("location")
         if loc:
             delta = dist_m(c["lat"], c["lng"], loc["latitude"], loc["longitude"])
@@ -122,7 +137,7 @@ def main():
                 late = opens_late(p)
                 noise = any(k in name for k in ("沒有急診", "無法接急診", "非24小時", "暫時取消",
                                                 "自助洗", "基督教醫院", "醫院急診室", "急診請先電聯",
-                                                "家禽", "畜牧", "經濟動物", "不看貓狗", "野戰醫院"))
+                                                "家禽", "畜牧", "經濟動物", "不看貓狗", "野戰醫院", "無提供急診"))
                 if (looks_emergency or late) and not noise and "動物" in name + addr:
                     tag = "[候選]" if looks_emergency else "[候選·營業至深夜]"
                     candidates.append(f"{tag} {name} | {addr}")

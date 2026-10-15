@@ -1,0 +1,342 @@
+{
+ "ChIJFwTtdQ-sQjQRDdUv6eFR9Zo": {
+  "name": "伊甸動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJRTpxt-OrQjQRSeWl6PptYaI": {
+  "name": "太僕動物醫院（龍江院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJs16ioTGqQjQR4lxBaSK0YUs": {
+  "name": "杜克動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJvZ4EhYOpQjQRDm6XRV---YE": {
+  "name": "王樣動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJEz5U6ZqpQjQR9kG3FQXQY78": {
+  "name": "大安動物醫院（公館院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJleIT6DqpQjQRGJ4YBxYeVmw": {
+  "name": "大安動物醫院（新生南路）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJjcggTZdo3y8Rrd6RhZCwqog": {
+  "name": "全民動物醫院",
+  "deep_night": null,
+  "seeded": "2026-10-15"
+ },
+ "ChIJSwFKzaWpQjQRMuY3LKifXeI": {
+  "name": "展望動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJ94eQWgerQjQRFwTtE2i1bis": {
+  "name": "全國動物醫院（台北分院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJ3QeZwJarQjQRdRucQezyKKY": {
+  "name": "太僕動物醫院(南京院)",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJU_UVpJKrQjQR1hFtwsRnVzk": {
+  "name": "興泰動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJU5vwbAGqQjQRKoQ7nDjiN_Q": {
+  "name": "大群動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJj6ms3tGvQjQRZTK1vHJPtVw": {
+  "name": "布達羊急診動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJCW7YE5KvQjQRcOc5CTFd5Pw": {
+  "name": "阿牛犬貓急診醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJXdFN66OrQjQRNUxdudQcUXw": {
+  "name": "永春動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJ3z5z3TypQjQRYbz6RVDBReg": {
+  "name": "上弦動物醫院（板橋院區）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJb6aXDcynQjQRDGcy7FkmgDg": {
+  "name": "上弦動物醫院（林口院區）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJC0ZM6DyoQjQRWRKNj_1Yos0": {
+  "name": "牧村動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJwcWmhSypQjQRjFty0SLEmJ8": {
+  "name": "長佐動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJDVNPYkKpQjQREYuwRWzYaJI": {
+  "name": "中日動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJr63FCZMDaDQRYdAbWXABC9k": {
+  "name": "亞東動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJaaMtv-upQjQRQU9hUnmWcFw": {
+  "name": "樂活動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJG7JoBQCpQjQRjMtGg719wDA": {
+  "name": "念念動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJV2XCO44daDQRIsMX3MfKzXU": {
+  "name": "麗明動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJiXApkXWpQjQRLwH7oPPKv3Y": {
+  "name": "飛梅利動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJvSrUzVVTXTQRfXnKpZT1m8A": {
+  "name": "辛巴動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJpT9aFnUfaDQR1Ej2Vs0m8Pg": {
+  "name": "品湛動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJt5G1Rh0faDQRuNaeaz6dLS8": {
+  "name": "元氣動物醫院（三民總院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJQbMhOVojaDQRKcAZN6cbx8Y": {
+  "name": "磨鼻子動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJb9xCVBohaDQRJdHYfqPNUoM": {
+  "name": "青谷動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJ-b1WzEUfaDQRnXNrqggP6Ew": {
+  "name": "全日動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJzzoZt881aDQRG7pOjUDFThA": {
+  "name": "築心動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJgVHVYDQ3aDQR8SFW2Yxy3-A": {
+  "name": "全天候動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJAQAAAN81aDQRh6H1M_OUQ2s": {
+  "name": "安欣動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJB36OFX41aDQR40qWNxo6n3I": {
+  "name": "杜瑪犬貓專科醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJhXUTl9U3aDQRfIaBWmJfKMo": {
+  "name": "高飛動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJn70nAxE3aDQRkIRQHzigNVc": {
+  "name": "沐暮星動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJnz-_tp03aDQRHKxgNzzaURI": {
+  "name": "城光動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJJRzrucI9aTQR1r_GH8V0mHQ": {
+  "name": "全國動物醫院（台中總院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJtenXhaQ9aTQRS5PvamovCf4": {
+  "name": "羅大宇動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJCedGUo09aTQR-j6FTlYhAEs": {
+  "name": "格林威治動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJDcNFJwYXaTQRVwAUOXNMHc8": {
+  "name": "康德動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJGfCcInk9aTQRZVXCW9KgIX8": {
+  "name": "沐恩動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJn00V7I49aTQRPXcqPTom3Sg": {
+  "name": "慈愛動物醫院-台中總院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJm-jpOccXaTQR_GWF1MEg2UA": {
+  "name": "夏洛克動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJb6n0TRI9aTQRdFo9TIcHFTU": {
+  "name": "謙谷若松動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJxVVlFzc9aTQRXQuzNBgwmJ8": {
+  "name": "樂樂復健動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJHxyKMeU3aTQROwoU5FZSPw8": {
+  "name": "忠愛動物醫院",
+  "deep_night": null,
+  "seeded": "2026-10-15"
+ },
+ "ChIJjWb_3aywbjQRTIJI5VEU7WU": {
+  "name": "和牧動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJlUUBLJmWbjQR1LNiVenurNw": {
+  "name": "高醫動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJ3wL0K6h1bjQREvp6nmUPjOM": {
+  "name": "全國動物醫院（台南分院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJr0lz5GB2bjQRigWMaZsquYw": {
+  "name": "諾亞動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJXXQMvS53bjQRAWhQ3_hjXFU": {
+  "name": "慕光動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJDTbilnh2bjQR57AnKDfQFxI": {
+  "name": "慈愛動物醫院（台南總院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJXUM4CjF3bjQR7PIrmeggZY0": {
+  "name": "蕾米動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJtfz0Q30RbjQR6TJsOtsKbVA": {
+  "name": "聯盟動物醫院（仁武總院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJ0y1f3SMFbjQRYd5JSDsk3k8": {
+  "name": "宏力動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJh1uDlJgFbjQR21JPlaPupu4": {
+  "name": "中興梅西動物醫療中心",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJccPry7kEbjQR_GsBRo9ME8Y": {
+  "name": "烏鐸動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJewdDEpQEbjQRay_If9oq1DU": {
+  "name": "冠安動物醫院",
+  "deep_night": null,
+  "seeded": "2026-10-15"
+ },
+ "ChIJCVz4EFkbbjQRsk1lytBABPQ": {
+  "name": "希望動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJJbR-TgAFbjQRgtrth64JqU0": {
+  "name": "星羽動物醫院（三民院）",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJ-zca2T8FbjQRHz3A2orEY6M": {
+  "name": "順心動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJQ7VO05oFbjQRlX10PkgigUI": {
+  "name": "東林動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJh2Kg7sUFbjQRXc2CP_QEtYs": {
+  "name": "希安動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJqUc4gkQXbjQRYMBCTkt3gA0": {
+  "name": "名仁動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ },
+ "ChIJj4mQZpSfaDQRiZFolwKIk0U": {
+  "name": "上海動物醫院",
+  "deep_night": false,
+  "seeded": "2026-10-15"
+ },
+ "ChIJKQARwwx3bjQRmWE2ve2c4-U": {
+  "name": "旭日動物醫院",
+  "deep_night": true,
+  "seeded": "2026-10-15"
+ }
+}
