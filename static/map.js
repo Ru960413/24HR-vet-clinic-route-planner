@@ -6,6 +6,7 @@
 const I18N = {
   zh: {
     me: "我",
+    eveningLabel: "🌙 晚間門診（非深夜急診）",
     note: "備註",
     phone: "電話",
     emergency: "急診專線",
@@ -24,6 +25,7 @@ const I18N = {
   },
   en: {
     me: "Me",
+    eveningLabel: "🌙 Evening clinic (not a late-night ER)",
     note: "Note",
     phone: "Phone",
     emergency: "Emergency line",
@@ -168,7 +170,7 @@ function buildFilterBar(map, clinics, entries, t) {
   function apply() {
     entries.forEach(({ clinic, marker }) => {
       const okSpecies = state.species === "all" ||
-        (clinic.species_verified && clinic.species.includes(state.species));
+        (!clinic.evening && clinic.species_verified && clinic.species.includes(state.species));
       const okNow = !state.nowOnly || openNow(clinic);
       marker.setMap(okSpecies && okNow ? map : null);
     });
@@ -234,6 +236,41 @@ async function initMap() {
       });
       return { clinic: c, marker };
     });
+
+    // evening tier: no-coverage regions' until-~9PM clinics. Gold dots so
+    // they never read as ER markers; they join the open-now filter (so the
+    // 🌙 toggle hides them past 21:00) and hide under any species filter.
+    try {
+      const evRes = await fetch(`/api/evening?lang=${lang}`);
+      if (evRes.ok) {
+        const evening = await evRes.json();
+        evening.forEach((c) => {
+          const marker = new google.maps.Marker({
+            position: { lat: c.lat, lng: c.lng },
+            map,
+            title: c.name,
+            icon: {
+              path: google.maps.SymbolPath.CIRCLE,
+              scale: 7, fillColor: "#d9b273", fillOpacity: 0.95,
+              strokeColor: "#8a6d3b", strokeWeight: 1.5,
+            },
+          });
+          marker.addListener("click", () => {
+            const lines = [
+              `<strong>${esc(c.name)}</strong>`,
+              `<em>${t.eveningLabel}</em>`,
+              esc(c.note),
+              `${t.phone}: ${telLinks(c.phone)}`,
+              `<a href="https://www.google.com/maps/dir/?api=1&destination=${c.lat},${c.lng}&travelmode=driving" target="_blank" rel="noopener">${t.navigate}</a>`,
+            ];
+            infoWindow.setContent(`<div class="map-info">${lines.join("<br>")}</div>`);
+            infoWindow.open(map, marker);
+          });
+          entries.push({ clinic: { ...c, evening: true }, marker });
+        });
+      }
+    } catch (e) { /* evening layer is optional; the ER map must never wait on it */ }
+
     buildFilterBar(map, clinics, entries, t);
   } catch (e) {
     el.insertAdjacentHTML("beforebegin", `<p class="map-error">${t.loadError}</p>`);

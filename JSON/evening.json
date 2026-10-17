@@ -1,0 +1,80 @@
+[
+  {
+    "name_zh": "凱亞動物醫院",
+    "name_en": "Kai Ya Animal Hospital",
+    "city_zh": "宜蘭縣",
+    "city_en": "Yilan County",
+    "note_zh": "門診至 21:00・週四、週日休（查證 2026-10）",
+    "note_en": "Open until 9PM · closed Thu & Sun (verified Oct 2026)",
+    "phone": "03-932-5670",
+    "lat": 24.7511712,
+    "lng": 121.7550139,
+    "er_hours": [[9, 12], [14, 21]],
+    "er_off_days": [0, 4]
+  },
+  {
+    "name_zh": "維倫斯動物醫院",
+    "name_en": "Wei Lun Si Animal Hospital",
+    "city_zh": "宜蘭縣",
+    "city_en": "Yilan County",
+    "note_zh": "每日門診至 21:00・非門診時段急診採加價收費，收治與否請先電洽（查證 2026-10）",
+    "note_en": "Daily until 9PM · off-hours emergencies at surcharge — call first (verified Oct 2026)",
+    "phone": "03-935-3550",
+    "lat": 24.7595611,
+    "lng": 121.7529171,
+    "er_hours": [[12, 17.5], [19, 21]],
+    "er_off_days": []
+  },
+  {
+    "name_zh": "聖心動物醫院",
+    "name_en": "Sheng Xin Animal Hospital",
+    "city_zh": "苗栗縣",
+    "city_en": "Miaoli County",
+    "note_zh": "週一至六門診至 21:00・週日休（查證 2026-10）",
+    "note_en": "Mon–Sat until 9PM · closed Sun (verified Oct 2026)",
+    "phone": "037-461-332",
+    "lat": 24.6818731,
+    "lng": 120.874166,
+    "er_hours": [[9, 21]],
+    "er_off_days": [0]
+  },
+  {
+    "name_zh": "銅鑼元宏獸醫診所",
+    "name_en": "Tongluo Yuanhong Veterinary Clinic",
+    "city_zh": "苗栗縣",
+    "city_en": "Miaoli County",
+    "note_zh": "門診至 21:00・週三休，急症請先電話確認（查證 2026-10）",
+    "note_en": "Open until 9PM · closed Wed — call first for urgent cases (verified Oct 2026)",
+    "phone": "037-981-328",
+    "lat": 24.4878253,
+    "lng": 120.7876112,
+    "er_hours": [[9, 12], [14, 18], [19, 21]],
+    "er_off_days": [3]
+  },
+  {
+    "name_zh": "慧光動物醫院",
+    "name_en": "Hui Guang Animal Hospital",
+    "city_zh": "南投縣",
+    "city_en": "Nantou County",
+    "note_zh": "門診至 21:00・無固定公休（除開會或上課外不休息，前往前請先電話確認）（查證 2026-10）",
+    "note_en": "Open until 9PM · no fixed day off (closed only for meetings/training — call before heading over) (verified Oct 2026)",
+    "phone": "049-290-1187",
+    "lat": 23.9742496,
+    "lng": 120.9697745,
+    "er_hours": [[10, 21]],
+    "er_off_days": []
+  },
+  {
+    "name_zh": "湖光動物醫院澎湖分院",
+    "name_en": "Hu Kuang Animal Hospital Penghu Branch",
+    "city_zh": "澎湖縣",
+    "city_en": "Penghu County",
+    "note_zh": "僅週三、四門診至 21:00・預約制（查證 2026-10）",
+    "note_en": "Wed & Thu only, until 9PM · by appointment (verified Oct 2026)",
+    "phone": "06-926-9691",
+    "lat": 23.5707031,
+    "lng": 119.5797428,
+    "er_hours": [[13.5, 21]],
+    "er_off_days": [0, 1, 2, 5, 6]
+  }
+]

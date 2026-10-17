@@ -134,6 +134,33 @@ def redirect_legacy_host():
         return redirect(f"https://{CANONICAL_HOST}{request.full_path.rstrip('?')}", 301)
 
 
+EVENING_PATH = os.path.join(os.path.dirname(__file__), "JSON", "evening.json")
+_evening_cache = {"mtime": None, "data": None}
+
+
+def load_evening():
+    # evening-tier clinics (no-coverage regions, open until ~21:00, NOT ERs).
+    # NOTE: the prose rows in NO_COVERAGE below describe the same clinics —
+    # when one changes, update both.
+    mtime = os.path.getmtime(EVENING_PATH)
+    if _evening_cache["mtime"] != mtime:
+        with open(EVENING_PATH, encoding="utf-8") as f:
+            _evening_cache["data"] = json.load(f)
+        _evening_cache["mtime"] = mtime
+    return _evening_cache["data"]
+
+
+@app.route("/api/evening")
+def api_evening():
+    lang = request.args.get("lang")
+    data = load_evening()
+    if lang:
+        if lang not in ("zh", "en"):
+            abort(400, "lang must be 'zh' or 'en'")
+        data = [localize(c, lang) for c in data]
+    return jsonify(data)
+
+
 @app.route("/api/clinics")
 def api_clinics():
     clinics = [c for c in load_clinics() if c["active"]]
