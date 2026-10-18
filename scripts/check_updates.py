@@ -7,6 +7,7 @@
 # non-empty report into a repo issue, which triggers GitHub's own email
 # notification. Run from repo root: python3 scripts/check_updates.py
 
+import datetime as dt
 import json
 import math
 import os
@@ -115,6 +116,28 @@ def main():
                 problems.append(
                     f"[搬家?] {c['name_zh']}: 位置移動 {int(delta)}m，Google 地址: {d.get('formattedAddress', '?')}")
 
+    # 2.5: verification freshness sentinel (added 2026-10-18, owner ruling:
+    # full human re-confirmation at least every 6-12 months). A clinic whose
+    # last_verified stamp is older than 12 months surfaces here every month
+    # until re-stamped; never-verified clinics are tracked in the vault's
+    # 輪檢名冊 instead, so only report their count.
+    STALE_DAYS = 365
+    today = dt.date.today()
+    stale, never_verified = [], 0
+    for c in clinics:
+        if not c.get("active"):
+            continue
+        lv = c.get("last_verified")
+        if not lv:
+            never_verified += 1
+            continue
+        try:
+            age = (today - dt.date.fromisoformat(lv)).days
+        except ValueError:
+            continue
+        if age > STALE_DAYS:
+            stale.append(f"[保鮮期] {c['name_zh']}: 上次人工確認 {lv}（約 {age // 30} 個月前），請排入輪檢")
+
     # 3: discovery sweep
     seen = set()
     for city in CITIES:
@@ -143,7 +166,7 @@ def main():
                     candidates.append(f"{tag} {name} | {addr}")
             time.sleep(1.0)
 
-    if not problems and not candidates:
+    if not problems and not candidates and not stale:
         print("no changes detected")
         return
 
@@ -152,7 +175,11 @@ def main():
         report += ["## 既有診所異動", ""] + [f"- {p}" for p in problems] + [""]
     if candidates:
         report += ["## 候選新診所", ""] + [f"- {c}" for c in candidates] + [""]
-    report.append(f"_{len(problems)} 筆異動、{len(candidates)} 筆候選_")
+    if stale:
+        report += ["## 超過保鮮期（上次人工確認逾 12 個月）", ""] + [f"- {s}" for s in stale] + [""]
+    if never_verified:
+        report += [f"_另有 {never_verified} 間從未人工確認，滾動輪檢中（見 vault 輪檢名冊）_", ""]
+    report.append(f"_{len(problems)} 筆異動、{len(candidates)} 筆候選、{len(stale)} 筆過保鮮期_")
     text = "\n".join(report)
     print(text)
     with open("report.md", "w", encoding="utf-8") as f:
