@@ -10,7 +10,7 @@
 
 {% block content %}
 <div class="navbar">
-  <div class="nav-item"><a href="/route/{{ lang }}" class="back">&#x3c;</a></div>
+  <div class="nav-item"><a href="/route/{{ lang }}" class="back">←</a></div>
   <h2 class="nav-item title">{{ t.companion_title }}</h2>
   <div class="nav-item"></div>
 </div>
@@ -18,9 +18,17 @@
 <div class="companion-page">
   <p class="companion-sub">{{ t.companion_sub }}</p>
 
-  {# ── 故事區：字歸 Laisa（新制），本段為暫位文 ── #}
+  {# ── 故事：Laisa 親筆（2026-10-18），夜燈僅斷句與標點 ── #}
   <div class="companion-story">
-    <p>{{ t.companion_story_pending }}</p>
+    {% if lang == 'zh' %}
+    <p>那時候會接觸動物靈氣，其實是因為我的黑柴黑黑，2024 年，她確診了膀胱腫瘤。</p>
+    <p>2024 年底，她剛動了微創手術，但後續的追蹤顯示腫瘤有變大的趨勢，後來她也開始吃化療藥物進一步治療。她的身體本來就對藥物敏感，吃了一段時間後出現了拉肚子的狀況，因此我開始煮鮮食給她吃，也找到了靈氣，我第一次預約靈氣的服務，就是為了她。後來幸好她康復了，我也自己去學了靈氣。</p>
+    <p>在這裡，我想要提供一個能量上的陪伴，不以代替醫療為目的，但這是一個能讓我們愛的毛孩感受到我們愛牠們、也想陪牠們度過這段時光的方式。如果身為家長的你們對這個陪伴有興趣，歡迎來我的網站看看～</p>
+    {% else %}
+    <p>I found animal Reiki because of my black Shiba, Hei Hei — in 2024, she was diagnosed with a bladder tumor.</p>
+    <p>She had minimally invasive surgery at the end of 2024, but follow-ups showed the tumor growing, so she went on chemotherapy medication. Her body has always been sensitive to medicine, and after a while the side effects set in. I started cooking fresh food for her — and that was also when I found Reiki. My very first Reiki booking was for her. She has since recovered, and I went on to train in Reiki myself.</p>
+    <p>What I offer here is companionship on the energy level — never a substitute for veterinary care, but a way to let the animals we love feel how much we love them, and that we want to walk through this stretch with them. If that kind of companionship speaks to you, you're welcome to visit my site.</p>
+    {% endif %}
   </div>
 
   <div class="companion-disclaimer">

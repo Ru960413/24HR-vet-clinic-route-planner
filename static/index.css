@@ -518,9 +518,9 @@ p { font-family: 'DM Sans', 'Noto Sans TC', sans-serif; }
   z-index: 99;
   font-size: 12px;
   font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
-  border: 1px solid var(--border);
+  border: 1px solid var(--accent);
   background: var(--surface2);
-  color: var(--text-muted);
+  color: var(--accent);
   padding: 10px 16px;
   border-radius: 4px;
   transition: all 0.2s;
