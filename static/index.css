@@ -505,3 +505,53 @@ p { font-family: 'DM Sans', 'Noto Sans TC', sans-serif; }
    should find it. No CTA, no color jump. */
 .nav-soulbrush { font-size: 0.75rem; opacity: 0.8; margin-left: 16px; }
 .nav-soulbrush:hover { opacity: 1; }
+
+/* ── COMPANION FOOTNOTE (info window last line) ── */
+.companion-line { margin-top: 8px; font-size: 0.82em; opacity: 0.72; }
+.companion-line a { text-decoration: underline; }
+
+/* ── COMPANION FLOAT (details page, stacked above Top) ── */
+#companionBtn {
+  position: fixed;
+  bottom: 72px;
+  right: 24px;
+  z-index: 99;
+  font-size: 12px;
+  font-family: 'DM Sans', 'Noto Sans TC', sans-serif;
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  color: var(--text-muted);
+  padding: 10px 16px;
+  border-radius: 4px;
+  transition: all 0.2s;
+  letter-spacing: 0.05em;
+  text-decoration: none;
+}
+#companionBtn:hover { background: var(--surface); color: var(--accent); border-color: var(--accent); }
+
+/* ── COMPANION PAGE ── */
+.companion-page { max-width: 560px; margin: 0 auto; padding: 32px 16px 64px; }
+.companion-sub { color: var(--text-muted); letter-spacing: 0.08em; margin-bottom: 32px; }
+.companion-story { line-height: 2; margin-bottom: 40px; }
+.companion-story p { margin-bottom: 1.2em; }
+.companion-disclaimer {
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  padding: 14px 18px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.companion-cta { text-align: center; }
+.companion-cta a {
+  display: inline-block;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  padding: 12px 28px;
+  border-radius: 4px;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: all 0.2s;
+}
+.companion-cta a:hover { background: var(--accent); color: var(--bg, #111); }

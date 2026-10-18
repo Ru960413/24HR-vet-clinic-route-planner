@@ -1,0 +1,35 @@
+{% extends 'layout.html' %}
+{% block title %}{{ t.companion_title }}｜{{ t.seo_route_title.split('｜')[0] if lang == 'zh' else 'Emergency Vet Map' }}{% endblock title %}
+{% block description %}{{ t.companion_disclaimer }}{% endblock description %}
+{% block meta %}
+<link rel="canonical" href="https://vetmap.soulbrush.art/companion/{{ lang }}" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://vetmap.soulbrush.art/companion/zh" />
+<link rel="alternate" hreflang="en" href="https://vetmap.soulbrush.art/companion/en" />
+<link rel="alternate" hreflang="x-default" href="https://vetmap.soulbrush.art/companion/zh" />
+{% endblock meta %}
+
+{% block content %}
+<div class="navbar">
+  <div class="nav-item"><a href="/route/{{ lang }}" class="back">&#x3c;</a></div>
+  <h2 class="nav-item title">{{ t.companion_title }}</h2>
+  <div class="nav-item"></div>
+</div>
+
+<div class="companion-page">
+  <p class="companion-sub">{{ t.companion_sub }}</p>
+
+  {# ── 故事區：字歸 Laisa（新制），本段為暫位文 ── #}
+  <div class="companion-story">
+    <p>{{ t.companion_story_pending }}</p>
+  </div>
+
+  <div class="companion-disclaimer">
+    {{ t.companion_disclaimer }}
+  </div>
+
+  <div class="companion-cta">
+    <a href="{{ booking_url }}" rel="noopener"
+       data-goatcounter-click="companion/to-booking">{{ t.companion_cta }}</a>
+  </div>
+</div>
+{% endblock content %}

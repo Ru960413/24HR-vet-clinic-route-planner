@@ -22,6 +22,12 @@ UI_TEXT = {
     "zh": {
         "route_title": "急診獸醫院地圖",
         "seo_route_title": "24小時急診獸醫地圖｜全台深夜動物醫院即時查詢",
+        "companion_btn": "🫂 陪伴",
+        "companion_title": "陪伴",
+        "companion_sub": "看完醫生之後的事",
+        "companion_disclaimer": "靈氣不是醫療的替代。毛孩不舒服，請永遠先找獸醫——這一頁說的，是看完醫生之後的事。",
+        "companion_cta": "了解與預約（soulbrush.art）",
+        "companion_story_pending": "這裡會放一個真實的故事——做這張地圖的人，和她十七歲的狗。",
         "seo_route_desc": "全台 24 小時與深夜急診獸醫院地圖：一鍵導航與撥號、「此刻開著」即時篩選、特寵（鼠兔鳥爬）收治標示。免費、免登入，每間人工查證。",
         "seo_details_title": "全台24小時急診獸醫院名單（依縣市）｜夜間動物醫院電話與急診時段",
         "seo_details_desc": "各縣市 24 小時／深夜急診獸醫院完整名單：地址、電話、急診時段與特寵收治註記，並誠實標示目前沒有夜間急診資源的地區。每間人工查證、持續更新。",
@@ -62,6 +68,12 @@ UI_TEXT = {
     "en": {
         "route_title": "Emergency Vet Map",
         "seo_route_title": "24-Hour Emergency Vet Map | Night Animal Hospitals in Taiwan",
+        "companion_btn": "🫂 Companion",
+        "companion_title": "Companionship",
+        "companion_sub": "For after the vet visit",
+        "companion_disclaimer": "Reiki is not a substitute for veterinary care. If your animal is unwell, always see a vet first — this page is about what comes after.",
+        "companion_cta": "Learn more & book (soulbrush.art)",
+        "companion_story_pending": "A true story will live here — about the person who made this map, and her seventeen-year-old dog.",
         "seo_route_desc": "Live map of 24-hour and late-night emergency vet clinics across Taiwan: one-tap navigation and calls, open-now filter, exotic-pet flags. Free, no login, human-verified.",
         "seo_details_title": "24-Hour Emergency Vet Clinics in Taiwan — Full List by City",
         "seo_details_desc": "Complete list of 24-hour and late-night emergency veterinary clinics by city: addresses, phones, ER hours and exotic-pet notes, plus an honest list of regions with no night ER. Human-verified.",
@@ -255,6 +267,18 @@ def contact(lang):
                            thankyou_url=url_for("thankyou", _external=True))
 
 
+@app.route("/companion")
+def companion_root():
+    return redirect("/companion/zh")
+
+
+@app.route("/companion/<lang>")
+def companion(lang):
+    require_lang(lang)
+    booking = "https://soulbrush.art/reiki.html" if lang == "zh" else "https://soulbrush.art/en/reiki.html"
+    return render_template("companion.html", lang=lang, t=UI_TEXT[lang], booking_url=booking)
+
+
 @app.route("/wallpapers")
 def wallpapers():
     return render_template("wallpapers.html", lang="zh", t=UI_TEXT["zh"])
@@ -280,6 +304,7 @@ def sitemap():
         u(f"/route/{lang}", lastmod)
         u(f"/details/{lang}", lastmod)
         u(f"/about/{lang}")
+        u(f"/companion/{lang}")
         u(f"/contact/{lang}")
     u("/wallpapers")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'

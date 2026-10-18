@@ -22,6 +22,9 @@ const I18N = {
     filterHint: "特寵篩選只顯示有明確標示可看診的醫院；「此刻開著」依各院備註時段推算，可能與現場有出入——前往前請務必先電話確認。",
     speciesNames: { dog: "犬", cat: "貓", rodent: "鼠", rabbit: "兔", bird: "鳥",
       turtle: "龜", reptile: "爬蟲", hedgehog: "刺蝟", sugar_glider: "蜜袋鼯", ferret: "貂" },
+    companionLine: "🫂 看完醫生之後，若需要陪伴",
+    companionLink: "陪伴頁",
+    companionHref: "/companion/zh",
   },
   en: {
     me: "Me",
@@ -41,6 +44,9 @@ const I18N = {
     filterHint: "Exotic filters only show clinics that explicitly list the species; \"Open now\" is estimated from each clinic's noted hours and may differ from reality — always call before going.",
     speciesNames: { dog: "Dogs", cat: "Cats", rodent: "Rodents", rabbit: "Rabbits", bird: "Birds",
       turtle: "Turtles", reptile: "Reptiles", hedgehog: "Hedgehogs", sugar_glider: "Sugar gliders", ferret: "Ferrets" },
+    companionLine: "🫂 After the vet, if you need companionship",
+    companionLink: "Companion page",
+    companionHref: "/companion/en",
   },
 };
 
@@ -151,6 +157,16 @@ function infoElement(c, t) {
     el.appendChild(r);
     loadRating(c, r, t);
   }
+  // Companion footnote — always the LAST line of the card, below the rating.
+  // Someone rushing taps the phone/navigate links at the top and never sees
+  // it; someone reading calmly to the bottom finds a gentle "afterwards".
+  const comp = document.createElement("div");
+  comp.className = "companion-line";
+  comp.innerHTML = `${t.companionLine} → <a href="${t.companionHref}">${t.companionLink}</a>`;
+  comp.querySelector("a").addEventListener("click", () => {
+    if (window.goatcounter) goatcounter.count({ path: "companion/from-infowindow", event: true });
+  });
+  el.appendChild(comp);
   return el;
 }
 
