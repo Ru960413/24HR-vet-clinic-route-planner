@@ -1,5 +1,13 @@
 {% extends 'layout.html' %}
-{% block title %}{{ t.details_title }}{% endblock title %}
+{% block title %}{{ t.seo_details_title }}{% endblock title %}
+{% block description %}{{ t.seo_details_desc }}{% endblock description %}
+{% block meta %}
+<link rel="canonical" href="https://vetmap.soulbrush.art/details/{{ lang }}" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://vetmap.soulbrush.art/details/zh" />
+<link rel="alternate" hreflang="en" href="https://vetmap.soulbrush.art/details/en" />
+<link rel="alternate" hreflang="x-default" href="https://vetmap.soulbrush.art/details/zh" />
+<script type="application/ld+json">{{ jsonld|safe }}</script>
+{% endblock meta %}
 
 {% block content %}
 <div class="vet-clinic-list">

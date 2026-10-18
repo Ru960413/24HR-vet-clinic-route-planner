@@ -1,5 +1,12 @@
 {% extends 'layout.html' %}
-{% block title %}{{ t.route_title }}{% endblock title %}
+{% block title %}{{ t.seo_route_title }}{% endblock title %}
+{% block description %}{{ t.seo_route_desc }}{% endblock description %}
+{% block meta %}
+<link rel="canonical" href="https://vetmap.soulbrush.art/route/{{ lang }}" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://vetmap.soulbrush.art/route/zh" />
+<link rel="alternate" hreflang="en" href="https://vetmap.soulbrush.art/route/en" />
+<link rel="alternate" hreflang="x-default" href="https://vetmap.soulbrush.art/route/zh" />
+{% endblock meta %}
 
 {% block content %}
 <div class="navbar">

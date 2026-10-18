@@ -21,6 +21,11 @@ _cache = {"mtime": None, "data": None}
 UI_TEXT = {
     "zh": {
         "route_title": "急診獸醫院地圖",
+        "seo_route_title": "24小時急診獸醫地圖｜全台深夜動物醫院即時查詢",
+        "seo_route_desc": "全台 24 小時與深夜急診獸醫院地圖：一鍵導航與撥號、「此刻開著」即時篩選、特寵（鼠兔鳥爬）收治標示。免費、免登入，每間人工查證。",
+        "seo_details_title": "全台24小時急診獸醫院名單（依縣市）｜夜間動物醫院電話與急診時段",
+        "seo_details_desc": "各縣市 24 小時／深夜急診獸醫院完整名單：地址、電話、急診時段與特寵收治註記，並誠實標示目前沒有夜間急診資源的地區。每間人工查證、持續更新。",
+        "seo_about_desc": "為什麼有這張免費的急診獸醫地圖、資料怎麼人工查證、以及如何支持它繼續亮著。",
         "more_info": "更多獸醫院的詳細資訊",
         "details_title": "獸醫院詳細資訊",
         "details_heading": "全台提供24小時急診服務的獸醫院",
@@ -56,6 +61,11 @@ UI_TEXT = {
     },
     "en": {
         "route_title": "Emergency Vet Map",
+        "seo_route_title": "24-Hour Emergency Vet Map | Night Animal Hospitals in Taiwan",
+        "seo_route_desc": "Live map of 24-hour and late-night emergency vet clinics across Taiwan: one-tap navigation and calls, open-now filter, exotic-pet flags. Free, no login, human-verified.",
+        "seo_details_title": "24-Hour Emergency Vet Clinics in Taiwan — Full List by City",
+        "seo_details_desc": "Complete list of 24-hour and late-night emergency veterinary clinics by city: addresses, phones, ER hours and exotic-pet notes, plus an honest list of regions with no night ER. Human-verified.",
+        "seo_about_desc": "Why this free emergency vet map exists, how every clinic is human-verified, and how to keep it lit.",
         "more_info": "More info about vet clinics",
         "details_title": "Clinic Details",
         "details_heading": "Emergency Veterinary Services in Taiwan",
@@ -210,8 +220,26 @@ def details(lang):
     no_coverage = [dict(zip(("region", "nearest"), r[lang]),
                         evening=r.get("evening", {}).get(lang))
                    for r in NO_COVERAGE]
+    # Schema.org structured data: the clinic list as VeterinaryCare entries,
+    # so search engines can read the directory that otherwise lives in tables
+    items = []
+    for i, c in enumerate((x for x in load_clinics() if x["active"]), 1):
+        entry = {"@type": "VeterinaryCare",
+                 "name": c["name_zh" if lang == "zh" else "name_en"],
+                 "address": {"@type": "PostalAddress",
+                             "streetAddress": c["address_zh" if lang == "zh" else "address_en"],
+                             "addressLocality": c["city_zh" if lang == "zh" else "city_en"],
+                             "addressCountry": "TW"},
+                 "telephone": split_phones(c["phone"])[0] if c["phone"] else ""}
+        if c.get("lat"):
+            entry["geo"] = {"@type": "GeoCoordinates", "latitude": c["lat"], "longitude": c["lng"]}
+        items.append({"@type": "ListItem", "position": i, "item": entry})
+    jsonld = json.dumps({"@context": "https://schema.org", "@type": "ItemList",
+                         "name": UI_TEXT[lang]["seo_details_title"],
+                         "numberOfItems": len(items), "itemListElement": items},
+                        ensure_ascii=False)
     return render_template("details.html", lang=lang, t=UI_TEXT[lang], cities=cities,
-                           no_coverage=no_coverage)
+                           no_coverage=no_coverage, jsonld=jsonld)
 
 
 @app.route("/about/<lang>")
@@ -230,6 +258,34 @@ def contact(lang):
 @app.route("/wallpapers")
 def wallpapers():
     return render_template("wallpapers.html", lang="zh", t=UI_TEXT["zh"])
+
+
+@app.route("/robots.txt")
+def robots():
+    return app.response_class(
+        "User-agent: *\nAllow: /\nSitemap: https://vetmap.soulbrush.art/sitemap.xml\n",
+        mimetype="text/plain")
+
+
+@app.route("/sitemap.xml")
+def sitemap():
+    base = "https://vetmap.soulbrush.art"
+    lastmod = max((c["last_verified"] or "" for c in load_clinics()), default="") or "2026-07-25"
+    urls = []
+    def u(path, mod=None):
+        urls.append(f"<url><loc>{base}{path}</loc>" +
+                    (f"<lastmod>{mod}</lastmod>" if mod else "") + "</url>")
+    u("/", lastmod)
+    for lang in ("zh", "en"):
+        u(f"/route/{lang}", lastmod)
+        u(f"/details/{lang}", lastmod)
+        u(f"/about/{lang}")
+        u(f"/contact/{lang}")
+    u("/wallpapers")
+    xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
+           '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+           + "\n".join(urls) + "\n</urlset>\n")
+    return app.response_class(xml, mimetype="application/xml")
 
 
 @app.route("/thankyou.html")

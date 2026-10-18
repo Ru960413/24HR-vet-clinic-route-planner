@@ -1,10 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ 'zh-Hant-TW' if lang|default('zh') == 'zh' else 'en' }}">
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{% block title %}{% endblock title %}</title>
-    <meta name="description" content="24-hour emergency veterinary clinics in Taiwan" />
+    <meta name="description" content="{% block description %}24-hour emergency veterinary clinics in Taiwan — full list with night ER hours, phones and navigation.{% endblock description %}" />
+    <meta property="og:site_name" content="全台24小時急診獸醫院地圖 | 24HR Vet Clinics in Taiwan" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="{{ self.title() }}" />
+    <meta property="og:description" content="{{ self.description() }}" />
+    {% block meta %}{% endblock meta %}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link href="/static/index.css" rel="stylesheet" />
     {% block link %}{% endblock link %}

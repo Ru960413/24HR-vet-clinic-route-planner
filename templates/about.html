@@ -1,5 +1,12 @@
 {% extends 'layout.html' %}
-{% block title %}{{ t.about_title }}{% endblock title %}
+{% block title %}{{ t.about_title }}｜全台24小時急診獸醫院地圖{% endblock title %}
+{% block description %}{{ t.seo_about_desc }}{% endblock description %}
+{% block meta %}
+<link rel="canonical" href="https://vetmap.soulbrush.art/about/{{ lang }}" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://vetmap.soulbrush.art/about/zh" />
+<link rel="alternate" hreflang="en" href="https://vetmap.soulbrush.art/about/en" />
+<link rel="alternate" hreflang="x-default" href="https://vetmap.soulbrush.art/about/zh" />
+{% endblock meta %}
 
 {% block content %}
 <div class="navbar">
