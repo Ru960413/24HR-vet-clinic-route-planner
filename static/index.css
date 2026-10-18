@@ -503,5 +503,5 @@ p { font-family: 'DM Sans', 'Noto Sans TC', sans-serif; }
 /* ── SOULBRUSH ATTRIBUTION (route header) ── quiet by design: the person
    rushing at 2am shouldn't notice it; the person wondering who made this
    should find it. No CTA, no color jump. */
-.nav-soulbrush { font-size: 0.75rem; opacity: 0.55; }
+.nav-soulbrush { font-size: 0.75rem; opacity: 0.8; margin-left: 16px; }
 .nav-soulbrush:hover { opacity: 1; }
