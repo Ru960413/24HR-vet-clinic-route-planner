@@ -1933,8 +1933,8 @@
     "city_en": "Kaohsiung City",
     "district_zh": "三民區",
     "district_en": "Sanmin District",
-    "note_zh": "24小時營業",
-    "note_en": "Open 24 hours",
+    "note_zh": "經重新評估，2026-10-20 自地圖下架",
+    "note_en": "Removed from map after re-evaluation (2026-10-20)",
     "species": [
       "dog",
       "cat"
@@ -1946,8 +1946,8 @@
     "lat": 22.6445433,
     "lng": 120.3259118,
     "place_id": "ChIJ-zca2T8FbjQRHz3A2orEY6M",
-    "last_verified": "2026-08-04",
-    "active": true,
+    "last_verified": "2026-10-20",
+    "active": false,
     "id": 66,
     "er_hours": "24",
     "er_hours_quality": "exact"
