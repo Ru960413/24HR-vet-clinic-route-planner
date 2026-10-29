@@ -1184,15 +1184,15 @@
     "city_zh": "台中市",
     "city_en": "Taichung City",
     "district_zh": "西區",
-    "note_zh": "",
-    "note_en": "",
+    "note_zh": "21:30-08:30為夜間急診時段（僅犬貓），採夜間急診收費；日間為門診，建議先電話預約掛號（21:15後現場掛號即轉入急診時段）",
+    "note_en": "Night emergency 21:30-08:30 (dogs & cats only), ER rates apply; daytime is appointment-based outpatient — walk-ins after 21:15 are admitted as ER",
     "phone": "04-2371-0496",
     "emergency_phone": "",
     "website": "https://www.vet.com.tw",
     "lat": 24.1340947,
     "lng": 120.6624305,
     "place_id": "ChIJJRzrucI9aTQR1r_GH8V0mHQ",
-    "last_verified": null,
+    "last_verified": "2026-10-29",
     "active": true,
     "district_en": "West District",
     "species": [
@@ -1200,8 +1200,11 @@
       "cat"
     ],
     "species_verified": false,
-    "er_hours": "24",
-    "er_hours_quality": "assumed24"
+    "er_hours": [
+      21.5,
+      8.5
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 42,
@@ -1574,15 +1577,15 @@
     "city_zh": "台南市",
     "city_en": "Tainan City",
     "district_zh": "東區",
-    "note_zh": "",
-    "note_en": "",
+    "note_zh": "21:30-08:30為夜間急診時段（僅犬貓），採夜間急診收費；日間為門診，建議先電話預約掛號（21:15後現場掛號即轉入急診時段）",
+    "note_en": "Night emergency 21:30-08:30 (dogs & cats only), ER rates apply; daytime is appointment-based outpatient — walk-ins after 21:15 are admitted as ER",
     "phone": "06-267-3191",
     "emergency_phone": "",
     "website": "https://www.vet.com.tw",
     "lat": 22.9705804,
     "lng": 120.22735899999999,
     "place_id": "ChIJ3wL0K6h1bjQREvp6nmUPjOM",
-    "last_verified": null,
+    "last_verified": "2026-10-29",
     "active": true,
     "district_en": "East District",
     "species": [
@@ -1590,8 +1593,11 @@
       "cat"
     ],
     "species_verified": false,
-    "er_hours": "24",
-    "er_hours_quality": "assumed24"
+    "er_hours": [
+      21.5,
+      8.5
+    ],
+    "er_hours_quality": "exact"
   },
   {
     "id": 55,
