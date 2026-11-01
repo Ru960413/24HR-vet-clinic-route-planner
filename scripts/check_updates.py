@@ -16,7 +16,7 @@ import time
 
 import requests
 
-API_KEY = os.environ["MAPS_KEY"]  # server key — set MAPS_KEY=... (no fallback: the old public key is referrer-locked)
+API_KEY = os.environ["MAPS_KEY"].strip()  # server key — set MAPS_KEY=... (no fallback). .strip(): a pasted secret with a trailing newline is an invalid HTTP header (bit us 2026-11-01)
 MOVE_THRESHOLD_M = 150
 
 CITIES = ["台北", "新北", "基隆", "桃園", "新竹", "苗栗", "台中", "彰化", "南投",
