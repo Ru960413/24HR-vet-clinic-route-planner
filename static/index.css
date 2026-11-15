@@ -170,6 +170,26 @@ body {
 }
 .feature p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
+/* ── COMPANION DOOR（回程的門：暖光慢路，別亮過急診動線）── */
+.companion-door {
+  display: block;
+  margin: -32px 0 64px;
+  padding: 18px 24px;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  transition: border-color 0.2s, color 0.2s;
+  animation: fadeUp 0.6s ease 0.25s both;
+}
+.companion-door:hover { border-color: var(--accent); color: var(--text); }
+.companion-door-icon { display: block; font-size: 1.3rem; margin-bottom: 6px; }
+.companion-door-en { font-size: 0.72rem; opacity: 0.8; }
+
 /* ── BACK LINK ── */
 .back {
   font-size: 0.85rem;
