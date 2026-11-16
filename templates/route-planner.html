@@ -20,6 +20,9 @@
   </div>
 </div>
 
+{% if snake_season %}
+<a class="snake-banner" href="/snakebite/{{ lang }}" data-goatcounter-click="snakebite/from-map-banner">{{ t.season_banner }}</a>
+{% endif %}
 <div id="filter-bar"></div>
 <div id="map" data-lang="{{ lang }}"></div>
 {% endblock content %}

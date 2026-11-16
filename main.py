@@ -1,6 +1,7 @@
 import json
 import os
 import re
+from datetime import datetime, timedelta, timezone
 
 from flask import Flask, abort, jsonify, redirect, render_template, request, url_for
 from flask_cors import CORS
@@ -28,6 +29,11 @@ UI_TEXT = {
         "companion_disclaimer": "靈氣不是醫療的替代。毛孩不舒服，請永遠先找獸醫——這一頁說的，是看完醫生之後的事。",
         "companion_cta": "了解與預約（soulbrush.art）",
         "companion_story_pending": "這裡會放一個真實的故事——做這張地圖的人，和她十七歲的狗。",
+        "snakebite_title": "蛇咬急救",
+        "snakebite_btn": "🐍 蛇咬急救",
+        "snakebite_sub": "毛孩被蛇咬了怎麼辦",
+        "seo_snakebite_desc": "毛孩被毒蛇咬傷怎麼辦：急救三步驟、台灣毒蛇與血清分型、全台深夜有抗蛇毒血清的獸醫院名單、費用預告。每一筆人工查證。",
+        "season_banner": "🐍 蛇季出沒中——毛孩被蛇咬了怎麼辦？看這頁",
         "seo_route_desc": "全台 24 小時與深夜急診獸醫院地圖：一鍵導航與撥號、「此刻開著」即時篩選、特寵（鳥龜鼠兔）收治標示。免費、免登入，每間人工查證。",
         "seo_details_title": "全台24小時急診獸醫院名單（依縣市）｜夜間動物醫院電話與急診時段",
         "seo_details_desc": "各縣市 24 小時／深夜急診獸醫院完整名單：地址、電話、急診時段與特寵收治註記，並誠實標示目前沒有夜間急診資源的地區。每間人工查證、持續更新。",
@@ -74,6 +80,11 @@ UI_TEXT = {
         "companion_disclaimer": "Reiki is not a substitute for veterinary care. If your animal is unwell, always see a vet first — this page is about what comes after.",
         "companion_cta": "Learn more & book (soulbrush.art)",
         "companion_story_pending": "A true story will live here — about the person who made this map, and her seventeen-year-old dog.",
+        "snakebite_title": "Snakebite First Aid",
+        "snakebite_btn": "🐍 Snakebite",
+        "snakebite_sub": "If your pet is bitten by a snake",
+        "seo_snakebite_desc": "What to do when your pet is bitten by a venomous snake in Taiwan: first-aid steps, snake and antivenom types, night vet hospitals that stock antivenom, and cost. Hand-verified.",
+        "season_banner": "🐍 Snake season — what to do if your pet is bitten? Read this page",
         "seo_route_desc": "Live map of 24-hour and late-night emergency vet clinics across Taiwan: one-tap navigation and calls, open-now filter, exotic-pet flags. Free, no login, human-verified.",
         "seo_details_title": "24-Hour Emergency Vet Clinics in Taiwan — Full List by City",
         "seo_details_desc": "Complete list of 24-hour and late-night emergency veterinary clinics by city: addresses, phones, ER hours and exotic-pet notes, plus an honest list of regions with no night ER. Human-verified.",
@@ -203,13 +214,15 @@ def index():
     months_en = ["", "January", "February", "March", "April", "May", "June", "July",
                  "August", "September", "October", "November", "December"]
     return render_template("index.html", updated_zh=f"{y}年{m}月",
-                           updated_en=f"{months_en[int(m)]} {y}")
+                           updated_en=f"{months_en[int(m)]} {y}",
+                           snake_season=snake_season_now())
 
 
 @app.route("/route/<lang>")
 def route_planner(lang):
     require_lang(lang)
-    return render_template("route-planner.html", lang=lang, t=UI_TEXT[lang], maps_key=MAPS_KEY)
+    return render_template("route-planner.html", lang=lang, t=UI_TEXT[lang], maps_key=MAPS_KEY,
+                           snake_season=snake_season_now())
 
 
 @app.route("/details/<lang>")
@@ -305,6 +318,7 @@ def sitemap():
         u(f"/details/{lang}", lastmod)
         u(f"/about/{lang}")
         u(f"/companion/{lang}")
+        u(f"/snakebite/{lang}")
         u(f"/contact/{lang}")
     u("/wallpapers")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
@@ -316,6 +330,61 @@ def sitemap():
 @app.route("/thankyou.html")
 def thankyou():
     return render_template("thankyou.html")
+
+
+# ── Snakebite layer (2026-11-16) ─────────────────────────────────────────
+# Night ERs on this map that are also TVMA antivenom storage/contact points
+# (desk cross-check 2026-11-16 vs tw-tvma.org/serum.php, phones = our verified
+# numbers). 弘隼 (Yilan) is listed by owner ruling 2026-11-16: it is Yilan's
+# only night serum point — not a map listing. Stock moves; the page tells
+# people to call first, every entry, no exceptions.
+SNAKEBITE_POINTS = [
+    {"region_zh": "台北市", "region_en": "Taipei",
+     "name_zh": "布達羊急診動物醫院", "name_en": "Budayang Emergency Animal Hospital",
+     "phone": "02-2834-1119", "hours_zh": "24 小時", "hours_en": "24 hours"},
+    {"region_zh": "新北市（林口）", "region_en": "New Taipei (Linkou)",
+     "name_zh": "上弦動物醫院 林口院區", "name_en": "Shangxian Animal Hospital, Linkou",
+     "phone": "02-2609-0119", "hours_zh": "24 小時", "hours_en": "24 hours"},
+    {"region_zh": "宜蘭縣", "region_en": "Yilan",
+     "name_zh": "弘隼動物醫院", "name_en": "Hongsun Animal Hospital",
+     "phone": "03-932-7600", "hours_zh": "時段請電話確認", "hours_en": "call to confirm hours"},
+    {"region_zh": "桃園市", "region_en": "Taoyuan",
+     "name_zh": "全日動物醫院", "name_en": "Quanri Animal Hospital",
+     "phone": "03-271-7530", "hours_zh": "夜間 21:00–09:00", "hours_en": "nights 21:00–09:00"},
+    {"region_zh": "新竹市", "region_en": "Hsinchu",
+     "name_zh": "全天候動物醫院", "name_en": "All-Day Animal Hospital",
+     "phone": "03-668-6356", "hours_zh": "24 小時", "hours_en": "24 hours"},
+    {"region_zh": "台中市", "region_en": "Taichung",
+     "name_zh": "慈愛動物醫院 台中總院", "name_en": "Ci-Ai Animal Hospital, Taichung HQ",
+     "phone": "04-2406-6688", "hours_zh": "24 小時", "hours_en": "24 hours"},
+    {"region_zh": "台中市", "region_en": "Taichung",
+     "name_zh": "全國動物醫院 台中總院", "name_en": "Chuan Guo Animal Hospital, Taichung HQ",
+     "phone": "04-2371-0496", "hours_zh": "夜間 21:30–08:30", "hours_en": "nights 21:30–08:30"},
+    {"region_zh": "嘉義市", "region_en": "Chiayi",
+     "name_zh": "高醫動物醫院", "name_en": "Kao-Yi Animal Hospital",
+     "phone": "05-235-1339", "hours_zh": "約 20:00–00:30（深夜前）", "hours_en": "approx. 20:00–00:30"},
+    {"region_zh": "台南市", "region_en": "Tainan",
+     "name_zh": "慈愛動物醫院 台南總院", "name_en": "Ci-Ai Animal Hospital, Tainan HQ",
+     "phone": "06-220-3166", "hours_zh": "24 小時", "hours_en": "24 hours"},
+]
+SNAKEBITE_CHECKED = "2026-11"  # desk-verification stamp shown on the page
+
+
+def snake_season_now():
+    # Taiwan's snake-activity season, roughly April through October
+    return 4 <= datetime.now(timezone(timedelta(hours=8))).month <= 10
+
+
+@app.route("/snakebite")
+def snakebite_root():
+    return redirect("/snakebite/zh")
+
+
+@app.route("/snakebite/<lang>")
+def snakebite(lang):
+    require_lang(lang)
+    return render_template("snakebite.html", lang=lang, t=UI_TEXT[lang],
+                           points=SNAKEBITE_POINTS, checked=SNAKEBITE_CHECKED)
 
 
 # regions verified (2026-07) to have no night/24h emergency vet at all;

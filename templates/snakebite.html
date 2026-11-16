@@ -1,0 +1,135 @@
+{% extends 'layout.html' %}
+{% block title %}{{ t.snakebite_title }}｜{{ t.seo_route_title.split('｜')[0] if lang == 'zh' else 'Emergency Vet Map' }}{% endblock title %}
+{% block description %}{{ t.seo_snakebite_desc }}{% endblock description %}
+{% block meta %}
+<link rel="canonical" href="https://vetmap.soulbrush.art/snakebite/{{ lang }}" />
+<link rel="alternate" hreflang="zh-Hant-TW" href="https://vetmap.soulbrush.art/snakebite/zh" />
+<link rel="alternate" hreflang="en" href="https://vetmap.soulbrush.art/snakebite/en" />
+<link rel="alternate" hreflang="x-default" href="https://vetmap.soulbrush.art/snakebite/zh" />
+{% endblock meta %}
+
+{% block content %}
+<div class="navbar">
+  <div class="nav-item"><a href="/route/{{ lang }}" class="back">←</a></div>
+  <h2 class="nav-item title">🐍 {{ t.snakebite_title }}</h2>
+  <div class="nav-item"><a href="/details/{{ lang }}" class="info">{{ t.more_info }}</a></div>
+</div>
+
+<div class="about-prose snake-page">
+  {% if lang == 'zh' %}
+
+  <p class="snake-sub">{{ t.snakebite_sub }}——先深呼吸。被咬之後你有時間，但沒有可以浪費的時間。</p>
+
+  <div class="snake-steps">
+    <h3>現在就做的三件事</h3>
+    <ol>
+      <li><strong>保持毛孩安靜，不要讓牠奔跑。</strong>抱得動就抱著走，傷口位置盡量低於心臟。</li>
+      <li><strong>記下蛇的樣子。</strong>安全距離內用手機拍一張最好——顏色、花紋、頭型。<em>不要抓蛇、不要追蛇。</em>血清分種類，認得出蛇就是幫牠搶時間。</li>
+      <li><strong>先打電話，再出發。</strong>打給下方名單的醫院，講三件事：被蛇咬、蛇長什麼樣（或拍到的照片）、多久能到。確認對方此刻有血清、收蛇咬，再上路。</li>
+    </ol>
+    <p class="snake-dont"><strong>不要做：</strong>不割開傷口、不用嘴吸毒、不冰敷、不綁止血帶——這些都已證實會讓傷害更嚴重。</p>
+  </div>
+
+  <div class="faq">
+    <h3>台灣的毒蛇與血清分型</h3>
+    <p>獸醫端的抗蛇毒血清分三種，對應不同的蛇——這就是為什麼「記下蛇的樣子」重要：</p>
+    <dl>
+      <dt>🟤 龜殼花・赤尾青竹絲（出血性毒）</dt>
+      <dd>最常見的咬傷來源，共用同一型血清。全台儲備最多的一型。</dd>
+      <dt>⚫ 雨傘節・眼鏡蛇（神經性毒）</dt>
+      <dd>共用同一型血清。雨傘節毒性強但咬傷初期症狀不明顯——懷疑被咬就直奔醫院，不要等腫起來。</dd>
+      <dt>🟠 鎖鏈蛇（混合毒）</dt>
+      <dd>主要出沒於南部與東部（高屏、花東）。極罕見，但全台獸醫端血清儲備只有個位數——偏偏多在資源較少的區域發生。在這些地區被咬，<strong>第一通電話就說「懷疑是鎖鏈蛇」</strong>，讓醫院提早確認血清與轉診路線。</dd>
+      <dt>其他蛇種（如百步蛇）</dt>
+      <dd>目前全聯會系統沒有對應的獸醫用血清儲備。立刻電話聯絡最近的急診獸醫院，描述蛇的樣子，依獸醫師指示處理。</dd>
+    </dl>
+  </div>
+
+  <div class="faq">
+    <h3>深夜有血清的獸醫院（{{ checked }} 桌面查證）</h3>
+    <p>白天，獸醫院可以透過獸醫師公會系統調撥血清；<strong>深夜沒有調撥——只有現場已經備有血清的醫院幫得上忙。</strong>下面是全台「深夜開著、而且是血清儲備點」的交集名單，很短，這是現實不是疏漏：</p>
+    <div class="snake-list">
+      {% for p in points %}
+      <div class="snake-point">
+        <span class="snake-region">{{ p.region_zh }}</span>
+        <span class="snake-name">{{ p.name_zh }}</span>
+        <span class="snake-hours">{{ p.hours_zh }}</span>
+        <a class="snake-phone" href="tel:{{ p.phone.replace('-', '') }}">📞 {{ p.phone }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="snake-caveat">⚠️ 血清庫存會變動、會用完——<strong>每一間，出發前都要先打電話</strong>，告知蛇種、確認此刻有血清。高雄與其他未列出的縣市，深夜目前沒有本地圖查證過的血清點：請電洽<a href="https://www.tw-tvma.org/serum.php" target="_blank" rel="noopener">全聯會即時庫存頁</a>所列的儲備單位，或先到最近的急診獸醫院做支持性處置。</p>
+  </div>
+
+  <div class="faq">
+    <h3>費用，先說在前面</h3>
+    <p>抗蛇毒血清一劑公告價為 <strong>28,000 元</strong>（獸醫師公會全國聯合會定價，不含診療與住院費），而且依咬傷程度可能需要不只一劑。這不是任何醫院亂開價——血清是管制藥品，全台同一個價。深夜抱著毛孩站在櫃台前，希望你是已經知道這個數字的人。牠值得，而你有權利先知道。</p>
+  </div>
+
+  <div class="faq">
+    <h3>平日白天的話</h3>
+    <p>平日 09:00–18:00，任何獸醫院都可以向所在縣市的獸醫師公會申請調撥血清——所以白天被咬，先打給你信任的獸醫院就好，不一定要跑儲備點。假日與夜間沒有調撥窗口，才需要上面的深夜名單。</p>
+  </div>
+
+  <p class="snake-disclaimer">這一頁由人手整理、桌面查證於 {{ checked }}，資料源為<a href="https://www.tw-tvma.org/serum.php" target="_blank" rel="noopener">中華民國獸醫師公會全國聯合會</a>。我們是地圖，不是獸醫——醫療判斷永遠以現場獸醫師為準。發現資訊有誤，<a href="/contact/zh">請告訴我們</a>，這頁跟整張地圖一樣，靠每一雙眼睛保持是真的。🏮</p>
+
+  {% else %}
+
+  <p class="snake-sub">{{ t.snakebite_sub }} — take a breath first. You have time, just none to waste.</p>
+
+  <div class="snake-steps">
+    <h3>Three things to do right now</h3>
+    <ol>
+      <li><strong>Keep your animal calm and still — no running.</strong> Carry them if you can, keeping the wound below heart level.</li>
+      <li><strong>Remember what the snake looked like.</strong> A phone photo from a safe distance is best — color, pattern, head shape. <em>Never try to catch or chase it.</em> Antivenom is type-specific; identifying the snake buys time.</li>
+      <li><strong>Call before you go.</strong> Call a hospital from the list below and say three things: snakebite, what the snake looked like, and how soon you can arrive. Confirm they have antivenom in stock right now before you set off.</li>
+    </ol>
+    <p class="snake-dont"><strong>Do not:</strong> cut the wound, suck out venom, apply ice, or use a tourniquet — all proven to make things worse.</p>
+  </div>
+
+  <div class="faq">
+    <h3>Taiwan's venomous snakes & antivenom types</h3>
+    <p>Veterinary antivenom in Taiwan comes in three types, matched to the snake — which is why remembering the snake matters:</p>
+    <dl>
+      <dt>🟤 Taiwan habu & bamboo viper (hemorrhagic)</dt>
+      <dd>The most common bites; one shared antivenom, and the most widely stocked.</dd>
+      <dt>⚫ Banded krait & Chinese cobra (neurotoxic)</dt>
+      <dd>One shared antivenom. Krait bites can look deceptively mild at first — if you suspect one, go now; don't wait for swelling.</dd>
+      <dt>🟠 Russell's viper (mixed venom)</dt>
+      <dd>Found mainly in the south and east (Kaohsiung-Pingtung, Hualien-Taitung). Very rare, but only a handful of doses exist in the whole veterinary system — mostly in regions with the fewest resources. If bitten there, <strong>say "suspected Russell's viper" in your first call</strong> so the hospital can confirm stock and referral routes early.</dd>
+      <dt>Other snakes (e.g. the hundred-pacer)</dt>
+      <dd>No veterinary antivenom is currently stocked for these. Call the nearest emergency vet immediately, describe the snake, and follow the vet's guidance.</dd>
+    </dl>
+  </div>
+
+  <div class="faq">
+    <h3>Night hospitals with antivenom (desk-checked {{ checked }})</h3>
+    <p>During weekday hours, any vet can request antivenom through the veterinary association. <strong>At night there is no such channel — only hospitals that already hold stock on-site can help.</strong> Here is the full overlap of "open at night" and "antivenom storage point". It is short; that is the reality, not an omission:</p>
+    <div class="snake-list">
+      {% for p in points %}
+      <div class="snake-point">
+        <span class="snake-region">{{ p.region_en }}</span>
+        <span class="snake-name">{{ p.name_en }}</span>
+        <span class="snake-hours">{{ p.hours_en }}</span>
+        <a class="snake-phone" href="tel:{{ p.phone.replace('-', '') }}">📞 {{ p.phone }}</a>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="snake-caveat">⚠️ Stock moves and runs out — <strong>call every hospital before setting off</strong>, name the snake, confirm they have the right antivenom now. For Kaohsiung and counties not listed, no night stock point has been verified by this map: check the <a href="https://www.tw-tvma.org/serum.php" target="_blank" rel="noopener">national live-stock page</a>, or head to the nearest emergency vet for supportive care.</p>
+  </div>
+
+  <div class="faq">
+    <h3>About the cost, upfront</h3>
+    <p>One dose of antivenom is <strong>NT$28,000</strong> (set nationally by the veterinary association; treatment and hospitalization are extra), and serious bites can need more than one. No hospital is overcharging you — it is a controlled drug, the same price everywhere. If you ever stand at a counter at 3 a.m. holding your animal, we want you to be someone who already knew this number. They are worth it, and you deserve to know first.</p>
+  </div>
+
+  <div class="faq">
+    <h3>On a weekday, in daylight</h3>
+    <p>Weekdays 09:00–18:00, any vet hospital can request antivenom through its county veterinary association — so for daytime bites, call the vet you trust first. The request channel closes at night and on holidays; that is when the night list above matters.</p>
+  </div>
+
+  <p class="snake-disclaimer">This page is hand-compiled and desk-verified as of {{ checked }}, from data by the <a href="https://www.tw-tvma.org/serum.php" target="_blank" rel="noopener">National Veterinary Association of Taiwan</a>. We are a map, not a vet — medical judgment always belongs to the veterinarian in front of you. Spotted an error? <a href="/contact/en">Tell us</a> — like the whole map, this page stays true through every pair of eyes. 🏮</p>
+
+  {% endif %}
+</div>
+{% endblock content %}

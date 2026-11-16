@@ -170,6 +170,50 @@ body {
 }
 .feature p { font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; }
 
+/* ── SNAKEBITE PAGE ── */
+.snake-sub { color: var(--text-muted); font-size: 0.95rem; margin: 8px 0 28px; }
+.snake-steps h3, .snake-page .faq h3 {
+  font-family: 'Cormorant Garamond', 'Noto Serif TC', serif;
+  font-size: 1.15rem; font-weight: 600; margin-bottom: 12px;
+}
+.snake-steps ol { padding-left: 1.3em; }
+.snake-steps li { margin-bottom: 12px; line-height: 1.8; font-size: 0.95rem; }
+.snake-dont {
+  margin-top: 16px; padding: 12px 16px; border: 1px solid var(--border);
+  border-left: 3px solid #b5651d; border-radius: 6px;
+  font-size: 0.9rem; color: var(--text-muted);
+}
+.snake-list { border: 1px solid var(--border); border-radius: 8px; overflow: hidden; margin: 16px 0; }
+.snake-point {
+  display: grid; grid-template-columns: 7.5em 1fr auto auto;
+  gap: 4px 14px; align-items: baseline;
+  padding: 10px 16px; border-bottom: 1px solid var(--border);
+  font-size: 0.9rem;
+}
+.snake-point:last-child { border-bottom: none; }
+.snake-region { color: var(--text-muted); font-size: 0.82rem; }
+.snake-name { color: var(--text); }
+.snake-hours { color: var(--text-muted); font-size: 0.82rem; }
+.snake-phone { white-space: nowrap; }
+.snake-caveat, .snake-disclaimer { font-size: 0.88rem; color: var(--text-muted); line-height: 1.8; }
+.snake-disclaimer { margin-top: 40px; border-top: 1px solid var(--border); padding-top: 20px; }
+@media (max-width: 560px) {
+  .snake-point { grid-template-columns: 1fr auto; }
+  .snake-region { grid-column: 1 / -1; }
+  .snake-hours { grid-column: 1; }
+}
+
+/* ── SNAKE SEASON BANNER（4–10 月限定）── */
+.snake-banner {
+  display: block; text-align: center;
+  margin: 0 0 16px; padding: 9px 16px;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: 8px; font-size: 0.85rem;
+  color: var(--text-muted); text-decoration: none;
+  transition: border-color 0.2s, color 0.2s;
+}
+.snake-banner:hover { border-color: var(--accent); color: var(--text); }
+
 /* ── COMPANION DOOR（回程的門：暖光慢路，別亮過急診動線）── */
 .companion-door {
   display: block;
