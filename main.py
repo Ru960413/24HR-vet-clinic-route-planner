@@ -366,6 +366,11 @@ SNAKEBITE_POINTS = [
     {"region_zh": "台南市", "region_en": "Tainan",
      "name_zh": "慈愛動物醫院 台南總院", "name_en": "Ci-Ai Animal Hospital, Tainan HQ",
      "phone": "06-220-3166", "hours_zh": "24 小時", "hours_en": "24 hours"},
+    # 宏力: owner ruling 2026-11-16 — Kaohsiung's only night serum point,
+    # listed by the same logic as 弘隼 (serum access first; not a map listing)
+    {"region_zh": "高雄市", "region_en": "Kaohsiung",
+     "name_zh": "宏力動物醫院", "name_en": "Hongli Animal Hospital",
+     "phone": "07-310-2819", "hours_zh": "24 小時緊急電話", "hours_en": "24h emergency line"},
 ]
 SNAKEBITE_CHECKED = "2026-11"  # desk-verification stamp shown on the page
 
