@@ -234,6 +234,19 @@ body {
 .companion-door-icon { display: block; font-size: 1.3rem; margin-bottom: 6px; }
 .companion-door-en { font-size: 0.72rem; opacity: 0.8; }
 
+/* 蛇咬頁常駐小入口（蛇季另有頂部 banner，這行全年站崗） */
+.snake-door {
+  display: block;
+  margin: -48px 0 64px;
+  padding: 10px 24px;
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.snake-door:hover { color: var(--text); }
+
 /* ── BACK LINK ── */
 .back {
   font-size: 0.85rem;
