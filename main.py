@@ -320,6 +320,7 @@ def sitemap():
         u(f"/companion/{lang}")
         u(f"/snakebite/{lang}")
         u(f"/contact/{lang}")
+    u("/subscribe")
     u("/wallpapers")
     xml = ('<?xml version="1.0" encoding="UTF-8"?>\n'
            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
@@ -378,6 +379,13 @@ SNAKEBITE_CHECKED = "2026-11"  # desk-verification stamp shown on the page
 def snake_season_now():
     # Taiwan's snake-activity season, roughly April through October
     return 4 <= datetime.now(timezone(timedelta(hours=8))).month <= 10
+
+
+@app.route("/subscribe")
+def subscribe():
+    # newsletter signup lives on its own page so the third-party form script
+    # (MailerLite + reCAPTCHA) never loads on the emergency paths
+    return render_template("subscribe.html", lang="zh", t=UI_TEXT["zh"])
 
 
 @app.route("/snakebite")

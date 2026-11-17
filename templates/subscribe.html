@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+{% block title %}訂閱地圖通訊｜24小時急診獸醫地圖{% endblock title %}
+{% block description %}訂閱 24 小時急診獸醫地圖的更新通訊：每月最多一封的地圖異動摘要，蛇季前多一封提醒。免費、隨時可退訂。{% endblock description %}
+{% block meta %}
+<link rel="canonical" href="https://vetmap.soulbrush.art/subscribe" />
+{% endblock meta %}
+
+{% block content %}
+<div class="navbar">
+  <div class="nav-item"><a href="/" class="back">←</a></div>
+  <h2 class="nav-item title">✉️ 訂閱地圖通訊</h2>
+  <div class="nav-item"></div>
+</div>
+
+<div class="about-prose subscribe-page">
+  <p>地圖有更新的時候，寄一封信告訴你——哪裡的燈亮了、哪裡的燈熄了、多了什麼新工具。<strong>一個月最多一封</strong>，蛇季開始前多一封提醒。不想收了，每封信裡一鍵就能走。</p>
+  <p class="subscribe-sub">The map's update letter — at most one email a month, plus a heads-up before snake season. Unsubscribe anytime.</p>
+
+  <div class="ml-embed-wrap">
+    {% include 'ml-embed.html' %}
+  </div>
+
+  <p class="subscribe-privacy">你的 email 只用來寄地圖通訊，存放於 MailerLite（我們的 server 不經手、不儲存），不會交給任何第三方。送出後會收到一封確認信，按了才算訂閱成功——防止別人拿你的信箱亂填。</p>
+</div>
+{% endblock content %}

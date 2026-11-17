@@ -92,5 +92,9 @@
     <a class="back-map-btn" href="https://ko-fi.com/soulbrushstudio" target="_blank" rel="noopener">{{ t.support_intl }}</a>
     <a class="back-map-btn" href="/route/{{ lang }}">{{ t.back_to_map }}</a>
   </div>
+
+  <a class="snake-door" href="/subscribe" data-goatcounter-click="newsletter/from-about">
+    {% if lang == 'zh' %}✉️ 訂閱地圖通訊——有更新寄信告訴你，一個月最多一封{% else %}✉️ Subscribe to map updates — at most one email a month{% endif %}
+  </a>
 </div>
 {% endblock content %}

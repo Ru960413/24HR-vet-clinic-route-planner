@@ -203,6 +203,18 @@ body {
   .snake-hours { grid-column: 1; }
 }
 
+/* ── SUBSCRIBE PAGE ── */
+.subscribe-sub { font-size: 0.82rem; color: var(--text-muted); opacity: 0.85; }
+.ml-embed-wrap { max-width: 480px; margin: 28px auto; }
+.ml-embed-wrap .ml-form-embedWrapper { border-radius: 8px; }
+.subscribe-page .snake-door { margin: 0; }
+.subscribe-privacy {
+  font-size: 0.82rem; color: var(--text-muted); line-height: 1.8;
+  border-top: 1px solid var(--border); padding-top: 16px; margin-top: 32px;
+}
+/* 入口行在內文頁中照常排（snake-door 原為首頁負邊距設計） */
+.about-prose .snake-door, .snake-page .snake-door { margin: 24px 0 8px; }
+
 /* ── SNAKE SEASON BANNER（4–10 月限定）── */
 .snake-banner {
   display: block; text-align: center;
