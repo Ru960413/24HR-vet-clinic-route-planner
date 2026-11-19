@@ -328,8 +328,8 @@
     "lat": 25.044964999999998,
     "lng": 121.55384249999999,
     "place_id": "ChIJU_UVpJKrQjQR1hFtwsRnVzk",
-    "last_verified": null,
-    "active": true,
+    "last_verified": "2026-11-19",
+    "active": false,
     "district_en": "Songshan District",
     "species": [
       "dog",
