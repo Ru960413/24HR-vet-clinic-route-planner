@@ -31,7 +31,7 @@
     </ol>
   </div>
 
-  <p class="report-line">{{ t.verified_hint }} <a href="/contact/{{ lang }}">{{ t.report_link }}</a></p>
+  <p class="report-line">{{ t.verified_hint }} <a href="/contact/{{ lang }}">{{ t.report_link }}</a>{% if lang == 'zh' %} · <a href="/subscribe" data-goatcounter-click="newsletter/from-details">✉️ 訂閱地圖更新</a>{% else %} · <a href="/subscribe" data-goatcounter-click="newsletter/from-details">✉️ Subscribe to updates</a>{% endif %}</p>
 
   {% for city in cities %}
   <h3 class="city" id="{{ city.anchor }}">{{ city.name }}</h3>
