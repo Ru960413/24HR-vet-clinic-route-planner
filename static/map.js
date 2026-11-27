@@ -173,7 +173,13 @@ function infoElement(c, t) {
 function buildFilterBar(map, clinics, entries, t) {
   const bar = document.getElementById("filter-bar");
   if (!bar) return;
+  // chips come from ER clinics AND exotic evening entries (so a species with
+  // only an evening-tier option — hedgehogs — still gets its chip and an answer)
   const present = new Set(clinics.flatMap((c) => (c.species_verified ? c.species : [])));
+  entries.forEach(({ clinic }) => {
+    if (clinic.evening && clinic.species_verified && Array.isArray(clinic.species))
+      clinic.species.forEach((s) => s !== "*" && present.add(s));
+  });
   const keys = SPECIES_ORDER.filter((s) => present.has(s));
 
   const chips = [["all", t.filterAll], ...keys.map((s) => [s, t.speciesNames[s]])];
@@ -185,8 +191,16 @@ function buildFilterBar(map, clinics, entries, t) {
   const state = { species: "all", nowOnly: false };
   function apply() {
     entries.forEach(({ clinic, marker }) => {
-      const okSpecies = state.species === "all" ||
-        (!clinic.evening && clinic.species_verified && clinic.species.includes(state.species));
+      // default view: ER pins + classic evening dots (no species field);
+      // exotic evening dots (species-tagged) appear only under their species
+      // filter — they answer "where can MY animal go", not the general map.
+      // "*" = hospital says 特寵 without a species list; matches every chip,
+      // its note says to phone for species.
+      const matchesSpecies = clinic.species_verified && Array.isArray(clinic.species) &&
+        (clinic.species.includes("*") || clinic.species.includes(state.species));
+      const okSpecies = state.species === "all"
+        ? !(clinic.evening && clinic.species)
+        : matchesSpecies;
       const okNow = !state.nowOnly || openNow(clinic);
       marker.setMap(okSpecies && okNow ? map : null);
     });
