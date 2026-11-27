@@ -176,8 +176,8 @@
   "name_en": "Zhishan Animal Hospital",
   "city_zh": "台北市",
   "city_en": "Taipei",
-  "note_zh": "特寵看診至 21:00（兔、鼠、刺蝟、龜、龍貓、蜜袋鼯、鳥）・刺蝟等依醫師班表（單一醫師）・需預約，出發前必電話（查證 2026-11）",
-  "note_en": "Exotics until 21:00 (rabbits, rodents, hedgehogs, turtles, chinchillas, sugar gliders, birds) · hedgehog by one vet's schedule · by appointment — always call first (verified Nov 2026)",
+  "note_zh": "兔、鼠每日有醫師看診至 21:00；刺蝟、龜、鳥、蜜袋鼯、天竺鼠限林宸右醫師（班表制，每月公布）・需預約，出發前必電話（院方班表核對 2026-11）",
+  "note_en": "Rabbits & rodents seen daily until 21:00; hedgehogs, turtles, birds, sugar gliders & guinea pigs by Dr. Lin only (monthly schedule) · by appointment — always call first (schedule-verified Nov 2026)",
   "phone": "02-2832-8385",
   "lat": 25.103596,
   "lng": 121.519959,
@@ -211,8 +211,8 @@
   "name_en": "Meng Chong Animal Hospital",
   "city_zh": "嘉義市",
   "city_en": "Chiayi City",
-  "note_zh": "鳥類內外科與重症照護・平日看診至 21:00（週末至 19:00）・特寵醫師非每日晚診，出發前必電話（查證 2026-11）",
-  "note_en": "Avian medicine & critical care · weekdays until 21:00 (weekends 19:00) · exotic vet not on every evening — always call first (verified Nov 2026)",
+  "note_zh": "鳥類內外科與重症照護・看診至 21:00（週日晚間至 19:00）・鳥禽科＝吳醫師一人且晚診不定，出發前必電話（院方班表核對 2026-11）",
+  "note_en": "Avian medicine & critical care · until 21:00 (Sun evenings until 19:00) · one avian vet, not on every evening — always call first (schedule-verified Nov 2026)",
   "phone": "05-276-0177",
   "lat": 23.4773222,
   "lng": 120.4681494,
@@ -223,6 +223,10 @@
    ],
    [
     14,
+    17
+   ],
+   [
+    18,
     21
    ]
   ],
